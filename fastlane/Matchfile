@@ -1,4 +1,4 @@
-git_url("https://github.com/OhKanghoon/allnight-certification.git")
+git_url("git@github.com:OhKanghoon/allnight-certification.git")
 
 storage_mode("git")
 
