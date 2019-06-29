@@ -14,7 +14,7 @@ AllNight-Android can be found in [this repo]().
 ## Overview
 * Provides coktail recipes
 
-## Supported Moduels  
+## Development environments
 AllNight-iOS is developed with
 * iOS 11.0
 * XCode
