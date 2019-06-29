@@ -15,6 +15,7 @@
 		BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */; };
 		BA279DC322C77D13004CA0F6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */; };
 		BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */; };
+		BA279DCC22C78611004CA0F6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DCB22C78611004CA0F6 /* Recipe.swift */; };
 		BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5310C22C74790005809C3 /* AppDelegate.swift */; };
 		BAF5311222C74790005809C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311022C74790005809C3 /* Main.storyboard */; };
 		BAF5311422C74791005809C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311322C74791005809C3 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		BA279DCB22C78611004CA0F6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BAF5310922C74790005809C3 /* allnight-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allnight-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF5310C22C74790005809C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF5311122C74790005809C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		BA279DC622C77D53004CA0F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA279DCB22C78611004CA0F6 /* Recipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
 				BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */,
+				BA279DCC22C78611004CA0F6 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
