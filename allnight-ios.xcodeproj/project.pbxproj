@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */; };
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
+		BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */; };
+		BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */; };
+		BA279DBF22C77CCA004CA0F6 /* MixSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */; };
+		BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */; };
+		BA279DC322C77D13004CA0F6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */; };
+		BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */; };
 		BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5310C22C74790005809C3 /* AppDelegate.swift */; };
 		BAF5311222C74790005809C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311022C74790005809C3 /* Main.storyboard */; };
 		BAF5311422C74791005809C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311322C74791005809C3 /* Assets.xcassets */; };
@@ -33,6 +39,12 @@
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		9863CC7D48E4882F0937B556 /* Pods-allnight-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.debug.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B769DC6C116C639C0398BEA7 /* Pods-allnight-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixRecipeViewController.swift; sourceTree = "<group>"; };
+		BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixSearchViewController.swift; sourceTree = "<group>"; };
+		BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BAF5310922C74790005809C3 /* allnight-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allnight-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF5310C22C74790005809C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF5311122C74790005809C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +100,96 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BA279DB322C77B91004CA0F6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DB922C77C40004CA0F6 /* Recipe */,
+				BA279DB522C77C05004CA0F6 /* Main */,
+				BA279DB822C77C35004CA0F6 /* Mix Recipe */,
+				BA279DB622C77C09004CA0F6 /* Mix Search */,
+				BA279DB722C77C26004CA0F6 /* Onboarding */,
+				BA279DB422C77BFB004CA0F6 /* Sign In */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BA279DB422C77BFB004CA0F6 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */,
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		BA279DB522C77C05004CA0F6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BA279DB622C77C09004CA0F6 /* Mix Search */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */,
+			);
+			path = "Mix Search";
+			sourceTree = "<group>";
+		};
+		BA279DB722C77C26004CA0F6 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		BA279DB822C77C35004CA0F6 /* Mix Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */,
+			);
+			path = "Mix Recipe";
+			sourceTree = "<group>";
+		};
+		BA279DB922C77C40004CA0F6 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		BA279DC622C77D53004CA0F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA279DC722C77D82004CA0F6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA279DC822C77D94004CA0F6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA279DC922C77DBD004CA0F6 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				BAF5313222C754AE005809C3 /* main.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
 		BAF5310022C74790005809C3 = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +232,13 @@
 		BAF5312C22C748C8005809C3 /* Souces */ = {
 			isa = PBXGroup;
 			children = (
-				BAF5313222C754AE005809C3 /* main.swift */,
 				BAF5310C22C74790005809C3 /* AppDelegate.swift */,
+				BA279DB322C77B91004CA0F6 /* Domain */,
+				BA279DC922C77DBD004CA0F6 /* Entry */,
+				BA279DC622C77D53004CA0F6 /* Models */,
 				BAF5312F22C74D1B005809C3 /* Networking */,
+				BA279DC722C77D82004CA0F6 /* Services */,
+				BA279DC822C77D94004CA0F6 /* Utils */,
 			);
 			path = Souces;
 			sourceTree = "<group>";
@@ -347,9 +453,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */,
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
+				BA279DBF22C77CCA004CA0F6 /* MixSearchViewController.swift in Sources */,
+				BA279DC322C77D13004CA0F6 /* OnboardingViewController.swift in Sources */,
 				BAF5313122C74D2A005809C3 /* Networking.swift in Sources */,
+				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
+				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
+				BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
