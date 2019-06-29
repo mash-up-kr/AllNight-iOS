@@ -19,6 +19,7 @@
 		BA279DCE22C78627004CA0F6 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DCD22C78627004CA0F6 /* RecipeService.swift */; };
 		BA279DD022C7866B004CA0F6 /* UITableView+reusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DCF22C7866B004CA0F6 /* UITableView+reusableCell.swift */; };
 		BA279DD222C78773004CA0F6 /* UICollectionView+reusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */; };
+		BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9932F022C7CC5500E4BFA8 /* UIColor+AllNight.swift */; };
 		BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5310C22C74790005809C3 /* AppDelegate.swift */; };
 		BAF5311422C74791005809C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311322C74791005809C3 /* Assets.xcassets */; };
 		BAF5311722C74791005809C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311522C74791005809C3 /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 		BA279DCD22C78627004CA0F6 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
 		BA279DCF22C7866B004CA0F6 /* UITableView+reusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+reusableCell.swift"; sourceTree = "<group>"; };
 		BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+reusableCell.swift"; sourceTree = "<group>"; };
+		BA9932F022C7CC5500E4BFA8 /* UIColor+AllNight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AllNight.swift"; sourceTree = "<group>"; };
 		BAF5310922C74790005809C3 /* allnight-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allnight-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF5310C22C74790005809C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF5311322C74791005809C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				BA279DCF22C7866B004CA0F6 /* UITableView+reusableCell.swift */,
 				BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */,
+				BA9932F022C7CC5500E4BFA8 /* UIColor+AllNight.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 				BA279DCE22C78627004CA0F6 /* RecipeService.swift in Sources */,
+				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
 				BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */,
 				BA279DCC22C78611004CA0F6 /* Recipe.swift in Sources */,
