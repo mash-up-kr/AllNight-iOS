@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
+let console = ConsoleDestination()
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
