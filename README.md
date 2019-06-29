@@ -1,4 +1,4 @@
-## AllNight
+![logo](images/logo.png)
 |      iOS      |     Android      |
 | :-----------: | :--------------: |
 | [App Store]() | [Google Store]() |
@@ -13,16 +13,16 @@ AllNight-iOS is developed with
   * [Moya]()
   * [Kingfisher]()
   * [SwiftyBeaver]()
-  * [Firebase/Auth]()
 
 Other repositories...
-* AllNight-Android can be found in [this repo]()  
-* AllNight-Backend can be found in [this repo]()
+* AllNight-Android can be found in [this repo](https://github.com/mash-up-kr/AllNight-Android)  
+* AllNight-Backend can be found in [this repo](https://github.com/mash-up-kr/allnight-backend)
 
 ## Getting Started
-1. clone this repository
-2. pod install
-3. open .xcworkspace
+1. `clone this repository`
+2. `bundle install`
+3. `bundle exec pod install`
+4. `open .xcworkspace`
 
 ## Overview
 * Provides coktail recipes
