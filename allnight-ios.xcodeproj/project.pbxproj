@@ -315,6 +315,7 @@
 				BAF5311922C74791005809C3 /* Sources */,
 				BAF5311A22C74791005809C3 /* Frameworks */,
 				BAF5311B22C74791005809C3 /* Resources */,
+				BA279DCA22C78342004CA0F6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -445,6 +446,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-allnight-ios/Pods-allnight-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BA279DCA22C78342004CA0F6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
