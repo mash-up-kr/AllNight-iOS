@@ -33,7 +33,7 @@ Other repositories...
 If you find a bug, please report to us by posting [issues](https://github.com/mash-up-kr/AllNight-iOS/issues) on Github.
 
 ## License
-AllNight is released under the [MIT license](https://github.com/naver/billboard.js/blob/master/LICENSE).
+AllNight is released under the [MIT license](https://github.com/mash-up-kr/AllNight-iOS/blob/develop/LICENSE).
 
 ```
 Copyright 2019 ~ present Mash-Up-Kr
