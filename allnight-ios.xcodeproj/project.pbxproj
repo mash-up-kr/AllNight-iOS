@@ -13,7 +13,9 @@
 		BAF5311222C74790005809C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311022C74790005809C3 /* Main.storyboard */; };
 		BAF5311422C74791005809C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311322C74791005809C3 /* Assets.xcassets */; };
 		BAF5311722C74791005809C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311522C74791005809C3 /* LaunchScreen.storyboard */; };
-		BAF5312222C74791005809C3 /* allnight_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5312122C74791005809C3 /* allnight_iosTests.swift */; };
+		BAF5313122C74D2A005809C3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313022C74D2A005809C3 /* Networking.swift */; };
+		BAF5313322C754AE005809C3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313222C754AE005809C3 /* main.swift */; };
+		BAF5313522C754F5005809C3 /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313422C754F5005809C3 /* StubAppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +40,10 @@
 		BAF5311622C74791005809C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF5311822C74791005809C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF5311D22C74791005809C3 /* allnight-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "allnight-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAF5312122C74791005809C3 /* allnight_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allnight_iosTests.swift; sourceTree = "<group>"; };
 		BAF5312322C74791005809C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF5313022C74D2A005809C3 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		BAF5313222C754AE005809C3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BAF5313422C754F5005809C3 /* StubAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppDelegate.swift; sourceTree = "<group>"; };
 		D5551A6BDE1AECA521612616 /* Pods-allnight-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.release.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.release.xcconfig"; sourceTree = "<group>"; };
 		FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,7 +113,7 @@
 			children = (
 				BAF5312D22C748D0005809C3 /* Resources */,
 				BAF5312C22C748C8005809C3 /* Souces */,
-				BAF5312E22C748D5005809C3 /* Supporting Files */,
+				BAF5312E22C748D5005809C3 /* SupportingFiles */,
 			);
 			path = "allnight-ios";
 			sourceTree = "<group>";
@@ -117,8 +121,8 @@
 		BAF5312022C74791005809C3 /* allnight-iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAF5312122C74791005809C3 /* allnight_iosTests.swift */,
-				BAF5312322C74791005809C3 /* Info.plist */,
+				BAF5313722C7553E005809C3 /* SupportingFiles */,
+				BAF5313622C75534005809C3 /* Sources */,
 			);
 			path = "allnight-iosTests";
 			sourceTree = "<group>";
@@ -126,7 +130,9 @@
 		BAF5312C22C748C8005809C3 /* Souces */ = {
 			isa = PBXGroup;
 			children = (
+				BAF5313222C754AE005809C3 /* main.swift */,
 				BAF5310C22C74790005809C3 /* AppDelegate.swift */,
+				BAF5312F22C74D1B005809C3 /* Networking */,
 			);
 			path = Souces;
 			sourceTree = "<group>";
@@ -141,12 +147,36 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BAF5312E22C748D5005809C3 /* Supporting Files */ = {
+		BAF5312E22C748D5005809C3 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				BAF5311822C74791005809C3 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		BAF5312F22C74D1B005809C3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BAF5313022C74D2A005809C3 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BAF5313622C75534005809C3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BAF5313422C754F5005809C3 /* StubAppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BAF5313722C7553E005809C3 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BAF5312322C74791005809C3 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
+				BAF5313122C74D2A005809C3 /* Networking.swift in Sources */,
+				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAF5312222C74791005809C3 /* allnight_iosTests.swift in Sources */,
+				BAF5313522C754F5005809C3 /* StubAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +513,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "allnight-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/allnight-ios/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kanghoon.allnight-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -499,7 +532,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "allnight-ios/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/allnight-ios/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,7 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kanghoon.allnight-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -518,7 +552,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "allnight-iosTests/Info.plist";
+				INFOPLIST_FILE = "allnight-iosTests/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +573,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "allnight-iosTests/Info.plist";
+				INFOPLIST_FILE = "allnight-iosTests/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
