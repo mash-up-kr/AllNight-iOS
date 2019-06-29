@@ -20,12 +20,17 @@
 		BA279DD022C7866B004CA0F6 /* UITableView+reusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DCF22C7866B004CA0F6 /* UITableView+reusableCell.swift */; };
 		BA279DD222C78773004CA0F6 /* UICollectionView+reusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */; };
 		BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5310C22C74790005809C3 /* AppDelegate.swift */; };
-		BAF5311222C74790005809C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311022C74790005809C3 /* Main.storyboard */; };
 		BAF5311422C74791005809C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311322C74791005809C3 /* Assets.xcassets */; };
 		BAF5311722C74791005809C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF5311522C74791005809C3 /* LaunchScreen.storyboard */; };
 		BAF5313122C74D2A005809C3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313022C74D2A005809C3 /* Networking.swift */; };
 		BAF5313322C754AE005809C3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313222C754AE005809C3 /* main.swift */; };
 		BAF5313522C754F5005809C3 /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313422C754F5005809C3 /* StubAppDelegate.swift */; };
+		EF432FB622C79EF900786CFD /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB522C79EF900786CFD /* Recipe.storyboard */; };
+		EF432FB822C79F0700786CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB722C79F0700786CFD /* Main.storyboard */; };
+		EF432FBA22C79F3500786CFD /* MixRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB922C79F3500786CFD /* MixRecipe.storyboard */; };
+		EF432FBC22C79F3D00786CFD /* MixSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */; };
+		EF432FBE22C79F4800786CFD /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBD22C79F4800786CFD /* Onboarding.storyboard */; };
+		EF432FC022C79F5300786CFD /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBF22C79F5300786CFD /* SignIn.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +60,6 @@
 		BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+reusableCell.swift"; sourceTree = "<group>"; };
 		BAF5310922C74790005809C3 /* allnight-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "allnight-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF5310C22C74790005809C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAF5311122C74790005809C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAF5311322C74791005809C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAF5311622C74791005809C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAF5311822C74791005809C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +69,12 @@
 		BAF5313222C754AE005809C3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BAF5313422C754F5005809C3 /* StubAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppDelegate.swift; sourceTree = "<group>"; };
 		D5551A6BDE1AECA521612616 /* Pods-allnight-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.release.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.release.xcconfig"; sourceTree = "<group>"; };
+		EF432FB522C79EF900786CFD /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		EF432FB722C79F0700786CFD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EF432FB922C79F3500786CFD /* MixRecipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MixRecipe.storyboard; sourceTree = "<group>"; };
+		EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MixSearch.storyboard; sourceTree = "<group>"; };
+		EF432FBD22C79F4800786CFD /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		EF432FBF22C79F5300786CFD /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DC022C77CE2004CA0F6 /* SignInViewController.swift */,
+				EF432FBF22C79F5300786CFD /* SignIn.storyboard */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */,
+				EF432FB722C79F0700786CFD /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */,
+				EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */,
 			);
 			path = "Mix Search";
 			sourceTree = "<group>";
@@ -149,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DC222C77D13004CA0F6 /* OnboardingViewController.swift */,
+				EF432FBD22C79F4800786CFD /* Onboarding.storyboard */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -157,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */,
+				EF432FB922C79F3500786CFD /* MixRecipe.storyboard */,
 			);
 			path = "Mix Recipe";
 			sourceTree = "<group>";
@@ -165,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */,
+				EF432FB522C79EF900786CFD /* Recipe.storyboard */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -258,7 +274,6 @@
 		BAF5312D22C748D0005809C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BAF5311022C74790005809C3 /* Main.storyboard */,
 				BAF5311322C74791005809C3 /* Assets.xcassets */,
 				BAF5311522C74791005809C3 /* LaunchScreen.storyboard */,
 			);
@@ -382,9 +397,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF432FC022C79F5300786CFD /* SignIn.storyboard in Resources */,
+				EF432FB622C79EF900786CFD /* Recipe.storyboard in Resources */,
+				EF432FB822C79F0700786CFD /* Main.storyboard in Resources */,
+				EF432FBA22C79F3500786CFD /* MixRecipe.storyboard in Resources */,
+				EF432FBC22C79F3D00786CFD /* MixSearch.storyboard in Resources */,
+				EF432FBE22C79F4800786CFD /* Onboarding.storyboard in Resources */,
 				BAF5311722C74791005809C3 /* LaunchScreen.storyboard in Resources */,
 				BAF5311422C74791005809C3 /* Assets.xcassets in Resources */,
-				BAF5311222C74790005809C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,14 +539,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BAF5311022C74790005809C3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAF5311122C74790005809C3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BAF5311522C74791005809C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
