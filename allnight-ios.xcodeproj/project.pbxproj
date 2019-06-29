@@ -31,6 +31,7 @@
 		EF432FBC22C79F3D00786CFD /* MixSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */; };
 		EF432FBE22C79F4800786CFD /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBD22C79F4800786CFD /* Onboarding.storyboard */; };
 		EF432FC022C79F5300786CFD /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FBF22C79F5300786CFD /* SignIn.storyboard */; };
+		EF432FC622C7D0FC00786CFD /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF432FC522C7D0FC00786CFD /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MixSearch.storyboard; sourceTree = "<group>"; };
 		EF432FBD22C79F4800786CFD /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		EF432FBF22C79F5300786CFD /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		EF432FC522C7D0FC00786CFD /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 			children = (
 				BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */,
 				EF432FBB22C79F3D00786CFD /* MixSearch.storyboard */,
+				EF432FC522C7D0FC00786CFD /* SearchResultTableViewCell.swift */,
 			);
 			path = "Mix Search";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF432FC622C7D0FC00786CFD /* SearchResultTableViewCell.swift in Sources */,
 				BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */,
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
 				BA279DD022C7866B004CA0F6 /* UITableView+reusableCell.swift in Sources */,
