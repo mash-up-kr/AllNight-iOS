@@ -11,11 +11,13 @@ import UIKit
 final class MixSearchViewController: UIViewController {
     
     @IBOutlet weak var searchResultTableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     private var searchResult: Array<String> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex) 보드카", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         initTableView()
     }
     

@@ -18,35 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-ZT-YQn">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrq-ZT-YQn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="tintColor" red="0.82745098039215681" green="0.72941176470588232" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="6uo-T4-bbd">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="undo" id="o0m-nb-Yxz"/>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="hNf-ol-dDm"/>
+                                        <barButtonItem key="leftBarButtonItem" image="icArrowBack" style="plain" id="o0m-nb-Yxz"/>
+                                        <barButtonItem key="rightBarButtonItem" image="icArrowFront" style="plain" id="hNf-ol-dDm"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 술로 만드시나요??" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK0-EF-afn">
                                 <rect key="frame" x="16" y="110" width="186" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여러개를 선택하실 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irz-wr-nsO">
                                 <rect key="frame" x="16" y="142" width="173" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ha0-Gx-EWn">
                                 <rect key="frame" x="24" y="196" width="366" height="38"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex) 보드카" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-gI-ecx">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex) 보드카" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-gI-ecx">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="29"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="onSearchTextChanged:" destination="CrU-08-T4C" eventType="editingChanged" id="DDr-xT-Efp"/>
@@ -63,7 +66,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="G4B-I6-phh"/>
                                     <constraint firstItem="dkG-Vn-YVa" firstAttribute="top" secondItem="Oj5-gI-ecx" secondAttribute="bottom" constant="8" id="G9z-Fd-WX6"/>
@@ -128,18 +131,20 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Irz-wr-nsO" firstAttribute="leading" secondItem="bc0-JH-LiI" secondAttribute="leading" constant="16" id="6xJ-Ya-kqr"/>
                             <constraint firstItem="Ha0-Gx-EWn" firstAttribute="top" secondItem="Irz-wr-nsO" secondAttribute="bottom" constant="37" id="CW3-SD-mzF"/>
                             <constraint firstAttribute="trailing" secondItem="gPk-De-YgZ" secondAttribute="trailing" constant="15" id="H5Y-jP-WGe"/>
+                            <constraint firstItem="vrq-ZT-YQn" firstAttribute="leading" secondItem="bc0-JH-LiI" secondAttribute="leading" id="LGA-zZ-bao"/>
                             <constraint firstItem="bc0-JH-LiI" firstAttribute="trailing" secondItem="Ha0-Gx-EWn" secondAttribute="trailing" constant="24" id="Ly9-VR-XgH"/>
                             <constraint firstItem="jDd-OA-7qC" firstAttribute="leading" secondItem="bc0-JH-LiI" secondAttribute="leading" id="Mp2-jd-RlV"/>
                             <constraint firstItem="Ha0-Gx-EWn" firstAttribute="leading" secondItem="bc0-JH-LiI" secondAttribute="leading" constant="24" id="VOn-9W-Q1t"/>
                             <constraint firstItem="bK0-EF-afn" firstAttribute="leading" secondItem="bc0-JH-LiI" secondAttribute="leading" constant="16" id="YVr-bU-1UE"/>
                             <constraint firstItem="jDd-OA-7qC" firstAttribute="top" secondItem="Ha0-Gx-EWn" secondAttribute="bottom" constant="40" id="ZVT-Sm-utL"/>
                             <constraint firstItem="Irz-wr-nsO" firstAttribute="top" secondItem="bK0-EF-afn" secondAttribute="bottom" constant="8" id="b97-RO-aZW"/>
+                            <constraint firstItem="vrq-ZT-YQn" firstAttribute="trailing" secondItem="bc0-JH-LiI" secondAttribute="trailing" id="d5B-YQ-a2f"/>
                             <constraint firstItem="bc0-JH-LiI" firstAttribute="trailing" secondItem="jDd-OA-7qC" secondAttribute="trailing" id="gEC-rT-IcC"/>
                             <constraint firstItem="bc0-JH-LiI" firstAttribute="bottom" secondItem="gPk-De-YgZ" secondAttribute="bottom" constant="40" id="mPq-46-t9X"/>
                             <constraint firstItem="vrq-ZT-YQn" firstAttribute="top" secondItem="bc0-JH-LiI" secondAttribute="top" id="q99-yJ-hfO"/>
@@ -150,6 +155,7 @@
                     </view>
                     <connections>
                         <outlet property="searchResultTableView" destination="jDd-OA-7qC" id="OAG-c9-DAf"/>
+                        <outlet property="searchTextField" destination="Oj5-gI-ecx" id="ZWt-fO-Ia4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xv8-He-kqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +164,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icArrowBack" width="24" height="24"/>
+        <image name="icArrowFront" width="24" height="24"/>
         <image name="icCart" width="24" height="24"/>
         <image name="icFind" width="24" height="24"/>
         <image name="icMixCocktail" width="74" height="74"/>
