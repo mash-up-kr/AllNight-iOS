@@ -10,11 +10,11 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
-    // MARK: View LifeCycle
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
