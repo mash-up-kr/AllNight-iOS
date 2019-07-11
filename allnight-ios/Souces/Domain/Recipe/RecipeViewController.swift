@@ -17,8 +17,8 @@ final class RecipeViewController: UIViewController {
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
-    let minHeaderHeight: CGFloat = 176
-    let maxHeaderHeight: CGFloat = 343
+    let minHeaderHeight: CGFloat = 141
+    let maxHeaderHeight: CGFloat = 276
     
     var previousScrollOffset: CGFloat = 0
     var isAnimating = false
@@ -60,10 +60,6 @@ extension RecipeViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard !isAnimating else { return }
         
-        if scrollView.contentOffset.y == -387.0 {
-            scrollView.contentOffset.y = -maxHeaderHeight
-        }
-        
         let scrollDiff = scrollView.contentOffset.y - previousScrollOffset
         
         let absoluteTop: CGFloat = 0
@@ -76,7 +72,6 @@ extension RecipeViewController: UITableViewDelegate {
             // 새로운 높이 계산
             var newHeight = headerHeightConstraint.constant
             
-            print(abs(scrollDiff))
             if scrollView.contentOffset.y + scrollView.contentInset.top > 0 {
                 // tableview가 제일 상단이 아닐때,
                 if isScrollingUp {
@@ -92,7 +87,6 @@ extension RecipeViewController: UITableViewDelegate {
             // header 높이 설정
             if newHeight != headerHeightConstraint.constant {
                 headerHeightConstraint.constant = newHeight
-                print(headerHeightConstraint.constant)
             }
             
             previousScrollOffset = scrollView.contentOffset.y
@@ -127,7 +121,6 @@ extension RecipeViewController: UITableViewDelegate {
     
     func expandHeader() {
         self.view.layoutIfNeeded()
-        let diff = maxHeaderHeight - headerHeightConstraint.constant
         self.isAnimating = true
         UIView.animate(withDuration: 0.2, animations: {
             self.headerHeightConstraint.constant = self.maxHeaderHeight
