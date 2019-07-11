@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbI-KR-s2s">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PbI-KR-s2s">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.043137254899999998" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailInformationCell" rowHeight="273" id="HhO-fi-Ih9" customClass="DetailInformationTableViewCell" customModule="allnight_ios" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailInformationCell" rowHeight="273" id="HhO-fi-Ih9" customClass="DetailInformationTableViewCell" customModule="allnight_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="273"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhO-fi-Ih9" id="xCm-XU-RkH">
@@ -75,34 +75,10 @@
                                                     <color key="textColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wXQ-vg-Bez">
-                                                    <rect key="frame" x="16" y="72" width="382" height="142.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wj9-qQ-rqS">
-                                                        <size key="itemSize" width="343" height="31"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x4e-FU-wg7">
-                                                            <rect key="frame" x="19.5" y="0.0" width="343" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </view>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.043137254899999998" green="0.047058823530000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="wXQ-vg-Bez" secondAttribute="bottom" constant="32" id="HS3-70-jEt"/>
-                                                <constraint firstAttribute="trailing" secondItem="wXQ-vg-Bez" secondAttribute="trailing" constant="16" id="QaM-mk-nYa"/>
-                                                <constraint firstItem="wXQ-vg-Bez" firstAttribute="top" secondItem="KSR-lr-oxu" secondAttribute="bottom" constant="20" id="Y8p-si-mVI"/>
                                                 <constraint firstItem="KSR-lr-oxu" firstAttribute="leading" secondItem="rNd-lm-CCs" secondAttribute="leading" constant="16" id="ifc-4o-qFp"/>
-                                                <constraint firstItem="wXQ-vg-Bez" firstAttribute="leading" secondItem="KSR-lr-oxu" secondAttribute="leading" id="niq-Et-Sy5"/>
                                                 <constraint firstItem="KSR-lr-oxu" firstAttribute="top" secondItem="rNd-lm-CCs" secondAttribute="top" constant="32" id="t8O-iQ-n4u"/>
                                             </constraints>
                                         </tableViewCellContentView>
