@@ -9,8 +9,9 @@
 import UIKit
 
 enum RecipeTableCell: String, CaseIterable {
-    case need
-    case information
+    case RecipeHeaderTableViewCell
+    case RecipeRowTableViewCell
+    case DetailInformationTableViewCell
 }
 
 final class RecipeViewController: UIViewController {
@@ -42,6 +43,51 @@ final class RecipeViewController: UIViewController {
     }
 }
 
+// MARK: private functions for tableviewcell
+private extension RecipeViewController {
+    func getRecipeHeaderTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, reusableCellIdentifier: String) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath)
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        return cell
+    }
+    
+    func getRecipeRowTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, reusableCellIdentifier: String) -> UITableViewCell {
+        let lastRowIndex = tableView.numberOfRows(inSection: indexPath.section) - 1
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath) as? RecipeRowTableViewCell else {
+            return UITableViewCell()
+        }
+
+        if indexPath.row == lastRowIndex {
+            cell.changeBottomConstraint(constraint: 32)
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        } else {
+            cell.changeBottomConstraint(constraint: 8)
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 10000, bottom: 0, right: 0)
+        }
+        
+        return cell
+    }
+    
+    func getDetailInformationTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, reusableCellIdentifier: String) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath) as? DetailInformationTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        switch indexPath.section {
+        case 0:
+            cell.config(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
+        case 1:
+            cell.config(title: "GLASS", detail: "Glass")
+        default:
+            cell.config(title: "INSTRUCTION", detail: "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오.")
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        }
+        
+        return cell
+    }
+}
+
 // MARK: UITableViewDataSource
 extension RecipeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +95,7 @@ extension RecipeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1 {
+        if section == 2 {
             return 5
         }
         else {
@@ -58,36 +104,20 @@ extension RecipeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-//        cell.textLabel?.text = "Article \(indexPath.row)"
-//        let cell: UITableViewCell
+        let cell: UITableViewCell
         
         switch indexPath.section {
-        case 1:
-            let lastRowIndex = tableView.numberOfRows(inSection: indexPath.section) - 1
+        case 2:
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeHeaderTableViewCell", for: indexPath)
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-                return cell
-            } else if indexPath.row == lastRowIndex {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeRowTableViewCell", for: indexPath) as? RecipeRowTableViewCell else {
-                    return UITableViewCell()
-                }
-                cell.changeBottomConstraint()
-                return cell
+                cell = getRecipeHeaderTableViewCell(tableView, cellForRowAt: indexPath, reusableCellIdentifier: RecipeTableCell.RecipeHeaderTableViewCell.rawValue)
             } else {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeRowTableViewCell", for: indexPath) as? RecipeRowTableViewCell else {
-                    return UITableViewCell()
-                }
-                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-                return cell
+                cell = getRecipeRowTableViewCell(tableView, cellForRowAt: indexPath, reusableCellIdentifier: RecipeTableCell.RecipeRowTableViewCell.rawValue)
             }
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailInformationTableViewCell", for: indexPath) as? DetailInformationTableViewCell else {
-                return UITableViewCell()
-            }
-            return cell
+            cell = getDetailInformationTableViewCell(tableView, cellForRowAt: indexPath, reusableCellIdentifier: RecipeTableCell.DetailInformationTableViewCell.rawValue)
         }
+        
+        return cell
     }
 }
 
@@ -150,11 +180,8 @@ extension RecipeViewController: UITableViewDelegate {
     func canAnimateHeader(_ scrollView: UIScrollView) -> Bool {
         // header가 줄어들었을 때, scrollView의 사이즈 계산
         let scrollViewMaxHeight = scrollView.frame.height + headerHeightConstraint.constant - (minHeaderHeight + 100)
-        print(scrollViewMaxHeight)
-        print(scrollView.contentSize.height)
     
         // header가 줄어들었을 때, 스크롤 할 수 있는 공간 여전히 만들어 두기
-        // 여기 공간 부분 cell이 4개일때에도 되도록 계산하기!
         return scrollView.contentSize.height > scrollViewMaxHeight
     }
     

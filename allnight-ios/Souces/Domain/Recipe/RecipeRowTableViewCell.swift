@@ -23,7 +23,7 @@ class RecipeRowTableViewCell: UITableViewCell {
         amountLabel.text = "1/2 oz"
     }
     
-    func changeBottomConstraint() {
-        bottomLayoutConstraint.constant = 32
+    func changeBottomConstraint(constraint: CGFloat) {
+        bottomLayoutConstraint.constant = constraint
     }
 }
