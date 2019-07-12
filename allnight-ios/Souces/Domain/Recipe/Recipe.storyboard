@@ -228,6 +228,7 @@
                     </view>
                     <connections>
                         <outlet property="headerHeightConstraint" destination="9gJ-jl-lvT" id="O6e-zp-KYQ"/>
+                        <outlet property="headerImageView" destination="lFx-zH-UAw" id="77i-Gt-4Oz"/>
                         <outlet property="tableView" destination="PbI-KR-s2s" id="AZf-z2-OUE"/>
                     </connections>
                 </viewController>

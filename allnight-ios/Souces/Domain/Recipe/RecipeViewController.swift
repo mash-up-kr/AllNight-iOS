@@ -17,6 +17,7 @@ enum RecipeTableCell: String, CaseIterable {
 final class RecipeViewController: UIViewController {
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerImageView: UIImageView!
     
     let minHeaderHeight: CGFloat = 141
     let maxHeaderHeight: CGFloat = 276

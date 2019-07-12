@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Athelas-Bold.ttf</string>
+		<string>Athelas-BoldItalic.ttf</string>
+		<string>Athelas-Italic.ttf</string>
+		<string>Athelas-Regular.ttf</string>
+		<string>NanumBarunGothic.otf</string>
+		<string>NanumBarunGothicBold.otf</string>
+		<string>NanumBarunGothicLight.otf</string>
+		<string>NanumBarunGothicUltraLight.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
