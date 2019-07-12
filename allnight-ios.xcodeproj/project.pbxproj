@@ -17,6 +17,7 @@
 		03DA0B7822D88605002B600E /* Athelas-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7022D88605002B600E /* Athelas-Italic.ttf */; };
 		03DA0B7922D88605002B600E /* Athelas-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7122D88605002B600E /* Athelas-Bold.ttf */; };
 		03DA0B7A22D88605002B600E /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7222D88605002B600E /* NanumBarunGothicLight.otf */; };
+		03DA0B7C22D887F7002B600E /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7B22D887F7002B600E /* Color.xcassets */; };
 		26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */; };
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
 		BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */; };
@@ -66,6 +67,7 @@
 		03DA0B7022D88605002B600E /* Athelas-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-Italic.ttf"; sourceTree = "<group>"; };
 		03DA0B7122D88605002B600E /* Athelas-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-Bold.ttf"; sourceTree = "<group>"; };
 		03DA0B7222D88605002B600E /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
+		03DA0B7B22D887F7002B600E /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		9863CC7D48E4882F0937B556 /* Pods-allnight-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.debug.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				03DA0B6A22D88605002B600E /* Fonts */,
 				BAF5311322C74791005809C3 /* Assets.xcassets */,
 				BAF5311522C74791005809C3 /* LaunchScreen.storyboard */,
+				03DA0B7B22D887F7002B600E /* Color.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				EF432FB822C79F0700786CFD /* Main.storyboard in Resources */,
 				03DA0B7622D88605002B600E /* NanumBarunGothicBold.otf in Resources */,
 				03DA0B7922D88605002B600E /* Athelas-Bold.ttf in Resources */,
+				03DA0B7C22D887F7002B600E /* Color.xcassets in Resources */,
 				03DA0B7722D88605002B600E /* NanumBarunGothic.otf in Resources */,
 				03DA0B7822D88605002B600E /* Athelas-Italic.ttf in Resources */,
 				EF432FBA22C79F3500786CFD /* MixRecipe.storyboard in Resources */,
