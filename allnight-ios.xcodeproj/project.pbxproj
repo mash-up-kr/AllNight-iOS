@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CB98E22D814CE0056D36D /* DetailInformationTableViewCell.swift */; };
+		030CB99122D822860056D36D /* RecipeRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */; };
 		26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */; };
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
 		BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030CB98E22D814CE0056D36D /* DetailInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationTableViewCell.swift; sourceTree = "<group>"; };
+		030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowTableViewCell.swift; sourceTree = "<group>"; };
 		5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		9863CC7D48E4882F0937B556 /* Pods-allnight-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.debug.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 			children = (
 				BA279DC422C77D2C004CA0F6 /* RecipeViewController.swift */,
 				EF432FB522C79EF900786CFD /* Recipe.storyboard */,
+				030CB98E22D814CE0056D36D /* DetailInformationTableViewCell.swift */,
+				030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030CB99122D822860056D36D /* RecipeRowTableViewCell.swift in Sources */,
 				EF432FC622C7D0FC00786CFD /* SearchResultTableViewCell.swift in Sources */,
 				BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */,
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
@@ -521,6 +528,7 @@
 				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 				BA279DCE22C78627004CA0F6 /* RecipeService.swift in Sources */,
+				030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */,
 				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
 				BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */,

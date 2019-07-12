@@ -44,14 +44,50 @@ final class RecipeViewController: UIViewController {
 
 // MARK: UITableViewDataSource
 extension RecipeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        if section == 1 {
+            return 5
+        }
+        else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Article \(indexPath.row)"
-        return cell
+//        let cell = UITableViewCell()
+//        cell.textLabel?.text = "Article \(indexPath.row)"
+//        let cell: UITableViewCell
+        
+        switch indexPath.section {
+        case 1:
+            let lastRowIndex = tableView.numberOfRows(inSection: indexPath.section) - 1
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeHeaderTableViewCell", for: indexPath)
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+                return cell
+            } else if indexPath.row == lastRowIndex {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeRowTableViewCell", for: indexPath) as? RecipeRowTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.changeBottomConstraint()
+                return cell
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeRowTableViewCell", for: indexPath) as? RecipeRowTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+                return cell
+            }
+        default:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailInformationTableViewCell", for: indexPath) as? DetailInformationTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        }
     }
 }
 
@@ -113,9 +149,12 @@ extension RecipeViewController: UITableViewDelegate {
     
     func canAnimateHeader(_ scrollView: UIScrollView) -> Bool {
         // header가 줄어들었을 때, scrollView의 사이즈 계산
-        let scrollViewMaxHeight = scrollView.frame.height + headerHeightConstraint.constant - minHeaderHeight
+        let scrollViewMaxHeight = scrollView.frame.height + headerHeightConstraint.constant - (minHeaderHeight + 100)
+        print(scrollViewMaxHeight)
+        print(scrollView.contentSize.height)
     
-        // header가 줄어들었을 때, 스크롤 할 수 있는 공간 여전히 역만들어 두기
+        // header가 줄어들었을 때, 스크롤 할 수 있는 공간 여전히 만들어 두기
+        // 여기 공간 부분 cell이 4개일때에도 되도록 계산하기!
         return scrollView.contentSize.height > scrollViewMaxHeight
     }
     
