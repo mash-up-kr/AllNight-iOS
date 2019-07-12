@@ -42,6 +42,10 @@ final class RecipeViewController: UIViewController {
         tableView.dataSource = self
         tableView.contentInset.top = maxHeaderHeight
     }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: private functions for tableviewcell

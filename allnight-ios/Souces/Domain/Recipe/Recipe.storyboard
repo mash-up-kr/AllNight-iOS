@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.otf">
+            <string>NanumBarunGothicOTF</string>
+        </array>
+        <array key="NanumBarunGothicBold.otf">
+            <string>NanumBarunGothicOTFBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Recipe View Controller-->
         <scene sceneID="9HD-AC-rr7">
@@ -36,14 +44,14 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="5MU-Bx-uWu"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="16"/>
                                                     <color key="textColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-mf-TRk">
                                                     <rect key="frame" x="16" y="72" width="382" height="158"/>
                                                     <string key="text">칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.</string>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="16"/>
                                                     <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -71,8 +79,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-lr-oxu">
-                                                    <rect key="frame" x="16" y="32" width="41" height="21.5"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <rect key="frame" x="16" y="32" width="42" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="16"/>
                                                     <color key="textColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -102,7 +110,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Vermouth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-Kv-O0q">
                                                             <rect key="frame" x="16" y="4" width="315" height="48.5"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
                                                             <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -111,7 +119,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="27" id="tQI-co-wSh"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                                             <color key="textColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -161,10 +169,16 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCircle" translatesAutoresizingMaskIntoConstraints="NO" id="7Cd-4L-Wov">
                                                 <rect key="frame" x="12" y="0.0" width="24" height="24"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bijou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al1-AA-qOa">
-                                                <rect key="frame" x="16" y="24" width="337" height="36"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al1-AA-qOa">
+                                                <rect key="frame" x="16" y="24" width="337" height="34"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Bijou">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="30" name="Athelas-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -183,6 +197,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnT-Fs-K2Q">
                                                 <rect key="frame" x="16" y="20" width="24" height="24"/>
                                                 <state key="normal" image="icArrowBack"/>
+                                                <connections>
+                                                    <action selector="backButtonAction:" destination="1z5-gn-ndp" eventType="touchUpInside" id="4eW-iv-Fm4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-Dr-vm2">
                                                 <rect key="frame" x="374" y="20" width="24" height="24"/>
