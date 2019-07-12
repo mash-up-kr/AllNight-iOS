@@ -22,6 +22,9 @@ final class RecipeViewController: UIViewController {
     let minHeaderHeight: CGFloat = 141
     let maxHeaderHeight: CGFloat = 276
     
+    let animationDuration: TimeInterval = 0.2
+    let absoluteTop: CGFloat = 0
+    
     var previousScrollOffset: CGFloat = 0
     var isAnimating = false
     
@@ -31,16 +34,16 @@ final class RecipeViewController: UIViewController {
         initTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        headerHeightConstraint.constant = maxHeaderHeight
-        expandHeader()
-    }
-    
     private func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.contentInset.top = maxHeaderHeight
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        headerHeightConstraint.constant = maxHeaderHeight
+        expandHeader()
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
@@ -133,8 +136,6 @@ extension RecipeViewController: UITableViewDelegate {
         
         let scrollDiff = scrollView.contentOffset.y - previousScrollOffset
         
-        let absoluteTop: CGFloat = 0
-        
         let isScrollingUp = scrollDiff > 0 && scrollView.contentOffset.y + scrollView.contentInset.top > absoluteTop
         let isScrollingDown = scrollDiff < 0 && scrollView.contentOffset.y < -minHeaderHeight
         
@@ -193,7 +194,7 @@ extension RecipeViewController: UITableViewDelegate {
     func expandHeader() {
         self.view.layoutIfNeeded()
         self.isAnimating = true
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: animationDuration, animations: {
             self.headerHeightConstraint.constant = self.maxHeaderHeight
             self.view.layoutIfNeeded()
         }) { _ in
