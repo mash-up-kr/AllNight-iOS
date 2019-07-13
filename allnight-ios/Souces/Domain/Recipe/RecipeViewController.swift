@@ -192,8 +192,8 @@ extension RecipeViewController: UITableViewDelegate {
     }
     
     func expandHeader() {
-        self.view.layoutIfNeeded()
-        self.isAnimating = true
+        view.layoutIfNeeded()
+        isAnimating = true
         UIView.animate(withDuration: animationDuration, animations: {
             self.headerHeightConstraint.constant = self.maxHeaderHeight
             self.view.layoutIfNeeded()
