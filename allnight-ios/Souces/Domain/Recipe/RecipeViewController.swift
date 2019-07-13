@@ -84,11 +84,11 @@ private extension RecipeViewController {
         
         switch indexPath.section {
         case 0:
-            cell.config(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
+            cell.configure(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
         case 1:
-            cell.config(title: "GLASS", detail: "Glass")
+            cell.configure(title: "GLASS", detail: "Glass")
         default:
-            cell.config(title: "INSTRUCTION", detail: "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오.")
+            cell.configure(title: "INSTRUCTION", detail: "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오.")
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         }
         

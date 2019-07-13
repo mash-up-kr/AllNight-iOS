@@ -18,7 +18,7 @@ class RecipeRowTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func config() {
+    func configure() {
         nameLabel.text = "Sweet Vermouth"
         amountLabel.text = "1/2 oz"
     }

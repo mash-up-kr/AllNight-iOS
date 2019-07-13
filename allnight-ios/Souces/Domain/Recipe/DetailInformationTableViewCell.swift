@@ -17,7 +17,7 @@ class DetailInformationTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func config(title: String, detail: String) {
+    func configure(title: String, detail: String) {
         titleLabel.text = title
         detailLabel.text = detail
     }
