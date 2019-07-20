@@ -8,7 +8,9 @@
 
 import Moya
 
-final class Network<Target: TargetType>: MoyaProvider<Target> {
+typealias AllNightNetworking = Networking<AllNightAPI>
+
+final class Networking<Target: TargetType>: MoyaProvider<Target> {
 
   init(plugins: [PluginType] = []) {
     let configuration = URLSessionConfiguration.default
@@ -20,21 +22,27 @@ final class Network<Target: TargetType>: MoyaProvider<Target> {
     super.init(manager: manager, plugins: plugins)
   }
 
-  override func request(_ target: Target, callbackQueue: DispatchQueue? = .none, progress: ProgressBlock? = .none, completion: @escaping Completion) -> Cancellable {
+  @discardableResult
+  func request(
+    _ target: Target,
+    completionHandler: @escaping (Response) -> Void,
+    errorHandler: @escaping (MoyaError) -> Void
+  ) -> Cancellable {
     let requestString = "\(target.method) \(target.path)"
 
     log.debug("Request : \(requestString)")
 
-    return self.requestNormal(target, callbackQueue: callbackQueue, progress: progress) { result in
+    return self.request(target) { result in
       switch result {
       case let .success(response):
         do {
           let filteredResponse = try response.filterSuccessfulStatusCodes()
-          completion(.success(filteredResponse))
+          completionHandler(filteredResponse)
         }
         catch {
           log.warning("Failure : \(requestString) (\(response.statusCode))")
-          completion(.failure(MoyaError.statusCode(response)))
+
+          errorHandler(MoyaError.statusCode(response))
         }
       case let .failure(error):
         if let response = error.response {
@@ -46,7 +54,7 @@ final class Network<Target: TargetType>: MoyaProvider<Target> {
             log.warning("Failure : \(requestString) (\(response.statusCode))")
           }
         }
-        completion(.failure(error))
+        errorHandler(error)
       }
     }
   }
