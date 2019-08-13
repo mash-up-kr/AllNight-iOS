@@ -90,8 +90,8 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt: \(indexPath)")
+        //TODO: - 선택한 칵테일에 대한 상세 레시피 화면으로 이동
     }
-    
 }
 
 //MARK: - Side Menu View Controller Transition Delegate
