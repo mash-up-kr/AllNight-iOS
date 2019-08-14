@@ -26,6 +26,7 @@ final class MainViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var floatingButton: UIButton!
+    @IBOutlet var searchTextField: UITextField!
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -33,6 +34,9 @@ final class MainViewController: UIViewController {
         
         view.layer.addSublayer(floatingButton.layer)
         
+        //change searchTextField text color
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Search Cocktail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 94/255, green: 94/255, blue: 94/255, alpha: 1)])
+
         setUpCollectionView()
     }
     
