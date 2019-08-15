@@ -11,7 +11,8 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     //MARK: - Property
-    private let cellIdentifier = "sideMenuCell"
+    private let firstCellIdentifier = "scrapRecipeCell"
+    private let secondCellIdentifier = "recentRecipeCell"
     
     //MARK: - IBOutlet
     @IBOutlet var tableView: UITableView!
@@ -37,11 +38,20 @@ class SideMenuViewController: UIViewController {
 
 extension SideMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SideMenuTableViewCell else { return UITableViewCell() }
+        var identifier = ""
+        
+        if indexPath.row == 0 {
+            identifier = firstCellIdentifier
+        }
+        else if indexPath.row == 1 {
+            identifier = secondCellIdentifier
+        }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? SideMenuTableViewCell else { return UITableViewCell() }
         
         cell.configure(indexPath: indexPath)
         
@@ -50,6 +60,7 @@ extension SideMenuViewController: UITableViewDataSource {
 }
 
 extension SideMenuViewController: UITableViewDelegate {
+    //셀 눌렀을때 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let menuTpye = MenuType(rawValue: indexPath.row) else { return }

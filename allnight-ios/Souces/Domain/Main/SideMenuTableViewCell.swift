@@ -17,8 +17,6 @@ class SideMenuTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        commonInit()
     }
     
     override func prepareForReuse() {
@@ -26,15 +24,14 @@ class SideMenuTableViewCell: UITableViewCell {
         iconImgView.image = nil
         menuNameLabel.text = nil
     }
-    
-    private func commonInit() {
-        
-    }
-    
+
     func configure(indexPath: IndexPath) {
         if indexPath.row == 0 {
             iconImgView.image = UIImage(named: "icScrap24Normal-1")
             menuNameLabel.text = "스크랩 레시피"
+        }
+        else if indexPath.row == 1 {
+            iconImgView.image = UIImage(named: "<#T##String#>")
         }
     }
 }

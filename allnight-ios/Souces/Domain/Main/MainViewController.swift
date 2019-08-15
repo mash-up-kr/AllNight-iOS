@@ -6,11 +6,6 @@
 //  Copyright © 2019 kanghoon. All rights reserved.
 //
 
-/*
- - 칵테일 이름 폰트 변경
- - 플로팅 버튼 안먹힘
- - scrap 기능
- */
 import UIKit
 
 final class MainViewController: UIViewController {
@@ -35,7 +30,7 @@ final class MainViewController: UIViewController {
         view.layer.addSublayer(floatingButton.layer)
         
         //change searchTextField text color
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "Search Cocktail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 94/255, green: 94/255, blue: 94/255, alpha: 1)])
+        //searchTextField.attributedPlaceholder = NSAttributedString(string: "Search Cocktail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 94/255, green: 94/255, blue: 94/255, alpha: 1)])
 
         setUpCollectionView()
     }
