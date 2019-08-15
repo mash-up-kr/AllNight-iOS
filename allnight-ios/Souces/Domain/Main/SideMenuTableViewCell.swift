@@ -31,7 +31,8 @@ class SideMenuTableViewCell: UITableViewCell {
             menuNameLabel.text = "스크랩 레시피"
         }
         else if indexPath.row == 1 {
-            iconImgView.image = UIImage(named: "<#T##String#>")
+            iconImgView.image = UIImage(named: "icHistory24Normal")
+            menuNameLabel.text = "최근에 본 레시피"
         }
     }
 }

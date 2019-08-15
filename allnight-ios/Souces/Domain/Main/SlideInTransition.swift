@@ -24,7 +24,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     //transitionContext: 화면 전환과 관련된 정보를 담고있는 객체
-    //context의 container가 View, VC에 대한 정보를 담고있음
+    //context의 container가 view와 VC에 대한 정보를 담고있음
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toViewController = transitionContext.viewController(forKey: .to),
             let fromViewController = transitionContext.viewController(forKey: .from) else { return }
@@ -40,6 +40,7 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             
             //Init frame off the screen
             toViewController.view.frame = CGRect(x: fromViewController.view.bounds.width, y: statusBarHeight, width: finalWidth, height: finalHeight)
+//            toViewController.view.frame = CGRect(x: fromViewController.view.bounds.width, y: statusBarHeight, width: finalWidth, height: finalHeight)
         }
         
         //animate on screen

@@ -21,17 +21,11 @@ final class MainViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var floatingButton: UIButton!
-    @IBOutlet var searchTextField: UITextField!
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.layer.addSublayer(floatingButton.layer)
-        
-        //change searchTextField text color
-        //searchTextField.attributedPlaceholder = NSAttributedString(string: "Search Cocktail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.init(red: 94/255, green: 94/255, blue: 94/255, alpha: 1)])
-
         setUpCollectionView()
     }
     
@@ -39,28 +33,29 @@ final class MainViewController: UIViewController {
     private func setUpCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        //add header view
-        collectionView.register(UINib(nibName: "MainCollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
     }
     
-    //MARK: - IBAction
-    @IBAction func menuBarButtonDidTap(_ sender: UIButton) {
-        print("menuBarButtonDidTap")
-
+    func handleScrapButtonDidTap() {
+        print("handleScrapButtonDidTap")
+        //스크랩 버튼 눌렀을때에 대한 처리 로직 
+    }
+    
+    func handleMenuBarButtonDidTap() {
+        print("handleMenuBarButtonDidTap")
+        
         //TODO: - show side menu bar
         guard let sideMenuViewController = storyboard?.instantiateViewController(withIdentifier: "SideMenuViewController") else { return }
-
+        
         sideMenuViewController.modalPresentationStyle = .overCurrentContext
         //side Menu VC의 화면 전환에 대한 처리는 내가(MainViewController)가 하겠다는 의미
         sideMenuViewController.transitioningDelegate = self
         present(sideMenuViewController, animated: true, completion: nil)
     }
-
+    
+    //MARK: - IBAction
     @IBAction func floatingButtonDidTap(_ sender: UIButton) {
         print("floatingButtonDidTap")
     }
-    
 }
 
 //MARK: - Collection View Data Source
@@ -68,6 +63,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.delegate = self
         cell.configure(indexPath: indexPath)
         
         return cell
@@ -79,7 +75,12 @@ extension MainViewController: UICollectionViewDataSource {
     
     //section header view
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath)
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? CollectionReusableView else {
+            print("headerView is nil")
+            return UICollectionReusableView()
+        }
+        
+        headerView.link = self
         
         return headerView
     }

@@ -21,6 +21,8 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var delegate: MainViewController?
+    
     //MARK: - IBOutlet
     @IBOutlet var backgroundImgView: UIImageView!
     @IBOutlet var scrapButton: UIButton!
@@ -30,8 +32,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     //MARK: - Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        print("MainCollectionViewCell Init")
     }
     
     //MARK: - Method
@@ -50,6 +50,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     //MARK: - IBAction
     @IBAction func scrapButtonDidTap(_ sender: UIButton) {
         print("scrapButtonDidTap")
+        
+        delegate?.handleScrapButtonDidTap()
         
         sender.isSelected = !sender.isSelected
         isScrap = sender.isSelected
