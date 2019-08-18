@@ -17,6 +17,7 @@ AllNight-iOS is developed with
   * [SwiftyBeaver]()
 
 Other repositories...
+* AllNight-iOS can be found in [this repo](https://github.com/mash-up-kr/AllNight-iOS)
 * AllNight-Android can be found in [this repo](https://github.com/mash-up-kr/AllNight-Android)  
 * AllNight-Backend can be found in [this repo](https://github.com/mash-up-kr/allnight-backend)
 
