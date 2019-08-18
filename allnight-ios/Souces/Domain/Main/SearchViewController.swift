@@ -46,10 +46,6 @@ class SearchViewController: UIViewController {
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         print("backButtonDidTap")
         
-//        if searchTextField.isFirstResponder {
-//            searchTextField.resignFirstResponder()
-//        }
-        
         dismiss(animated: true, completion: nil)
     }
     

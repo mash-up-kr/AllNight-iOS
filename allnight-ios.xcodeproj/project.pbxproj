@@ -20,6 +20,7 @@
 		03DA0B7C22D887F7002B600E /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7B22D887F7002B600E /* Color.xcassets */; };
 		26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */; };
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
+		88321639230671EB0057232A /* AllNightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88321638230671EB0057232A /* AllNightProvider.swift */; };
 		8884B2F622D83F1A000276BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F522D83F1A000276BB /* SideMenuViewController.swift */; };
 		8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */; };
 		8884B2FA22D849FE000276BB /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F922D849FE000276BB /* SlideInTransition.swift */; };
@@ -82,6 +83,7 @@
 		03DA0B7B22D887F7002B600E /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		88321638230671EB0057232A /* AllNightProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNightProvider.swift; sourceTree = "<group>"; };
 		8884B2F522D83F1A000276BB /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		8884B2F922D849FE000276BB /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			children = (
 				BAF5313022C74D2A005809C3 /* Networking.swift */,
 				BA96F3E822CFA23400AC27CC /* AllNightAPI.swift */,
+				88321638230671EB0057232A /* AllNightProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				BAF5313122C74D2A005809C3 /* Networking.swift in Sources */,
 				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BA96F3F122CFB68100AC27CC /* Cocktail.swift in Sources */,
+				88321639230671EB0057232A /* AllNightProvider.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 				030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */,
 				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,

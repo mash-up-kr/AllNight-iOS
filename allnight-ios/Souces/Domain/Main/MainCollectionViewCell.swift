@@ -11,7 +11,7 @@ import UIKit
 class MainCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Property
-    private var isScrap = false {
+    var isScrap = false {
         didSet {
             if isScrap {
                 scrapButton.setImage(UIImage(named: "icScrap24Normal-1"), for: .normal)
@@ -51,7 +51,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     @IBAction func scrapButtonDidTap(_ sender: UIButton) {
         print("scrapButtonDidTap")
         
-        delegate?.handleScrapButtonDidTap()
+        delegate?.handleScrapButtonDidTap(cell: self)
         
         sender.isSelected = !sender.isSelected
         isScrap = sender.isSelected
