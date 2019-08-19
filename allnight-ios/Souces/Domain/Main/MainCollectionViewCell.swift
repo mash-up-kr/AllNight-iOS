@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainCollectionViewCell: UICollectionViewCell {
     
@@ -42,9 +43,24 @@ class MainCollectionViewCell: UICollectionViewCell {
         scrapButton.setImage(UIImage(named: "icScrap24Normal"), for: .normal)
     }
     
-    func configure(indexPath: IndexPath) {
-        backgroundImgView.image = UIImage(named: "imgCocktailTest")
-        cocktailNameLabel.text = "칵테일\(indexPath.row)"
+    func configure(indexPath: IndexPath, cocktailInfo: Cocktail) {
+        
+        //칵테일 썸네일 이미지 설정
+        let thumbUrl = cocktailInfo.drinkThumb
+        backgroundImgView.kf.setImage(with: thumbUrl)
+        
+        //칵테일 이름 설정
+        cocktailNameLabel.text = cocktailInfo.drinkName
+        
+        //알코올 유무 표시 이미지 설정
+        if cocktailInfo.alcoholic == "Alcoholic" {
+            alcholicImgView.image = UIImage(named: "icAlcholic")
+        } else {
+            alcholicImgView.image = nil
+        }
+        
+        //스크랩 유무 설정
+        
     }
     
     //MARK: - IBAction

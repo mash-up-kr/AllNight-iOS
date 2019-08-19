@@ -27,25 +27,21 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet var putInCartButton: UIButton!
     
     override func prepareForReuse() {
-        
+        isInCart = false
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(info: String) {
+        nameLabel.text = info
+        
+        if BucketManager.shared.ingredientsInBucket.contains(info) {
+            isInCart = true
+        }
     }
     
     @IBAction func putInCartButtonDidTap(_ sender: UIButton) {
-        print("putInCartButtonDidTap")
-        delegate?.handlePutInCartButton()
-        
         sender.isSelected = !sender.isSelected
         isInCart = sender.isSelected
+        
+        delegate?.handlePutInCartButton(cell: self)
     }
 }

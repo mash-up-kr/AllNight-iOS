@@ -17,12 +17,11 @@ final class MainViewController: UIViewController {
     }
     
     //서버로부터 칵테일 리스트 받아와 배열에 저장
-    //var cocktails: [Cocktail] = []
+    private var cocktails: [Cocktail] = []
+    private var favorites: Set<String> = []
     
     private let transition = SlideInTransition()
     private let cellIdentifier = "recipeCollectionViewCell"
-    
-    //private var RecipeNameArr: [String] = []
     
     //MARK: - IBOutlet
     @IBOutlet var collectionView: UICollectionView!
@@ -33,6 +32,18 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         setUpCollectionView()
+    
+        //통신
+        AllNightProvider.searchStaticCocktails(completion: {
+            if let data = try? $0.decodeJSON([Cocktail].self).get() {
+                self.cocktails = data
+                //print(self.cocktails)
+                //print("cocktails.count: \(self.cocktails.count)")
+                self.collectionView.reloadData()
+            }
+        }) {
+            print($0.errorDescription)
+        }
     }
     
     //MARK: - Method
@@ -43,14 +54,14 @@ final class MainViewController: UIViewController {
     
     func handleScrapButtonDidTap(cell: MainCollectionViewCell) {
         print("handleScrapButtonDidTap")
-        //스크랩 버튼 눌렀을때에 대한 처리 로직
         
         //몇번째 셀이 눌린건지 확인
         guard let indexPathTapped = collectionView.indexPath(for: cell), let cocktailNameTapped = cell.cocktailNameLabel.text else {
             return
         }
         
-    //cell.isScrap 상태에 따라, 스크랩 컨테이너에 칵테일 이름을 추가했다 삭제했다 해야할듯
+        //만약 isScrap false -> true 된거면, favorites에 추가
+        //favorites.insert(cocktails[indexPathTapped.row].drinkName)
 
         print("indexPathTapped: \(indexPathTapped)")
         print("cocktailNameTapped: \(cocktailNameTapped)")
@@ -80,13 +91,13 @@ extension MainViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? MainCollectionViewCell else { return UICollectionViewCell() }
         
         cell.delegate = self
-        cell.configure(indexPath: indexPath)
+        cell.configure(indexPath: indexPath, cocktailInfo: cocktails[indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return cocktails.count
     }
     
     //section header view
