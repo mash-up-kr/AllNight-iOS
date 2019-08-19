@@ -459,7 +459,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bkj-Pr-ReA">
-                                <rect key="frame" x="0.0" y="260" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="260" width="375" height="353"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bucketCell" rowHeight="64" id="CLD-a7-s56" customClass="SearchBucketTableViewCell" customModule="allnight_ios" customModuleProvider="target">
@@ -507,15 +507,30 @@
                                     <action selector="backButtonDidTap:" destination="HKw-mL-Gw6" eventType="touchUpInside" id="nBh-1X-8F7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvC-e8-DWp">
+                                <rect key="frame" x="0.0" y="613" width="375" height="54"/>
+                                <color key="backgroundColor" name="anBrown"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="20"/>
+                                <state key="normal" title="레시피 찾아보기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchRecipeButtonDidTap:" destination="HKw-mL-Gw6" eventType="touchUpInside" id="1bo-SN-bHg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="anBlack2"/>
                         <constraints>
                             <constraint firstItem="Bkj-Pr-ReA" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" id="7GO-so-V8h"/>
-                            <constraint firstItem="D7d-4e-wz6" firstAttribute="bottom" secondItem="Bkj-Pr-ReA" secondAttribute="bottom" id="Op4-HC-O6w"/>
+                            <constraint firstItem="D7d-4e-wz6" firstAttribute="bottom" secondItem="Bkj-Pr-ReA" secondAttribute="bottom" constant="54" id="Op4-HC-O6w"/>
                             <constraint firstItem="5yJ-fb-07g" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" id="UXc-ZK-B65"/>
                             <constraint firstItem="D7d-4e-wz6" firstAttribute="trailing" secondItem="5yJ-fb-07g" secondAttribute="trailing" id="VTn-72-cSK"/>
+                            <constraint firstItem="D7d-4e-wz6" firstAttribute="trailing" secondItem="YvC-e8-DWp" secondAttribute="trailing" id="Vvw-b6-vl1"/>
                             <constraint firstItem="D7d-4e-wz6" firstAttribute="trailing" secondItem="Bkj-Pr-ReA" secondAttribute="trailing" id="Xfz-7T-XrG"/>
+                            <constraint firstItem="YvC-e8-DWp" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" id="Zzo-i2-Wto"/>
                             <constraint firstItem="dEe-Nw-62s" firstAttribute="top" secondItem="D7d-4e-wz6" secondAttribute="top" constant="20" id="ceN-uc-VAa"/>
+                            <constraint firstItem="YvC-e8-DWp" firstAttribute="bottom" secondItem="D7d-4e-wz6" secondAttribute="bottom" id="j3k-2e-c5B"/>
+                            <constraint firstItem="YvC-e8-DWp" firstAttribute="top" secondItem="Bkj-Pr-ReA" secondAttribute="bottom" id="lzo-MD-PTa"/>
                             <constraint firstItem="Bkj-Pr-ReA" firstAttribute="top" secondItem="5yJ-fb-07g" secondAttribute="bottom" id="oOa-Fh-K1O"/>
                             <constraint firstItem="dEe-Nw-62s" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" constant="16" id="pMn-fL-2jv"/>
                             <constraint firstItem="5yJ-fb-07g" firstAttribute="top" secondItem="dEe-Nw-62s" secondAttribute="bottom" constant="20" id="ypC-YQ-X4n"/>
@@ -523,6 +538,7 @@
                         <viewLayoutGuide key="safeArea" id="D7d-4e-wz6"/>
                     </view>
                     <connections>
+                        <outlet property="searchRecipeButton" destination="YvC-e8-DWp" id="dkS-tW-d8v"/>
                         <outlet property="tableView" destination="Bkj-Pr-ReA" id="NZL-uq-AhW"/>
                     </connections>
                 </viewController>

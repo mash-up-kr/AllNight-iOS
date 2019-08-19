@@ -33,7 +33,7 @@ class SearchTableViewCell: UITableViewCell {
     func configure(info: String) {
         nameLabel.text = info
         
-        if BucketManager.shared.ingredientsInBucket.contains(info) {
+        if CocktailManager.shared.ingredientsInBucket.contains(info) {
             isInCart = true
         }
     }

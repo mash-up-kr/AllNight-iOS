@@ -12,7 +12,7 @@ class SearchBucketTableViewCell: UITableViewCell {
     
     //MARK: - Property
     var delegate: SearchBucketViewController?
-    var ingredientsArr = Array(BucketManager.shared.ingredientsInBucket)
+    var ingredientsArr = Array(CocktailManager.shared.ingredientsInBucket)
     
     //MARK: - IBOutlet
     @IBOutlet var ingredientNameLabel: UILabel!
@@ -26,7 +26,7 @@ class SearchBucketTableViewCell: UITableViewCell {
        
         //model 변경
         if let ingredientToRemove = ingredientNameLabel.text {
-            BucketManager.shared.ingredientsInBucket.remove(ingredientToRemove)
+            CocktailManager.shared.ingredientsInBucket.remove(ingredientToRemove)
         }
         
         delegate?.handleRemoveButton(cell: self)

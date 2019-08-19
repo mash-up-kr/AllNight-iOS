@@ -39,7 +39,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         backgroundImgView.image = nil
         cocktailNameLabel.text = ""
-        //alcholicImgView.image = nil
         scrapButton.setImage(UIImage(named: "icScrap24Normal"), for: .normal)
     }
     
@@ -60,16 +59,16 @@ class MainCollectionViewCell: UICollectionViewCell {
         }
         
         //스크랩 유무 설정
-        
+        if CocktailManager.shared.scrappedCocktails.contains(cocktailInfo.id) {
+            scrapButton.setImage(UIImage(named: "icScrap24Normal-1"), for: .normal)
+        }
     }
     
     //MARK: - IBAction
     @IBAction func scrapButtonDidTap(_ sender: UIButton) {
-        print("scrapButtonDidTap")
-        
-        delegate?.handleScrapButtonDidTap(cell: self)
-        
         sender.isSelected = !sender.isSelected
         isScrap = sender.isSelected
+        
+        delegate?.handleScrapButtonDidTap(cell: self)
     }
 }

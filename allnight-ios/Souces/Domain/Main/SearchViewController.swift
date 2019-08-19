@@ -61,13 +61,13 @@ class SearchViewController: UIViewController {
     func handlePutInCartButton(cell: SearchTableViewCell) {
         if let ingredientName = cell.nameLabel.text {
             if cell.isInCart {
-                BucketManager.shared.ingredientsInBucket.insert(ingredientName)
+                CocktailManager.shared.ingredientsInBucket.insert(ingredientName)
             } else {
-                BucketManager.shared.ingredientsInBucket.remove(ingredientName)
+                CocktailManager.shared.ingredientsInBucket.remove(ingredientName)
             }
         }
         
-        print("현재 카트 내용물: \(BucketManager.shared.ingredientsInBucket)")
+        print("현재 카트 내용물: \(CocktailManager.shared.ingredientsInBucket)")
     }
     
     func getIngredientList(ingredient: String) {

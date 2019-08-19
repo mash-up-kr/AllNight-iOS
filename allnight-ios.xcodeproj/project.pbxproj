@@ -22,7 +22,7 @@
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
 		88113EBB23097BF8000C37BA /* SearchBucketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */; };
 		88113EC3230A7FFB000C37BA /* SearchBucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */; };
-		88113EC6230A8A60000C37BA /* BucketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EC5230A8A60000C37BA /* BucketManager.swift */; };
+		88113EC6230A8A60000C37BA /* CocktailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EC5230A8A60000C37BA /* CocktailManager.swift */; };
 		88321639230671EB0057232A /* AllNightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88321638230671EB0057232A /* AllNightProvider.swift */; };
 		8884B2F622D83F1A000276BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F522D83F1A000276BB /* SideMenuViewController.swift */; };
 		8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */; };
@@ -88,7 +88,7 @@
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBucketTableViewCell.swift; sourceTree = "<group>"; };
 		88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBucketViewController.swift; sourceTree = "<group>"; };
-		88113EC5230A8A60000C37BA /* BucketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketManager.swift; sourceTree = "<group>"; };
+		88113EC5230A8A60000C37BA /* CocktailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailManager.swift; sourceTree = "<group>"; };
 		88321638230671EB0057232A /* AllNightProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNightProvider.swift; sourceTree = "<group>"; };
 		8884B2F522D83F1A000276BB /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -216,18 +216,18 @@
 		BA279DB522C77C05004CA0F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */,
-				EF432FB722C79F0700786CFD /* Main.storyboard */,
-				889284682305BF9E00B8FBDF /* SearchViewController.swift */,
-				8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */,
-				88F5F91622D3184F00A1ADEA /* MainCollectionViewCell.swift */,
 				8884B2F522D83F1A000276BB /* SideMenuViewController.swift */,
 				8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */,
 				8884B2F922D849FE000276BB /* SlideInTransition.swift */,
 				8892846423059AB500B8FBDF /* CollectionReusableView.swift */,
+				BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */,
+				88F5F91622D3184F00A1ADEA /* MainCollectionViewCell.swift */,
+				EF432FB722C79F0700786CFD /* Main.storyboard */,
+				889284682305BF9E00B8FBDF /* SearchViewController.swift */,
+				8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */,
 				88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */,
 				88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */,
-				88113EC5230A8A60000C37BA /* BucketManager.swift */,
+				88113EC5230A8A60000C37BA /* CocktailManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -631,7 +631,7 @@
 				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
 				8892846623059AB500B8FBDF /* CollectionReusableView.swift in Sources */,
-				88113EC6230A8A60000C37BA /* BucketManager.swift in Sources */,
+				88113EC6230A8A60000C37BA /* CocktailManager.swift in Sources */,
 				8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */,
 				88113EBB23097BF8000C37BA /* SearchBucketTableViewCell.swift in Sources */,
 				889284692305BF9E00B8FBDF /* SearchViewController.swift in Sources */,

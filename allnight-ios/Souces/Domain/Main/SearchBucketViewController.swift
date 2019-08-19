@@ -6,6 +6,8 @@
 //  Copyright © 2019 kanghoon. All rights reserved.
 //
 
+//버킷에 담은 재료가 하나도 없다면, searchRecipeButton 비활성화 해줘야할듯
+
 import UIKit
 
 class SearchBucketViewController: UIViewController {
@@ -14,6 +16,7 @@ class SearchBucketViewController: UIViewController {
     
     //MAKR: - IBOutlet
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchRecipeButton: UIButton!
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -26,6 +29,11 @@ class SearchBucketViewController: UIViewController {
     //MARK: - IBAction
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func searchRecipeButtonDidTap(_ sender: UIButton) {
+        print("레시피 찾아보기")
+        //재료가 들어간 레시피 리스트 보여주는 화면으로 연결
     }
     
     //MARK: - Method
@@ -41,7 +49,8 @@ class SearchBucketViewController: UIViewController {
 //MARK: - TableView Data Source
 extension SearchBucketViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BucketManager.shared.ingredientsInBucket.count
+        
+        return CocktailManager.shared.ingredientsInBucket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
