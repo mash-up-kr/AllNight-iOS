@@ -98,7 +98,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="CYY-Zr-wuz" customClass="CollectionReusableView" customModule="allnight_ios" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="CYY-Zr-wuz" customClass="MainCollectionReusableHeaderView" customModule="allnight_ios" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -109,12 +109,8 @@
                                                 <action selector="menuBarButtonDidTap:" destination="CYY-Zr-wuz" eventType="touchUpInside" id="V2K-O6-90Y"/>
                                             </connections>
                                         </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMainConcept" translatesAutoresizingMaskIntoConstraints="NO" id="LN4-a7-Gii">
-                                            <rect key="frame" x="16" y="64" width="343" height="424"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="343" id="pli-Cm-1bw"/>
-                                                <constraint firstAttribute="height" constant="424" id="zYx-cJ-SXX"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMainConcept" translatesAutoresizingMaskIntoConstraints="NO" id="LN4-a7-Gii">
+                                            <rect key="frame" x="16" y="64" width="343" height="436"/>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textimg" translatesAutoresizingMaskIntoConstraints="NO" id="rpL-Tc-qb0">
                                             <rect key="frame" x="100" y="108" width="175" height="26"/>
@@ -124,16 +120,15 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fF-QO-KEO">
-                                            <rect key="frame" x="16" y="536" width="61" height="23"/>
+                                            <rect key="frame" x="16" y="548" width="61" height="23"/>
                                             <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="20"/>
                                             <color key="textColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWQ-zJ-k5v">
-                                            <rect key="frame" x="84" y="547" width="275" height="1"/>
+                                            <rect key="frame" x="84" y="559" width="275" height="1"/>
                                             <color key="backgroundColor" red="0.82745098039999998" green="0.72941176470000002" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="275" id="B5h-gE-Qle"/>
                                                 <constraint firstAttribute="height" constant="1" id="nSm-Vi-Gss"/>
                                             </constraints>
                                         </view>
@@ -147,8 +142,11 @@
                                         <constraint firstAttribute="trailing" secondItem="dIt-nl-7fw" secondAttribute="trailing" constant="8" id="OCT-Rd-H56"/>
                                         <constraint firstItem="9fF-QO-KEO" firstAttribute="leading" secondItem="CYY-Zr-wuz" secondAttribute="leading" constant="16" id="SYm-2m-hV5"/>
                                         <constraint firstItem="rpL-Tc-qb0" firstAttribute="centerX" secondItem="CYY-Zr-wuz" secondAttribute="centerX" id="aLg-bH-m8E"/>
+                                        <constraint firstAttribute="trailing" secondItem="gWQ-zJ-k5v" secondAttribute="trailing" constant="16" id="bTF-n0-sjs"/>
+                                        <constraint firstItem="LN4-a7-Gii" firstAttribute="leading" secondItem="CYY-Zr-wuz" secondAttribute="leading" constant="16" id="cuI-B5-owp"/>
                                         <constraint firstItem="gWQ-zJ-k5v" firstAttribute="leading" secondItem="9fF-QO-KEO" secondAttribute="trailing" constant="7" id="mRl-8q-Q3p"/>
                                         <constraint firstItem="rpL-Tc-qb0" firstAttribute="top" secondItem="LN4-a7-Gii" secondAttribute="top" constant="44" id="rLv-FO-STn"/>
+                                        <constraint firstAttribute="trailing" secondItem="LN4-a7-Gii" secondAttribute="trailing" constant="16" id="wxI-eY-v73"/>
                                         <constraint firstItem="LN4-a7-Gii" firstAttribute="top" secondItem="CYY-Zr-wuz" secondAttribute="top" constant="64" id="wy3-T3-0n6"/>
                                     </constraints>
                                     <connections>
@@ -156,11 +154,10 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vT1-bJ-XWp">
-                                <rect key="frame" x="278" y="559" width="74" height="74"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vT1-bJ-XWp">
+                                <rect key="frame" x="278" y="543" width="74" height="74"/>
                                 <state key="normal" image="icMixCocktail"/>
                                 <connections>
-                                    <action selector="floatingButtonDidTap:" destination="Azo-bv-ej3" eventType="touchUpInside" id="row-W6-Cwe"/>
                                     <segue destination="PkN-eQ-sYP" kind="presentation" id="nrd-yD-mBN"/>
                                 </connections>
                             </button>
@@ -169,11 +166,11 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Dsf-YD-Ndk" firstAttribute="bottom" secondItem="v68-ch-iaE" secondAttribute="bottom" id="2pq-zk-xaH"/>
-                            <constraint firstItem="vT1-bJ-XWp" firstAttribute="top" secondItem="Dsf-YD-Ndk" secondAttribute="top" constant="539" id="6fD-dv-P5p"/>
                             <constraint firstItem="Dsf-YD-Ndk" firstAttribute="trailing" secondItem="v68-ch-iaE" secondAttribute="trailing" id="AVR-jG-0NH"/>
                             <constraint firstItem="v68-ch-iaE" firstAttribute="top" secondItem="Dsf-YD-Ndk" secondAttribute="top" id="Rz7-lF-Iic"/>
                             <constraint firstItem="Dsf-YD-Ndk" firstAttribute="trailing" secondItem="vT1-bJ-XWp" secondAttribute="trailing" constant="23" id="i91-VN-w49"/>
                             <constraint firstItem="v68-ch-iaE" firstAttribute="leading" secondItem="Dsf-YD-Ndk" secondAttribute="leading" id="jJe-Io-HVa"/>
+                            <constraint firstItem="Dsf-YD-Ndk" firstAttribute="bottom" secondItem="vT1-bJ-XWp" secondAttribute="bottom" constant="50" id="lUh-Xd-MPB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dsf-YD-Ndk"/>
                     </view>
@@ -393,7 +390,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="Rf7-n0-4bo" id="4iL-M0-CjQ"/>
+                                            <outlet property="ingredientNameLabel" destination="Rf7-n0-4bo" id="4iL-M0-CjQ"/>
                                             <outlet property="putInCartButton" destination="gUP-gf-URH" id="IxJ-DR-yUT"/>
                                         </connections>
                                     </tableViewCell>

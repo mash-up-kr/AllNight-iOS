@@ -14,6 +14,7 @@ struct Cocktail: Equatable {
     let enDrinkName: String
     let alcoholic: String
     let drinkThumb: URL
+    let isScrap = false
 }
 
 extension Cocktail: Decodable {
@@ -23,5 +24,6 @@ extension Cocktail: Decodable {
         case enDrinkName
         case alcoholic
         case drinkThumb
+        case isScrap
     }
 }

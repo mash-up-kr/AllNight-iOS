@@ -10,38 +10,46 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
+    //MARK: - Property
+    private let isInCartIconName = "icPutincart24Normal"
+    private let isNotInCartIconName = "icPutincart24Disactive"
+    
     var isInCart = false {
         didSet {
             if isInCart {
-                putInCartButton.setImage(UIImage(named: "icPutincart24Normal"), for: .normal)
+                putInCartButton.setImage(UIImage(named: isInCartIconName), for: .normal)
             } else {
-                putInCartButton.setImage(UIImage(named: "icPutincart24Disactive"), for: .normal)
+                putInCartButton.setImage(UIImage(named: isNotInCartIconName), for: .normal)
             }
         }
     }
-    
-    var delegate: SearchViewController?
-    
+
     //MARK: - IBOutlet 
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ingredientNameLabel: UILabel!
     @IBOutlet var putInCartButton: UIButton!
     
     override func prepareForReuse() {
         isInCart = false
     }
     
-    func configure(info: String) {
-        nameLabel.text = info
+    func configure(result: String) {
+        ingredientNameLabel.text = result
         
-        if CocktailManager.shared.ingredientsInBucket.contains(info) {
+        if CocktailManager.shared.ingredientsInBucket.contains(result) {
             isInCart = true
         }
     }
     
     @IBAction func putInCartButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        isInCart = sender.isSelected
         
-        delegate?.handlePutInCartButton(cell: self)
+        guard let ingredient = ingredientNameLabel.text else { return }
+        
+        if isInCart { //이미 카트에 담겨있던 재료라면
+            isInCart = false; //View 수정
+            CocktailManager.shared.ingredientsInBucket.remove(ingredient) //Model 수정
+        } else { //카트에 없던 재료라면
+            isInCart = true; //View 수정
+            CocktailManager.shared.ingredientsInBucket.insert(ingredient) //Model 수정
+        }
     }
 }

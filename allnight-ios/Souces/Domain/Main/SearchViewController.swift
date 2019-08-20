@@ -16,7 +16,6 @@ class SearchViewController: UIViewController {
     }
     
     private var searchResults: [String] = []
-    private var ingredientsInCart: Set<String> = []
     
     //MARK: - IBOutlet
     @IBOutlet var searchTextField: UITextField!
@@ -25,20 +24,8 @@ class SearchViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        searchTextField.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
         
-        //change search textField placeholder color
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex)칵테일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        
-        guard let clearButton = searchTextField.value(forKey: "_clearButton") as? UIButton else {
-            print("clearButton is nil.")
-            return
-        }
-
-        clearButton.setImage(UIImage(named: "icSmallx24Normal"), for: .normal)
+        commonInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,18 +45,25 @@ class SearchViewController: UIViewController {
     }
     
     //MARK: - Method
-    func handlePutInCartButton(cell: SearchTableViewCell) {
-        if let ingredientName = cell.nameLabel.text {
-            if cell.isInCart {
-                CocktailManager.shared.ingredientsInBucket.insert(ingredientName)
-            } else {
-                CocktailManager.shared.ingredientsInBucket.remove(ingredientName)
-            }
+    private func commonInit() {
+        //data source, delegate 설정
+        searchTextField.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //change searchTextField placeholder color
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex)칵테일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
+        //searchTextField clear버튼 설정
+        guard let clearButton = searchTextField.value(forKey: "_clearButton") as? UIButton else {
+            print("clearButton is nil.")
+            return
         }
         
-        print("현재 카트 내용물: \(CocktailManager.shared.ingredientsInBucket)")
+        clearButton.setImage(UIImage(named: "icSmallx24Normal"), for: .normal)
     }
     
+    //서버 통신
     func getIngredientList(ingredient: String) {
             AllNightProvider.search(ingredient: ingredient, completion: {[weak self] in
                 guard let self = `self` else { return }
@@ -96,8 +90,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchTableViewCell", for: indexPath) as? SearchTableViewCell else { return SearchTableViewCell() }
         
-        cell.delegate = self
-        cell.configure(info: searchResults[indexPath.row])
+        cell.configure(result: searchResults[indexPath.row])
         
         return cell
     }

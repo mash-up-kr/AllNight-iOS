@@ -8,25 +8,15 @@
 
 import UIKit
 
-class CollectionReusableView: UICollectionReusableView {
+class MainCollectionReusableHeaderView: UICollectionReusableView {
     //MARK: - Property
-    var link: MainViewController?
+    var delegate: MainViewController?
     
     //MARK: - IBOutlet
     @IBOutlet var menuBarButton: UIButton!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     
     //MARK: - IBAction
     @IBAction func menuBarButtonDidTap(_ sender: UIButton) {
-        //FIXME
-        
-        print("menuBarButtonDidTap")
-        
-        link?.handleMenuBarButtonDidTap()
+        delegate?.handleMenuBarButtonDidTap()
     }
 }

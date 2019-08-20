@@ -12,12 +12,16 @@ import Kingfisher
 class MainCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Property
+    private let scrappedIconName = "icScrap24Normal-1"
+    private let nonScrappedIconName = "icScrap24Normal"
+    private let alcholicIconName = "icAlcholic"
+    
     var isScrap = false {
         didSet {
             if isScrap {
-                scrapButton.setImage(UIImage(named: "icScrap24Normal-1"), for: .normal)
+                scrapButton.setImage(UIImage(named: scrappedIconName), for: .normal)
             } else {
-                scrapButton.setImage(UIImage(named: "icScrap24Normal"), for: .normal)
+                scrapButton.setImage(UIImage(named: nonScrappedIconName), for: .normal)
             }
         }
     }
@@ -39,7 +43,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         backgroundImgView.image = nil
         cocktailNameLabel.text = ""
-        scrapButton.setImage(UIImage(named: "icScrap24Normal"), for: .normal)
+        scrapButton.setImage(UIImage(named: nonScrappedIconName), for: .normal)
     }
     
     func configure(indexPath: IndexPath, cocktailInfo: Cocktail) {
@@ -53,14 +57,14 @@ class MainCollectionViewCell: UICollectionViewCell {
         
         //알코올 유무 표시 이미지 설정
         if cocktailInfo.alcoholic == "Alcoholic" {
-            alcholicImgView.image = UIImage(named: "icAlcholic")
+            alcholicImgView.image = UIImage(named: alcholicIconName)
         } else {
             alcholicImgView.image = nil
         }
         
-        //스크랩 유무 설정
+        //스크랩 유무에 따른 아이콘 설정 
         if CocktailManager.shared.scrappedCocktails.contains(cocktailInfo.id) {
-            scrapButton.setImage(UIImage(named: "icScrap24Normal-1"), for: .normal)
+            scrapButton.setImage(UIImage(named: scrappedIconName), for: .normal)
         }
     }
     

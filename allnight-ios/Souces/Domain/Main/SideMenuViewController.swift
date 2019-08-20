@@ -65,15 +65,7 @@ extension SideMenuViewController: UITableViewDelegate {
     //셀 눌렀을때 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let menuTpye = MenuType(rawValue: indexPath.row) else { return }
-        dismiss(animated: true) {
-            print("sideMenuTableView dismiss.")
-            
-            //TODO: - show '스크랩 레시피' 화면 
-        }
+    
+        dismiss(animated: true, completion: nil)
     }
-}
-
-enum MenuType: Int {
-    case scrap
 }

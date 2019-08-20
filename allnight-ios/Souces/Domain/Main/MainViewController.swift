@@ -33,7 +33,7 @@ final class MainViewController: UIViewController {
         
         setUpCollectionView()
     
-        //통신
+        //서버로부터 칵테일 리스트 받아옴
         AllNightProvider.searchStaticCocktails(completion: {
             if let data = try? $0.decodeJSON([Cocktail].self).get() {
                 self.cocktails = data
@@ -42,7 +42,7 @@ final class MainViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }) {
-            print($0.errorDescription)
+            print($0.errorDescription ?? "")
         }
     }
     
@@ -50,11 +50,12 @@ final class MainViewController: UIViewController {
     private func setUpCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        
     }
     
     func handleScrapButtonDidTap(cell: MainCollectionViewCell) {
         //몇번째 셀이 눌린건지 확인
-        guard let indexPathTapped = collectionView.indexPath(for: cell), let cocktailNameTapped = cell.cocktailNameLabel.text else {
+        guard let indexPathTapped = collectionView.indexPath(for: cell) else {
             return
         }
         
@@ -75,15 +76,11 @@ final class MainViewController: UIViewController {
         guard let sideMenuViewController = storyboard?.instantiateViewController(withIdentifier: "SideMenuViewController") else { return }
         
         sideMenuViewController.modalPresentationStyle = .overCurrentContext
-        //side Menu VC의 화면 전환에 대한 처리는 내가(MainViewController)가 하겠다는 의미
         sideMenuViewController.transitioningDelegate = self
         present(sideMenuViewController, animated: true, completion: nil)
     }
     
     //MARK: - IBAction
-    @IBAction func floatingButtonDidTap(_ sender: UIButton) {
-        print("floatingButtonDidTap")
-    }
 }
 
 //MARK: - Collection View Data Source
@@ -103,12 +100,12 @@ extension MainViewController: UICollectionViewDataSource {
     
     //section header view
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? CollectionReusableView else {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? MainCollectionReusableHeaderView else {
             print("headerView is nil")
             return UICollectionReusableView()
         }
         
-        headerView.link = self
+        headerView.delegate = self
         
         return headerView
     }

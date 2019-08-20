@@ -38,8 +38,6 @@ class SearchBucketViewController: UIViewController {
     
     //MARK: - Method
     func handleRemoveButton(cell: SearchBucketTableViewCell) {
-        //view 변경 - 셀 삭제
-        
         if let indexPath = tableView.indexPath(for: cell) {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -49,13 +47,12 @@ class SearchBucketViewController: UIViewController {
 //MARK: - TableView Data Source
 extension SearchBucketViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+  
         return CocktailManager.shared.ingredientsInBucket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "bucketCell", for: indexPath) as? SearchBucketTableViewCell else { return UITableViewCell() }
-        
         cell.configure(indexPath: indexPath)
         cell.delegate = self
         

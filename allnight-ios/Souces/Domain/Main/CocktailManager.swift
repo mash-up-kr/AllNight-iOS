@@ -24,4 +24,12 @@ class CocktailManager {
             print("scrappedCocktails: \(scrappedCocktails)")
         }
     }
+    
+    func getArrOfIngredientsInBucket() -> [String] {
+        return Array(ingredientsInBucket)
+    }
+    
+    func getArrOfScrappedCocktails() -> [String] {
+        return Array(scrappedCocktails)
+    }
 }

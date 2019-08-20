@@ -12,13 +12,13 @@ class SearchBucketTableViewCell: UITableViewCell {
     
     //MARK: - Property
     var delegate: SearchBucketViewController?
-    var ingredientsArr = Array(CocktailManager.shared.ingredientsInBucket)
+    var ingredientsArr = CocktailManager.shared.getArrOfIngredientsInBucket()
     
     //MARK: - IBOutlet
     @IBOutlet var ingredientNameLabel: UILabel!
     
     func configure(indexPath: IndexPath) {
-        ingredientNameLabel.text = ingredientsArr[indexPath.row]
+            ingredientNameLabel.text = ingredientsArr[indexPath.row]
     }
     
     @IBAction func removeButtonDidTap(_ sender: UIButton) {
