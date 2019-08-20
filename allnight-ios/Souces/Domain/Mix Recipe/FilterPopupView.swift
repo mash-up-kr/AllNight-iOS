@@ -9,7 +9,9 @@
 import UIKit
 
 class FilterPopupView: UIView {
-
+  
+  private var didUpdateConstraints = false
+  
   let filterView: UIView = {
     let view = UIView()
     
@@ -30,11 +32,52 @@ class FilterPopupView: UIView {
   }()
   
   var alcoholRadioButtonList: [RadioButton] = []
+  var alcoholRadioButtonTitleList: [String] = ["ALL", "Non-Alcohol", "Alchol"]
   
   var ingredientRadioButtonList: [RadioButton] = []
+  var ingredientRadioButtonTitleList: [String] = ["3", "4", "5+"]
   
-  override func awakeFromNib() {
+  var alcoholRadioButton1: RadioButton = {
+    let radio = RadioButton()
+    radio.setTitle("ALL", for: .normal)
+    radio.translatesAutoresizingMaskIntoConstraints = false
+    return radio
+  }();
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     
+    translatesAutoresizingMaskIntoConstraints = false
+    
+    filterView.addSubview(titleLabel)
+    filterView.addSubview(titleLabel)
+    
+    addSubview(filterView)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder: ) not been implemented")
+  }
+  
+  override func updateConstraints() {
+    if !didUpdateConstraints {
+      
+//      NSLayoutConstraint.activate([
+//        imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 184.0),
+//        imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//        imageView.widthAnchor.constraint(equalToConstant: 113.0),
+//        imageView.heightAnchor.constraint(equalToConstant: 95.0)
+//        ])
+//
+//      NSLayoutConstraint.activate([
+//        label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 42.0),
+//        label.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+//        ])
+      
+      didUpdateConstraints.toggle()
+    }
+    
+    super.updateConstraints()
   }
   
 }

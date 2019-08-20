@@ -27,6 +27,8 @@ final class MixRecipeViewController: UIViewController {
   
   let filterPopupView = FilterPopupView()
   
+  var recipeMode: MixRecipeMode = .SingleMode
+  
   @IBAction func tapHome(_ sender: Any) {
     
   }
@@ -36,7 +38,31 @@ final class MixRecipeViewController: UIViewController {
   }
   
   @IBAction func tapMode(_ sender: Any) {
+    if recipeMode == .SingleMode {
+      recipeMode = .MultipleMode
+    }
+    else if recipeMode == .MultipleMode {
+      recipeMode = .SingleMode
+    }
     
+    recipeCollectionView.setCollectionViewLayout(createCollectionViewLayout(recipeMode: recipeMode), animated: false)
+  }
+  
+  func createCollectionViewLayout(recipeMode: MixRecipeMode) -> UICollectionViewFlowLayout {
+    let layout = UICollectionViewFlowLayout()
+    
+    if recipeMode == .SingleMode {
+      layout.sectionInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+      layout.minimumLineSpacing = 32.0
+      layout.minimumInteritemSpacing = 0.0
+    }
+    else if recipeMode == .MultipleMode {
+      layout.sectionInset = UIEdgeInsets(top: 31.0, left: 16.0, bottom: 0.0, right: 16.0)
+      layout.minimumLineSpacing = 24.0
+      layout.minimumInteritemSpacing = 0.0
+    }
+    
+    return layout
   }
   
   
@@ -47,6 +73,16 @@ final class MixRecipeViewController: UIViewController {
     
     recipeCollectionView.delegate   = self
     recipeCollectionView.dataSource = self
+    
+    AllNightNetworking().request(.search(ingredient: "맥주"), completionHandler: { (Response) in
+      if let data = try? Response.decodeJSON(Array<String>.self).get() {
+        print(data)
+      }
+    }) { (MoyaError) in
+      print(MoyaError.errorDescription ?? "")
+    }
+    
+    recipeCollectionView.setCollectionViewLayout(createCollectionViewLayout(recipeMode: recipeMode), animated: false)
   }
 }
 
@@ -73,6 +109,24 @@ extension MixRecipeViewController: UICollectionViewDataSource {
 extension MixRecipeViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
     return false
+  }
+}
+
+extension MixRecipeViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    var width = 0.0
+    var height = 0.0
+    
+    if recipeMode == .SingleMode {
+      width = 343.0
+      height = 480.0
+    }
+    else if recipeMode == .MultipleMode {
+      width = 164.0
+      height = 209.9
+    }
+    
+    return CGSize(width: width, height: height)
   }
 }
 

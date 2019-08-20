@@ -16,7 +16,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     
   weak var cellDelegate: RecipeCollectionViewCellDelegate?
   
-  @IBOutlet weak var image: UIImageView!
+  @IBOutlet weak var imageView: UIImageView!
   
   @IBOutlet weak var detailView: UIView!
   
@@ -27,6 +27,11 @@ class RecipeCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var starButton: UIButton!
   
   private var starSelected: Bool = false
+  
+  var recipeMode: MixRecipeMode = .SingleMode
+  
+  @IBOutlet weak var detailViewHeightConstraint: NSLayoutConstraint!
+  
   
   override func awakeFromNib() {
     
@@ -41,6 +46,37 @@ class RecipeCollectionViewCell: UICollectionViewCell {
   
     cellDelegate?.tapStar(tapped: starSelected)
     starSelected.toggle()
+  }
+  
+  func setImage(_ image: UIImage)
+  {
+    imageView.image = image
+    layoutIfNeeded()
+  }
+  
+  func changeMode(_ mode: MixRecipeMode)
+  {
+    if (mode == recipeMode)
+    {
+      return
+    }
+    
+    recipeMode = mode
+    
+    if (recipeMode == .MultipleMode)
+    {
+      nameLabel.font = nameLabel.font.withSize(20.0)
+      
+      detailViewHeightConstraint.constant = 74.0
+    }
+    else if (recipeMode == .SingleMode)
+    {
+      nameLabel.font = nameLabel.font.withSize(39.0)
+      
+    detailViewHeightConstraint.constant = 155.0
+    }
+    
+    layoutIfNeeded()
   }
   
 }
