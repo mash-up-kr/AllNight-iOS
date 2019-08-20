@@ -44,12 +44,12 @@ class SearchTableViewCell: UITableViewCell {
         
         guard let ingredient = ingredientNameLabel.text else { return }
         
-        if isInCart { //이미 카트에 담겨있던 재료라면
-            isInCart = false; //View 수정
-            CocktailManager.shared.ingredientsInBucket.remove(ingredient) //Model 수정
-        } else { //카트에 없던 재료라면
-            isInCart = true; //View 수정
-            CocktailManager.shared.ingredientsInBucket.insert(ingredient) //Model 수정
+        if isInCart {
+            CocktailManager.shared.ingredientsInBucket.remove(ingredient)
+        } else {
+            CocktailManager.shared.ingredientsInBucket.insert(ingredient)
         }
+        
+        isInCart = !isInCart
     }
 }
