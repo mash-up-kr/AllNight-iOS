@@ -163,7 +163,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-z3-kLX" userLabel="header">
                                 <rect key="frame" x="0.0" y="44" width="414" height="276"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="lFx-zH-UAw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="lFx-zH-UAw">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idv-FD-1HB">
@@ -207,7 +207,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-Dr-vm2">
                                                 <rect key="frame" x="374" y="20" width="24" height="24"/>
-                                                <state key="normal" image="icFavorite"/>
+                                                <state key="normal" image="icScrap24Normal"/>
+                                                <state key="selected" image="icScrap24Normal-1"/>
+                                                <connections>
+                                                    <action selector="scrapButtonAction:" destination="1z5-gn-ndp" eventType="touchUpInside" id="CNB-D0-81A"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -251,6 +255,7 @@
                         <outlet property="drinkNameLabel" destination="al1-AA-qOa" id="OSz-nM-nnZ"/>
                         <outlet property="headerHeightConstraint" destination="9gJ-jl-lvT" id="O6e-zp-KYQ"/>
                         <outlet property="headerImageView" destination="lFx-zH-UAw" id="77i-Gt-4Oz"/>
+                        <outlet property="scrapButton" destination="p6S-Dr-vm2" id="LEh-tq-E6c"/>
                         <outlet property="tableView" destination="PbI-KR-s2s" id="AZf-z2-OUE"/>
                     </connections>
                 </viewController>
@@ -264,7 +269,8 @@
         <image name="icArrowBack" width="24" height="24"/>
         <image name="icBucket" width="375" height="176"/>
         <image name="icCircle" width="24" height="24"/>
-        <image name="icFavorite" width="24" height="24"/>
+        <image name="icScrap24Normal" width="24" height="24"/>
+        <image name="icScrap24Normal-1" width="24" height="24"/>
         <namedColor name="anBrown">
             <color red="0.82745098039215681" green="0.72941176470588232" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

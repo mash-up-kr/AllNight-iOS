@@ -20,6 +20,7 @@ final class RecipeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var drinkNameLabel: UILabel!
+    @IBOutlet weak var scrapButton: UIButton!
     
     let minHeaderHeight: CGFloat = 141
     let maxHeaderHeight: CGFloat = 276
@@ -32,11 +33,17 @@ final class RecipeViewController: UIViewController {
     
     // 서버로부터 받은 정보 저장 변수
     var cocktailDetail: CocktailDetail?
+    var cocktailId: String = ""
+    
+    //MARK: Property
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchDetailRecipe(id: "AWwR4CaAVDB3vSw6z78j")
+//        searchDetailRecipe(id: "AWwR4CaAVDB3vSw6z78j")
         initTableView()
     }
     
@@ -55,6 +62,15 @@ final class RecipeViewController: UIViewController {
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func scrapButtonAction(_ sender: Any) {
+        if scrapButton.isSelected { // 스크랩을 벌써 한 상태 -> 스크랩 해제
+            CocktailManager.shared.scrappedCocktails.remove(cocktailId)
+        } else {
+            CocktailManager.shared.scrappedCocktails.insert(cocktailId)
+        }
+        scrapButton.isSelected = !scrapButton.isSelected
+    }
 }
 
 // MARK: private functions for headerView
@@ -68,6 +84,14 @@ private extension RecipeViewController {
         // 칵테일 이름 지정 (영어)
         if let drinkName = cocktailDetail?.enDrinkName {
             drinkNameLabel.text = drinkName
+        }
+        
+        //스크랩 유무에 따른 아이콘 설정
+        if CocktailManager.shared.scrappedCocktails.contains(cocktailId) {
+            scrapButton.isSelected = true
+        }
+        else {
+            scrapButton.isSelected = false
         }
     }
 }
@@ -239,7 +263,7 @@ extension RecipeViewController {
             if let data = try? $0.decodeJSON(CocktailDetail.self).get() {
                 self.cocktailDetail = data
 //                print(self.cocktailDetail ?? "")
-                
+                self.cocktailId = id
                 DispatchQueue.main.async {
                     self.updateDetailHeaderView()
                     self.tableView.reloadData()
