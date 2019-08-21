@@ -13,6 +13,9 @@ import UIKit
 class SearchBucketViewController: UIViewController {
     
     //MARK: - Property
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     //MAKR: - IBOutlet
     @IBOutlet var tableView: UITableView!
