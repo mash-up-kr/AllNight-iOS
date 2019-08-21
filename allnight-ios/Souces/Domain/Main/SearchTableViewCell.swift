@@ -32,10 +32,10 @@ class SearchTableViewCell: UITableViewCell {
         isInCart = false
     }
     
-    func configure(result: String) {
-        ingredientNameLabel.text = result
+    func configure(ingredient: String) {
+        ingredientNameLabel.text = ingredient
         
-        if CocktailManager.shared.ingredientsInBucket.contains(result) {
+        if CocktailManager.shared.ingredientsInBucket.contains(ingredient) {
             isInCart = true
         }
     }
