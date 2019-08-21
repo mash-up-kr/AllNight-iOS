@@ -63,10 +63,6 @@ final class MainViewController: UIViewController {
             //스크랩 바구니에서 칵테일 id 삭제
             CocktailManager.shared.scrappedCocktails.remove(id)
         }
-        
-        //TODO: - "scrappedCocktails" 키를 가진 객체가 존재하는지부터 확인해야할듯 
-        UserDefaults.standard.removeObject(forKey: "scrappedCocktails")
-        UserDefaults.standard.set(CocktailManager.shared.getArrOfScrappedCocktails(), forKey: "scrappedCocktails")
     }
     
     func handleMenuBarButtonDidTap() {
@@ -79,8 +75,6 @@ final class MainViewController: UIViewController {
         sideMenuViewController.transitioningDelegate = self
         present(sideMenuViewController, animated: true, completion: nil)
     }
-    
-    //MARK: - IBAction
 }
 
 //MARK: - Collection View Data Source

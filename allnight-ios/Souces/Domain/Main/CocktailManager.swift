@@ -10,6 +10,7 @@ import Foundation
 
 class CocktailManager {
     static let shared = CocktailManager()
+    private let keyForScrappedCocktails = "scrappedCocktails"
     
     //장바구니에 담긴 술/재료들
     var ingredientsInBucket: Set<String> = [] {
@@ -22,6 +23,11 @@ class CocktailManager {
     var scrappedCocktails: Set<String> = [] {
         didSet {
             print("scrappedCocktails: \(scrappedCocktails)")
+            
+            if UserDefaults.standard.object(forKey: keyForScrappedCocktails) as? [String] != nil {
+                UserDefaults.standard.removeObject(forKey: keyForScrappedCocktails)
+            }
+            UserDefaults.standard.set(CocktailManager.shared.getArrOfScrappedCocktails(), forKey: keyForScrappedCocktails)
         }
     }
     
