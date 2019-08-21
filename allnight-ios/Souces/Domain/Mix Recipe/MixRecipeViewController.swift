@@ -9,8 +9,17 @@
 import UIKit
 
 enum MixRecipeMode: String, CaseIterable {
-    case SingleMode
-    case MultipleMode
+  case SingleMode
+  case MultipleMode
+  
+  mutating func toggle() {
+    if self == .SingleMode {
+      self = .MultipleMode
+    }
+    else {
+      self = .SingleMode
+    }
+  }
 }
 
 final class MixRecipeViewController: UIViewController {
@@ -25,9 +34,11 @@ final class MixRecipeViewController: UIViewController {
   
   @IBOutlet weak var recipeCollectionView: UICollectionView!
   
-  let filterPopupView = FilterPopupView()
+  let FilterPopup = FilterPopupView()
   
-  var recipeMode: MixRecipeMode = .SingleMode
+  let ScreenWidth = UIScreen.main.bounds.width
+  
+  var recipeMode = MixRecipeMode.SingleMode
   
   @IBAction func tapHome(_ sender: Any) {
     
@@ -38,33 +49,20 @@ final class MixRecipeViewController: UIViewController {
   }
   
   @IBAction func tapMode(_ sender: Any) {
-    if recipeMode == .SingleMode {
-      recipeMode = .MultipleMode
-    }
-    else if recipeMode == .MultipleMode {
-      recipeMode = .SingleMode
-    }
+    recipeMode.toggle()
     
-    recipeCollectionView.setCollectionViewLayout(createCollectionViewLayout(recipeMode: recipeMode), animated: false)
+    setModeImage(recipeMode: recipeMode)
+     recipeCollectionView.setCollectionViewLayout(loadRecipeCollectionLayout(recipeMode: recipeMode), animated: false)
   }
   
-  func createCollectionViewLayout(recipeMode: MixRecipeMode) -> UICollectionViewFlowLayout {
-    let layout = UICollectionViewFlowLayout()
-    
+  func setModeImage(recipeMode: MixRecipeMode) {
     if recipeMode == .SingleMode {
-      layout.sectionInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
-      layout.minimumLineSpacing = 32.0
-      layout.minimumInteritemSpacing = 0.0
+      modeButton.setImage(#imageLiteral(resourceName: "icMultiple"), for: .normal)
     }
-    else if recipeMode == .MultipleMode {
-      layout.sectionInset = UIEdgeInsets(top: 31.0, left: 16.0, bottom: 0.0, right: 16.0)
-      layout.minimumLineSpacing = 24.0
-      layout.minimumInteritemSpacing = 0.0
+    else {
+      modeButton.setImage(#imageLiteral(resourceName: "icSingle"), for: .normal)
     }
-    
-    return layout
   }
-  
   
   // MARK: View LifeCycle
 
@@ -82,7 +80,8 @@ final class MixRecipeViewController: UIViewController {
       print(MoyaError.errorDescription ?? "")
     }
     
-    recipeCollectionView.setCollectionViewLayout(createCollectionViewLayout(recipeMode: recipeMode), animated: false)
+    setModeImage(recipeMode: recipeMode)
+    recipeCollectionView.setCollectionViewLayout(loadRecipeCollectionLayout(recipeMode: recipeMode), animated: true)
   }
 }
 
@@ -98,7 +97,7 @@ extension MixRecipeViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCollectionViewCell", for: indexPath) as? RecipeCollectionViewCell else {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: recipeCellIdentifier, for: indexPath) as? RecipeCollectionViewCell else {
       return UICollectionViewCell()
     }
     
@@ -114,16 +113,16 @@ extension MixRecipeViewController: UICollectionViewDelegate {
 
 extension MixRecipeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    var width = 0.0
-    var height = 0.0
+    var width: CGFloat = 0.0
+    var height: CGFloat = 0.0
     
     if recipeMode == .SingleMode {
-      width = 343.0
-      height = 480.0
+      width = ScreenWidth - MarginLeftInSingle - MarginRightInSingle
+      height = HeightInSingle
     }
     else if recipeMode == .MultipleMode {
-      width = 164.0
-      height = 209.9
+      width = (ScreenWidth - MarginLeftInSingle * MarginRightInSingle - SpacingItemInMultiple) / 2.0
+      height = HeightInMultiple
     }
     
     return CGSize(width: width, height: height)
