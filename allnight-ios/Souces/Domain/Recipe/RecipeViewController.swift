@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 enum RecipeTableCell: String, CaseIterable {
     case RecipeHeaderTableViewCell
@@ -18,6 +19,8 @@ final class RecipeViewController: UIViewController {
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var drinkNameLabel: UILabel!
+    @IBOutlet weak var scrapButton: UIButton!
     
     let minHeaderHeight: CGFloat = 141
     let maxHeaderHeight: CGFloat = 276
@@ -28,9 +31,19 @@ final class RecipeViewController: UIViewController {
     var previousScrollOffset: CGFloat = 0
     var isAnimating = false
     
+    // 서버로부터 받은 정보 저장 변수
+    var cocktailDetail: CocktailDetail?
+    var cocktailId: String = ""
+    
+    //MARK: Property
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+//        searchDetailRecipe(id: "AWwR4CaAVDB3vSw6z78j")
         initTableView()
     }
     
@@ -49,6 +62,38 @@ final class RecipeViewController: UIViewController {
     @IBAction func backButtonAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func scrapButtonAction(_ sender: Any) {
+        if scrapButton.isSelected { // 스크랩을 벌써 한 상태 -> 스크랩 해제
+            CocktailManager.shared.scrappedCocktails.remove(cocktailId)
+        } else {
+            CocktailManager.shared.scrappedCocktails.insert(cocktailId)
+        }
+        scrapButton.isSelected = !scrapButton.isSelected
+    }
+}
+
+// MARK: private functions for headerView
+private extension RecipeViewController {
+    func updateDetailHeaderView() {
+        // 칵테일 썸네일 이미지 설정
+        if let thumbnail = cocktailDetail?.drinkThumb {
+            headerImageView.kf.setImage(with: thumbnail)
+        }
+        
+        // 칵테일 이름 지정 (영어)
+        if let drinkName = cocktailDetail?.enDrinkName {
+            drinkNameLabel.text = drinkName
+        }
+        
+        //스크랩 유무에 따른 아이콘 설정
+        if CocktailManager.shared.scrappedCocktails.contains(cocktailId) {
+            scrapButton.isSelected = true
+        }
+        else {
+            scrapButton.isSelected = false
+        }
+    }
 }
 
 // MARK: private functions for tableviewcell
@@ -65,6 +110,8 @@ private extension RecipeViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath) as? RecipeRowTableViewCell else {
             return UITableViewCell()
         }
+        
+        cell.configure(ingredientName: cocktailDetail?.ingredientArray[indexPath.row - 1] ?? "dummy" , measure: cocktailDetail?.measureArray[indexPath.row - 1] ?? "dummy")
 
         if indexPath.row == lastRowIndex {
             cell.changeBottomConstraint(constraint: 32)
@@ -84,11 +131,11 @@ private extension RecipeViewController {
         
         switch indexPath.section {
         case 0:
-            cell.configure(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
-        case 1:
-            cell.configure(title: "GLASS", detail: "Glass")
+//            cell.configure(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
+//        case 1:
+            cell.configure(title: "GLASS", detail: cocktailDetail?.glass ?? "glass")
         default:
-            cell.configure(title: "INSTRUCTION", detail: "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오.")
+            cell.configure(title: "INSTRUCTION", detail: cocktailDetail?.instructions ?? "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오")
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         }
         
@@ -99,12 +146,16 @@ private extension RecipeViewController {
 // MARK: UITableViewDataSource
 extension RecipeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+//        return 4
+        // INTRO 없는 버전
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 2 {
-            return 5
+//        if section == 2 {
+        // INTRO 없는 버전
+        if section == 1 {
+            return (cocktailDetail?.ingredientArray.count ?? 0) + 1
         }
         else {
             return 1
@@ -115,7 +166,9 @@ extension RecipeViewController: UITableViewDataSource {
         let cell: UITableViewCell
         
         switch indexPath.section {
-        case 2:
+//        case 2:
+        // INTRO 없는 버전
+        case 1:
             if indexPath.row == 0 {
                 cell = getRecipeHeaderTableViewCell(tableView, cellForRowAt: indexPath, reusableCellIdentifier: RecipeTableCell.RecipeHeaderTableViewCell.rawValue)
             } else {
@@ -199,6 +252,25 @@ extension RecipeViewController: UITableViewDelegate {
             self.view.layoutIfNeeded()
         }) { _ in
             self.isAnimating = false
+        }
+    }
+}
+
+// MARK: Networking
+extension RecipeViewController {
+    func searchDetailRecipe(id: String) {
+        AllNightProvider.searchCocktailDetail(id: id, completion: {
+            if let data = try? $0.decodeJSON(CocktailDetail.self).get() {
+                self.cocktailDetail = data
+//                print(self.cocktailDetail ?? "")
+                self.cocktailId = id
+                DispatchQueue.main.async {
+                    self.updateDetailHeaderView()
+                    self.tableView.reloadData()
+                }
+            }
+        }) {
+            print($0.errorDescription ?? "")
         }
     }
 }

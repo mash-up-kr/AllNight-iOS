@@ -14,7 +14,7 @@ struct CocktailDetail: Decodable {
     let enDrinkName: String
     let drinkName: String
     let instructions: String
-    let drinkThumb: String
+    let drinkThumb: URL
     let category: String
     let enInstructions: String
     let enCategory: String
