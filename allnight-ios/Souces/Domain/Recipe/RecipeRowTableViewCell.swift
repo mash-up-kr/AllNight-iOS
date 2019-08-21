@@ -18,9 +18,9 @@ class RecipeRowTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure() {
-        nameLabel.text = "Sweet Vermouth"
-        amountLabel.text = "1/2 oz"
+    func configure(ingredientName: String, measure: String) {
+        nameLabel.text = ingredientName
+        amountLabel.text = measure
     }
     
     func changeBottomConstraint(constraint: CGFloat) {

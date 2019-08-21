@@ -9,19 +9,21 @@
 import Foundation
 
 struct Cocktail: Equatable {
-  let id: String
-  let drinkName: String
-  let enDrinkName: String
-  let alcoholic: String
-  let drinkThumb: URL
+    let id: String
+    let drinkName: String
+    let enDrinkName: String
+    let alcoholic: String
+    let drinkThumb: URL
+    let isScrap = false
 }
 
 extension Cocktail: Decodable {
-  enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case drinkName
-    case enDrinkName
-    case alcoholic
-    case drinkThumb
-  }
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case drinkName
+        case enDrinkName
+        case alcoholic
+        case drinkThumb
+        case isScrap
+    }
 }

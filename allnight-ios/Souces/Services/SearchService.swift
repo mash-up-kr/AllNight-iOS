@@ -10,7 +10,7 @@ import Moya
 
 protocol SearchServiceType {
   func search(ingredient: String, completion: @escaping (Result<[String], MoyaError>) -> ())
-  func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int, completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
+    func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int, completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
   func searchStaticCocktails(completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
   func searchCocktailDetail(id: String, completion: @escaping (Result<CocktailDetail, MoyaError>) -> ())
 }
@@ -44,7 +44,7 @@ final class SearchService: SearchServiceType {
     completion: @escaping (Result<[Cocktail], MoyaError>) -> ()
   ) {
     self.networking.request(
-      .searchCocktails(ingredients: ingredients, offset: offset, isAlcohol: isAlcohol, ingredientCount: ingredientCount),
+        .searchCocktails(ingredients: ingredients, offset: offset, isAlcohol: isAlcohol, ingredientCount: ingredientCount),
       completionHandler: { response in
         completion(response.decodeJSON([Cocktail].self))
       }, errorHandler: { error in
@@ -64,7 +64,7 @@ final class SearchService: SearchServiceType {
 
   func searchCocktailDetail(id: String, completion: @escaping (Result<CocktailDetail, MoyaError>) -> ()) {
     self.networking.request(
-      .searchCocktaikDetail(id: id),
+      .searchCocktailDetail(id: id),
       completionHandler: { response in
         completion(response.decodeJSON(CocktailDetail.self))
       }, errorHandler: { error in
