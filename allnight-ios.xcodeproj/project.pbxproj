@@ -45,6 +45,8 @@
 		BEA241C622E3FE0A002F53B8 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C522E3FE0A002F53B8 /* RecipeCollectionViewCell.swift */; };
 		BEA241C822E41350002F53B8 /* FilterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C722E41350002F53B8 /* FilterPopupView.swift */; };
 		BEA241CA22E42768002F53B8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C922E42768002F53B8 /* RadioButton.swift */; };
+		BEC0B073230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0B072230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift */; };
+		BEC0B075230DEC0600975DD1 /* MixRecipeViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0B074230DEC0600975DD1 /* MixRecipeViewConfig.swift */; };
 		EF432FB622C79EF900786CFD /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB522C79EF900786CFD /* Recipe.storyboard */; };
 		EF432FB822C79F0700786CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB722C79F0700786CFD /* Main.storyboard */; };
 		EF432FBA22C79F3500786CFD /* MixRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF432FB922C79F3500786CFD /* MixRecipe.storyboard */; };
@@ -109,6 +111,8 @@
 		BEA241C522E3FE0A002F53B8 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEA241C722E41350002F53B8 /* FilterPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupView.swift; sourceTree = "<group>"; };
 		BEA241C922E42768002F53B8 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		BEC0B072230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixRecipeCollectionViewLayoutLookUpTable.swift; sourceTree = "<group>"; };
+		BEC0B074230DEC0600975DD1 /* MixRecipeViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixRecipeViewConfig.swift; sourceTree = "<group>"; };
 		D5551A6BDE1AECA521612616 /* Pods-allnight-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.release.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.release.xcconfig"; sourceTree = "<group>"; };
 		EF432FB522C79EF900786CFD /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
 		EF432FB722C79F0700786CFD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				BEA241C522E3FE0A002F53B8 /* RecipeCollectionViewCell.swift */,
 				BEA241C722E41350002F53B8 /* FilterPopupView.swift */,
 				BEA241C922E42768002F53B8 /* RadioButton.swift */,
+				BEC0B072230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift */,
+				BEC0B074230DEC0600975DD1 /* MixRecipeViewConfig.swift */,
 			);
 			path = "Mix Recipe";
 			sourceTree = "<group>";
@@ -592,12 +598,14 @@
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
 				BA279DD022C7866B004CA0F6 /* UITableView+reusableCell.swift in Sources */,
 				BA279DD222C78773004CA0F6 /* UICollectionView+reusableCell.swift in Sources */,
+				BEC0B075230DEC0600975DD1 /* MixRecipeViewConfig.swift in Sources */,
 				BA96F3EB22CFABC400AC27CC /* SearchService.swift in Sources */,
 				BEA241CA22E42768002F53B8 /* RadioButton.swift in Sources */,
 				BA279DBF22C77CCA004CA0F6 /* MixSearchViewController.swift in Sources */,
 				BA279DC322C77D13004CA0F6 /* OnboardingViewController.swift in Sources */,
 				BA96F3EF22CFB3B400AC27CC /* Moya+Decode.swift in Sources */,
 				BAF5313122C74D2A005809C3 /* Networking.swift in Sources */,
+				BEC0B073230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift in Sources */,
 				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BA96F3F122CFB68100AC27CC /* Cocktail.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
