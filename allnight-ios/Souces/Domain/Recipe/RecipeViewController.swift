@@ -43,7 +43,7 @@ final class RecipeViewController: UIViewController {
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchDetailRecipe(id: "AWwR4CaAVDB3vSw6z78j")
+//        searchDetailRecipe(id: "AWwR4K0EVDB3vSw6z8CM")
         initTableView()
     }
     
@@ -111,8 +111,14 @@ private extension RecipeViewController {
             return UITableViewCell()
         }
         
-        cell.configure(ingredientName: cocktailDetail?.ingredientArray[indexPath.row - 1] ?? "dummy" , measure: cocktailDetail?.measureArray[indexPath.row - 1] ?? "dummy")
-
+        if let cocktail = cocktailDetail {
+            var measurement = ""
+            if indexPath.row <= cocktail.measureArray.count {
+                measurement = cocktail.measureArray[indexPath.row - 1]
+            }
+            cell.configure(ingredientName: cocktail.ingredientArray[indexPath.row - 1] , measure: measurement)
+        }
+        
         if indexPath.row == lastRowIndex {
             cell.changeBottomConstraint(constraint: 32)
             cell.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
