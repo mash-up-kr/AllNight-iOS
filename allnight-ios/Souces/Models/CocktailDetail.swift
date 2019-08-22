@@ -9,14 +9,25 @@
 import Foundation
 
 struct CocktailDetail: Decodable {
-  let glass: String
-  let alcoholic: String
-  let enDrinkName: String
-  let drinkName: String
-  let instructions: String
-  let drinkThumb: String
-  let category: String
+    let glass: String
+    let alcoholic: String
+    let enDrinkName: String
+    let drinkName: String
+    let instructions: String
+    let drinkThumb: URL
+    let category: String
+    let enInstructions: String
+    let enCategory: String
+    let enFullIngredients: [String]
+    let enGlass: String
+    let enIngredientArray: [String]
+    let ingredientArray: [String]
+    let measureArray: [String]
+    let enMeasureArray: [String]
+    let imMatches: [Int]
+    let koFullIngredients: [String]
 
+/*
   let enIngredient01: String
   let enIngredient02: String
   let enIngredient03: String
@@ -38,17 +49,28 @@ struct CocktailDetail: Decodable {
   let measure04: String
   let measure05: String
   let measure06: String
-
+*/
 
   enum CodingKeys: String, CodingKey {
     case glass
     case alcoholic
-    case enDrinkName = "EnDrinkName"
+    case enDrinkName
     case drinkName
     case instructions
     case drinkThumb
     case category
+    case enInstructions
+    case enCategory
+    case enFullIngredients
+    case enGlass
+    case enIngredientArray
+    case ingredientArray
+    case measureArray
+    case enMeasureArray
+    case imMatches
+    case koFullIngredients
 
+    /*
     case enIngredient01 = "EnIngredient01"
     case enIngredient02 = "EnIngredient02"
     case enIngredient03 = "EnIngredient03"
@@ -70,5 +92,6 @@ struct CocktailDetail: Decodable {
     case measure04
     case measure05
     case measure06
+ */
   }
 }

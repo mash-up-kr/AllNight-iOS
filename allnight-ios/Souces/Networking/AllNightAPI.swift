@@ -10,9 +10,9 @@ import Moya
 
 enum AllNightAPI {
   case search(ingredient: String)
-  case searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int)
+    case searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int)
   case searchStaticCocktails
-  case searchCocktaikDetail(id: String)
+  case searchCocktailDetail(id: String)
 
   case scrapRecipe(id: String)
   case scrappedRecipes
@@ -33,7 +33,7 @@ extension AllNightAPI: TargetType {
       return "/api/v1/search/cocktail"
     case .searchStaticCocktails:
       return "/api/v1/search/cocktail/static"
-    case let .searchCocktaikDetail(id):
+    case let .searchCocktailDetail(id):
       return "/api/v1/search/cocktail/\(id)"
 
     case let .scrapRecipe(id):
@@ -51,7 +51,7 @@ extension AllNightAPI: TargetType {
       return .get
     case .searchStaticCocktails:
       return .get
-    case .searchCocktaikDetail:
+    case .searchCocktailDetail:
       return .get
 
     case .scrapRecipe:
@@ -72,7 +72,7 @@ extension AllNightAPI: TargetType {
     case let .search(ingredient):
       defaultParams["ingredient"] = ingredient
 
-    case let .searchCocktails(ingredients, offset, isAlcohol, ingredientCount):
+    case let .searchCocktails(ingredients, offset,isAlcohol, ingredientCount):
       defaultParams["ingredients"] = ingredients
       defaultParams["offset"] = offset
       defaultParams["isAlcohol"] = isAlcohol
@@ -88,7 +88,7 @@ extension AllNightAPI: TargetType {
     switch self {
     case .search, .searchCocktails:
       return .requestParameters(parameters: params,
-                                encoding: URLEncoding.default)
+                                encoding: URLEncoding(arrayEncoding: .noBrackets))
     default:
       return .requestPlain
     }

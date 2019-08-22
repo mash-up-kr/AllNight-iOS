@@ -20,6 +20,17 @@
 		03DA0B7C22D887F7002B600E /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B7B22D887F7002B600E /* Color.xcassets */; };
 		26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */; };
 		6869132A5DB650F50E77BB42 /* Pods_allnight_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF28106249DFFC7BF9C21C5E /* Pods_allnight_iosTests.framework */; };
+		88113EBB23097BF8000C37BA /* SearchBucketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */; };
+		88113EC3230A7FFB000C37BA /* SearchBucketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */; };
+		88113EC6230A8A60000C37BA /* CocktailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88113EC5230A8A60000C37BA /* CocktailManager.swift */; };
+		88321639230671EB0057232A /* AllNightProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88321638230671EB0057232A /* AllNightProvider.swift */; };
+		8884B2F622D83F1A000276BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F522D83F1A000276BB /* SideMenuViewController.swift */; };
+		8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */; };
+		8884B2FA22D849FE000276BB /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F922D849FE000276BB /* SlideInTransition.swift */; };
+		8892846623059AB500B8FBDF /* MainCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892846423059AB500B8FBDF /* MainCollectionReusableHeaderView.swift */; };
+		889284692305BF9E00B8FBDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889284682305BF9E00B8FBDF /* SearchViewController.swift */; };
+		8892846F2305CFDA00B8FBDF /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */; };
+		88F5F91722D3184F00A1ADEA /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5F91622D3184F00A1ADEA /* MainCollectionViewCell.swift */; };
 		BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */; };
 		BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */; };
 		BA279DBF22C77CCA004CA0F6 /* MixSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA279DBE22C77CCA004CA0F6 /* MixSearchViewController.swift */; };
@@ -80,6 +91,17 @@
 		03DA0B7B22D887F7002B600E /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		5F8F536EE8E4D5561F50F69C /* Pods_allnight_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_allnight_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664333E9A67EAADDFF17CFBF /* Pods-allnight-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.release.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBucketTableViewCell.swift; sourceTree = "<group>"; };
+		88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBucketViewController.swift; sourceTree = "<group>"; };
+		88113EC5230A8A60000C37BA /* CocktailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailManager.swift; sourceTree = "<group>"; };
+		88321638230671EB0057232A /* AllNightProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNightProvider.swift; sourceTree = "<group>"; };
+		8884B2F522D83F1A000276BB /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		8884B2F922D849FE000276BB /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
+		8892846423059AB500B8FBDF /* MainCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
+		889284682305BF9E00B8FBDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		88F5F91622D3184F00A1ADEA /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		9863CC7D48E4882F0937B556 /* Pods-allnight-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-ios.debug.xcconfig"; path = "Target Support Files/Pods-allnight-ios/Pods-allnight-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B769DC6C116C639C0398BEA7 /* Pods-allnight-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allnight-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-allnight-iosTests/Pods-allnight-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -204,8 +226,18 @@
 		BA279DB522C77C05004CA0F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8884B2F522D83F1A000276BB /* SideMenuViewController.swift */,
+				8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */,
+				8884B2F922D849FE000276BB /* SlideInTransition.swift */,
+				8892846423059AB500B8FBDF /* MainCollectionReusableHeaderView.swift */,
 				BA279DBA22C77C8C004CA0F6 /* MainViewController.swift */,
+				88F5F91622D3184F00A1ADEA /* MainCollectionViewCell.swift */,
 				EF432FB722C79F0700786CFD /* Main.storyboard */,
+				889284682305BF9E00B8FBDF /* SearchViewController.swift */,
+				8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */,
+				88113EC2230A7FFB000C37BA /* SearchBucketViewController.swift */,
+				88113EBA23097BF8000C37BA /* SearchBucketTableViewCell.swift */,
+				88113EC5230A8A60000C37BA /* CocktailManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -369,6 +401,7 @@
 			children = (
 				BAF5313022C74D2A005809C3 /* Networking.swift */,
 				BA96F3E822CFA23400AC27CC /* AllNightAPI.swift */,
+				88321638230671EB0057232A /* AllNightProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -596,25 +629,36 @@
 				BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */,
 				BA96F3E922CFA23400AC27CC /* AllNightAPI.swift in Sources */,
 				BAF5310D22C74790005809C3 /* AppDelegate.swift in Sources */,
+				88F5F91722D3184F00A1ADEA /* MainCollectionViewCell.swift in Sources */,
 				BA279DD022C7866B004CA0F6 /* UITableView+reusableCell.swift in Sources */,
 				BA279DD222C78773004CA0F6 /* UICollectionView+reusableCell.swift in Sources */,
 				BEC0B075230DEC0600975DD1 /* MixRecipeViewConfig.swift in Sources */,
 				BA96F3EB22CFABC400AC27CC /* SearchService.swift in Sources */,
 				BEA241CA22E42768002F53B8 /* RadioButton.swift in Sources */,
 				BA279DBF22C77CCA004CA0F6 /* MixSearchViewController.swift in Sources */,
+				8892846F2305CFDA00B8FBDF /* SearchTableViewCell.swift in Sources */,
 				BA279DC322C77D13004CA0F6 /* OnboardingViewController.swift in Sources */,
+				8884B2FA22D849FE000276BB /* SlideInTransition.swift in Sources */,
 				BA96F3EF22CFB3B400AC27CC /* Moya+Decode.swift in Sources */,
 				BAF5313122C74D2A005809C3 /* Networking.swift in Sources */,
 				BEC0B073230DE9B300975DD1 /* MixRecipeCollectionViewLayoutLookUpTable.swift in Sources */,
 				BA279DBD22C77CB9004CA0F6 /* MixRecipeViewController.swift in Sources */,
 				BA96F3F122CFB68100AC27CC /* Cocktail.swift in Sources */,
+				88321639230671EB0057232A /* AllNightProvider.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
 				030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */,
 				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
+				8892846623059AB500B8FBDF /* MainCollectionReusableHeaderView.swift in Sources */,
+				88113EC6230A8A60000C37BA /* CocktailManager.swift in Sources */,
+				8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */,
+				88113EBB23097BF8000C37BA /* SearchBucketTableViewCell.swift in Sources */,
+				889284692305BF9E00B8FBDF /* SearchViewController.swift in Sources */,
 				BA96F3ED22CFABCE00AC27CC /* ScrapService.swift in Sources */,
 				BEA241C822E41350002F53B8 /* FilterPopupView.swift in Sources */,
 				BA279DC522C77D2C004CA0F6 /* RecipeViewController.swift in Sources */,
+				88113EC3230A7FFB000C37BA /* SearchBucketViewController.swift in Sources */,
+				8884B2F622D83F1A000276BB /* SideMenuViewController.swift in Sources */,
 				BA279DCC22C78611004CA0F6 /* Recipe.swift in Sources */,
 				BAE900CA22E2C16400B30C77 /* CocktailDetail.swift in Sources */,
 			);
@@ -817,6 +861,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "allnight-iosTests/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -838,6 +883,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "allnight-iosTests/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

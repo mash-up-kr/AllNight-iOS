@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.otf">
+            <string>NanumBarunGothicOTF</string>
+        </array>
+        <array key="NanumBarunGothicBold.otf">
+            <string>NanumBarunGothicOTFBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="g1T-OY-LLD">
@@ -19,122 +27,60 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icOnboarding" translatesAutoresizingMaskIntoConstraints="NO" id="nYj-Bb-OsX">
-                                <rect key="frame" x="45.5" y="112" width="284" height="184"/>
+                                <rect key="frame" x="24" y="84" width="327" height="248"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="284" id="Td7-eR-jrV"/>
-                                    <constraint firstAttribute="height" constant="184" id="stO-dX-zgX"/>
+                                    <constraint firstAttribute="width" secondItem="nYj-Bb-OsX" secondAttribute="height" multiplier="327:248" id="tuP-J5-2pC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmt-xh-2kZ">
-                                <rect key="frame" x="64" y="320" width="247.5" height="52"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="술을">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="선택해서">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="레시피를">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="추천">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="받아보시겠어요">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="?">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="술을 선택해서 레시피를 추천 받아보시겠어요?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmt-xh-2kZ">
+                                <rect key="frame" x="16" y="368" width="343" height="46"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-5B-V2h">
-                                <rect key="frame" x="16" y="483" width="343" height="52"/>
-                                <color key="backgroundColor" red="0.82745098039215681" green="0.72941176470588232" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="488" width="343" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="77i-LQ-KFq"/>
-                                    <constraint firstAttribute="height" constant="52" id="ItX-N0-r5N"/>
+                                    <constraint firstAttribute="width" secondItem="NbF-5B-V2h" secondAttribute="height" multiplier="343:52" id="ziu-uZ-VEq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="네, 받아볼래요.">
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="19"/>
+                                <state key="normal" title="네, 받아볼래요." backgroundImage="btnOnboarding">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="95T-EF-z0q" kind="show" id="2SH-e3-5aU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-9x-1pg">
-                                <rect key="frame" x="16" y="551" width="343" height="52"/>
+                                <rect key="frame" x="16" y="556" width="343" height="52"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="eRc-9x-1pg" secondAttribute="height" multiplier="343:52" id="EWL-qn-sBq"/>
                                     <constraint firstAttribute="height" constant="52" id="Gq9-bz-VqV"/>
-                                    <constraint firstAttribute="width" constant="343" id="w5F-qB-w0w"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="아니요, 다음에 할래요.">
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
+                                <state key="normal" title="홈으로 그냥 갈래요.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xMx-v2-kcE" kind="show" id="qHl-SB-yus"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nYj-Bb-OsX" firstAttribute="centerX" secondItem="Saf-Tb-wjb" secondAttribute="centerX" id="028-GT-K8u"/>
-                            <constraint firstItem="NbF-5B-V2h" firstAttribute="centerX" secondItem="Saf-Tb-wjb" secondAttribute="centerX" id="74B-H3-BzY"/>
-                            <constraint firstItem="nYj-Bb-OsX" firstAttribute="top" secondItem="5eX-47-gBS" secondAttribute="top" constant="92" id="AJ7-YW-MgH"/>
-                            <constraint firstItem="5eX-47-gBS" firstAttribute="bottom" secondItem="eRc-9x-1pg" secondAttribute="bottom" constant="64" id="LdA-ct-Cm4"/>
-                            <constraint firstItem="eRc-9x-1pg" firstAttribute="centerX" secondItem="Saf-Tb-wjb" secondAttribute="centerX" id="Ofq-CG-HLB"/>
-                            <constraint firstItem="lmt-xh-2kZ" firstAttribute="centerX" secondItem="Saf-Tb-wjb" secondAttribute="centerX" id="Wma-pX-RbD"/>
-                            <constraint firstItem="lmt-xh-2kZ" firstAttribute="top" secondItem="nYj-Bb-OsX" secondAttribute="bottom" constant="24" id="Wwl-9V-OXF"/>
+                            <constraint firstItem="5eX-47-gBS" firstAttribute="trailing" secondItem="NbF-5B-V2h" secondAttribute="trailing" constant="16" id="9Bc-jy-O3t"/>
+                            <constraint firstItem="NbF-5B-V2h" firstAttribute="leading" secondItem="5eX-47-gBS" secondAttribute="leading" constant="16" id="A9i-mS-hNq"/>
+                            <constraint firstItem="nYj-Bb-OsX" firstAttribute="top" secondItem="5eX-47-gBS" secondAttribute="top" constant="64" id="AJ7-YW-MgH"/>
+                            <constraint firstItem="eRc-9x-1pg" firstAttribute="leading" secondItem="5eX-47-gBS" secondAttribute="leading" constant="16" id="BCx-1e-SmZ"/>
+                            <constraint firstItem="5eX-47-gBS" firstAttribute="trailing" secondItem="eRc-9x-1pg" secondAttribute="trailing" constant="16" id="Bsy-nW-djz"/>
+                            <constraint firstItem="5eX-47-gBS" firstAttribute="bottom" secondItem="eRc-9x-1pg" secondAttribute="bottom" constant="59" id="LdA-ct-Cm4"/>
+                            <constraint firstItem="lmt-xh-2kZ" firstAttribute="top" secondItem="nYj-Bb-OsX" secondAttribute="bottom" constant="36" id="Wwl-9V-OXF"/>
+                            <constraint firstItem="nYj-Bb-OsX" firstAttribute="leading" secondItem="5eX-47-gBS" secondAttribute="leading" constant="24" id="ZXq-h3-7EL"/>
+                            <constraint firstItem="lmt-xh-2kZ" firstAttribute="leading" secondItem="5eX-47-gBS" secondAttribute="leading" constant="16" id="eFX-nE-ntT"/>
+                            <constraint firstItem="5eX-47-gBS" firstAttribute="trailing" secondItem="nYj-Bb-OsX" secondAttribute="trailing" constant="24" id="mGg-ea-zLu"/>
                             <constraint firstItem="eRc-9x-1pg" firstAttribute="top" secondItem="NbF-5B-V2h" secondAttribute="bottom" constant="16" id="nZ4-ho-Wb3"/>
+                            <constraint firstItem="5eX-47-gBS" firstAttribute="trailing" secondItem="lmt-xh-2kZ" secondAttribute="trailing" constant="16" id="pwH-9o-SzC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5eX-47-gBS"/>
                     </view>
@@ -143,8 +89,25 @@
             </objects>
             <point key="canvasLocation" x="77" y="46"/>
         </scene>
+        <!--MixSearch-->
+        <scene sceneID="9xh-LL-7Pr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MixSearch" id="95T-EF-z0q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WXB-1h-Ddq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="45"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="xAA-CF-Ugy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="xMx-v2-kcE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cg1-SE-6o5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="121"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btnOnboarding" width="343" height="52"/>
         <image name="icOnboarding" width="327" height="248"/>
     </resources>
 </document>
