@@ -22,7 +22,7 @@
         <!--Recipe View Controller-->
         <scene sceneID="9HD-AC-rr7">
             <objects>
-                <viewController id="1z5-gn-ndp" customClass="RecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" id="1z5-gn-ndp" customClass="RecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FGp-uC-EGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,33 +109,35 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxRecipeNeed" translatesAutoresizingMaskIntoConstraints="NO" id="oai-Jg-Hpx">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="56.5"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Vermouth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-Kv-O0q">
-                                                            <rect key="frame" x="16" y="4" width="315" height="48.5"/>
-                                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
-                                                            <color key="textColor" name="anGray1"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 oz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fn5-Lm-fPf">
-                                                            <rect key="frame" x="339" y="4" width="27" height="48.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bUg-Zq-4mu">
+                                                            <rect key="frame" x="16" y="0.0" width="358" height="56.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Vermouth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-Kv-O0q">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="259.5" height="56.5"/>
+                                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
+                                                                    <color key="textColor" name="anGray1"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 oz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fn5-Lm-fPf">
+                                                                    <rect key="frame" x="265.5" y="0.0" width="92.5" height="56.5"/>
+                                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
+                                                                    <color key="textColor" name="anBrown"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="27" id="tQI-co-wSh"/>
+                                                                <constraint firstItem="9Gb-Kv-O0q" firstAttribute="width" secondItem="fn5-Lm-fPf" secondAttribute="width" multiplier="2.8" id="RRE-6c-HNd"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
-                                                            <color key="textColor" name="anBrown"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        </stackView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="oai-Jg-Hpx" firstAttribute="leading" secondItem="eAu-oD-zNw" secondAttribute="leading" id="1kY-dN-v5i"/>
-                                                        <constraint firstAttribute="bottom" secondItem="fn5-Lm-fPf" secondAttribute="bottom" constant="4" id="2oe-0V-IVE"/>
-                                                        <constraint firstItem="9Gb-Kv-O0q" firstAttribute="top" secondItem="eAu-oD-zNw" secondAttribute="top" constant="4" id="4kz-Re-h8y"/>
-                                                        <constraint firstItem="fn5-Lm-fPf" firstAttribute="leading" secondItem="9Gb-Kv-O0q" secondAttribute="trailing" constant="8" id="BcN-rl-WOQ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="9Gb-Kv-O0q" secondAttribute="bottom" constant="4" id="KyY-eR-aGJ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="fn5-Lm-fPf" secondAttribute="trailing" constant="16" id="TpE-uR-bAp"/>
+                                                        <constraint firstItem="bUg-Zq-4mu" firstAttribute="top" secondItem="eAu-oD-zNw" secondAttribute="top" id="HTj-1o-29A"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bUg-Zq-4mu" secondAttribute="bottom" id="Rkl-eJ-1Ya"/>
                                                         <constraint firstAttribute="trailing" secondItem="oai-Jg-Hpx" secondAttribute="trailing" id="Xgf-3H-GZk"/>
+                                                        <constraint firstItem="bUg-Zq-4mu" firstAttribute="leading" secondItem="eAu-oD-zNw" secondAttribute="leading" constant="16" id="gla-mj-gbG"/>
                                                         <constraint firstItem="oai-Jg-Hpx" firstAttribute="top" secondItem="eAu-oD-zNw" secondAttribute="top" id="qI0-pg-pID"/>
-                                                        <constraint firstItem="9Gb-Kv-O0q" firstAttribute="leading" secondItem="eAu-oD-zNw" secondAttribute="leading" constant="16" id="qo1-3m-dst"/>
-                                                        <constraint firstItem="fn5-Lm-fPf" firstAttribute="top" secondItem="eAu-oD-zNw" secondAttribute="top" constant="4" id="t4H-6x-cte"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bUg-Zq-4mu" secondAttribute="trailing" constant="8" id="xgU-po-hWJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="oai-Jg-Hpx" secondAttribute="bottom" id="y7S-uQ-bg7"/>
                                                     </constraints>
                                                 </view>
@@ -161,7 +163,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-z3-kLX" userLabel="header">
                                 <rect key="frame" x="0.0" y="44" width="414" height="276"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="lFx-zH-UAw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="lFx-zH-UAw">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idv-FD-1HB">
@@ -205,7 +207,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-Dr-vm2">
                                                 <rect key="frame" x="374" y="20" width="24" height="24"/>
-                                                <state key="normal" image="icFavorite"/>
+                                                <state key="normal" image="icScrap24Normal"/>
+                                                <state key="selected" image="icScrap24Normal-1"/>
+                                                <connections>
+                                                    <action selector="scrapButtonAction:" destination="1z5-gn-ndp" eventType="touchUpInside" id="CNB-D0-81A"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -246,8 +252,10 @@
                         <viewLayoutGuide key="safeArea" id="bfd-1j-PYE"/>
                     </view>
                     <connections>
+                        <outlet property="drinkNameLabel" destination="al1-AA-qOa" id="OSz-nM-nnZ"/>
                         <outlet property="headerHeightConstraint" destination="9gJ-jl-lvT" id="O6e-zp-KYQ"/>
                         <outlet property="headerImageView" destination="lFx-zH-UAw" id="77i-Gt-4Oz"/>
+                        <outlet property="scrapButton" destination="p6S-Dr-vm2" id="LEh-tq-E6c"/>
                         <outlet property="tableView" destination="PbI-KR-s2s" id="AZf-z2-OUE"/>
                     </connections>
                 </viewController>
@@ -261,7 +269,8 @@
         <image name="icArrowBack" width="24" height="24"/>
         <image name="icBucket" width="375" height="176"/>
         <image name="icCircle" width="24" height="24"/>
-        <image name="icFavorite" width="24" height="24"/>
+        <image name="icScrap24Normal" width="24" height="24"/>
+        <image name="icScrap24Normal-1" width="24" height="24"/>
         <namedColor name="anBrown">
             <color red="0.82745098039215681" green="0.72941176470588232" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
