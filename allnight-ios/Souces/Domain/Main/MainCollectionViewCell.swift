@@ -64,14 +64,14 @@ class MainCollectionViewCell: UICollectionViewCell {
         
         //스크랩 유무에 따른 아이콘 설정 
         if CocktailManager.shared.scrappedCocktails.contains(cocktailInfo.id) {
-            scrapButton.setImage(UIImage(named: scrappedIconName), for: .normal)
+            isScrap = true
         }
     }
     
     //MARK: - IBAction
     @IBAction func scrapButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        isScrap = sender.isSelected
+        
+        isScrap = !isScrap
         
         delegate?.handleScrapButtonDidTap(cell: self)
     }

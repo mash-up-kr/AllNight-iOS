@@ -20,7 +20,6 @@ class SideMenuTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        //재사용되기 전에 값 초기화
         iconImgView.image = nil
         menuNameLabel.text = nil
     }

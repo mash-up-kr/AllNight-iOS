@@ -32,8 +32,6 @@ class SideMenuViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func cancelButtonDidTap(_ sender: UIButton) {
-        print("cancelButtonDidTap")
-        
         dismiss(animated: true, completion: nil)
     }
 }
@@ -62,10 +60,12 @@ extension SideMenuViewController: UITableViewDataSource {
 }
 
 extension SideMenuViewController: UITableViewDelegate {
-    //셀 눌렀을때 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            //TODO: - 스크랩 모아보기 화면으로 이동 
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
-    
         dismiss(animated: true, completion: nil)
     }
 }

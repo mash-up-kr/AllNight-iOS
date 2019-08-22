@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     }
     
     private var searchResults: [String] = []
+    private let cellIdentifier = "searchTableViewCell"
     
     //MARK: - IBOutlet
     @IBOutlet var searchTextField: UITextField!
@@ -64,7 +65,7 @@ class SearchViewController: UIViewController {
     }
     
     //서버 통신
-    func getIngredientList(ingredient: String) {
+    private func getIngredientList(ingredient: String) {
             AllNightProvider.search(ingredient: ingredient, completion: {[weak self] in
                 guard let self = `self` else { return }
                 
@@ -75,7 +76,7 @@ class SearchViewController: UIViewController {
                     }
                 }
             }) {
-                print($0.errorDescription ?? "")
+                print($0.errorDescription ?? "no errorDescription!")
             }
     }
 }
@@ -83,14 +84,13 @@ class SearchViewController: UIViewController {
 //MARK: - TableView Data Source
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //FIXME: - 네트워킹 필요
         return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchTableViewCell", for: indexPath) as? SearchTableViewCell else { return SearchTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SearchTableViewCell else { return SearchTableViewCell() }
         
-        cell.configure(result: searchResults[indexPath.row])
+        cell.configure(ingredient: searchResults[indexPath.row])
         
         return cell
     }
