@@ -43,6 +43,12 @@ final class MainViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
+    
     //MARK: - Method
     private func setUpCollectionView() {
         collectionView.dataSource = self
