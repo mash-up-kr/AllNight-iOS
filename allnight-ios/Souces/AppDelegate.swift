@@ -24,6 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             CocktailManager.shared.scrappedCocktails = Set.init(scrappedCocktails)
         }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let onBoardingStoryboard = UIStoryboard.init(name: "SignIn", bundle: nil)
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        var viewController:UIViewController
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.bool(forKey: "hasRunBefore") == false {
+            print("The app is launching for the first time. Setting UserDefaults...")
+            
+            // Update the flag indicator
+            userDefaults.set(true, forKey: "hasRunBefore")
+//            userDefaults.synchronize() // This forces the app to update userDefaults
+            
+            // Run code here for the first launch
+            viewController = onBoardingStoryboard.instantiateInitialViewController()!
+            
+        } else {
+            print("The app has been launched before. Loading UserDefaults...")
+            // Run code here for every other launch but the first
+            viewController = mainStoryboard.instantiateInitialViewController()!
+        }
+        self.window!.rootViewController = viewController
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
     
