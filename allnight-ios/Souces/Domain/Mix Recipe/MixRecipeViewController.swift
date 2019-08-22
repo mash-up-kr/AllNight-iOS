@@ -34,18 +34,20 @@ final class MixRecipeViewController: UIViewController {
   
   @IBOutlet weak var recipeCollectionView: UICollectionView!
   
-  let FilterPopup = FilterPopupView()
+  let filterPopupView = FilterPopupView()
   
   let ScreenWidth = UIScreen.main.bounds.width
   
   var recipeMode = MixRecipeMode.SingleMode
+  
+  private var didUpdateConstraints = false
   
   @IBAction func tapHome(_ sender: Any) {
     
   }
   
   @IBAction func tapFilter(_ sender: Any) {
-    
+    filterPopupView.isHidden.toggle()
   }
   
   @IBAction func tapMode(_ sender: Any) {
@@ -82,6 +84,28 @@ final class MixRecipeViewController: UIViewController {
     
     setModeImage(recipeMode: recipeMode)
     recipeCollectionView.setCollectionViewLayout(loadRecipeCollectionLayout(recipeMode: recipeMode), animated: true)
+    
+    filterPopupView.filterPopupDelegate = self
+    filterPopupView.isHidden = true
+    view.addSubview(filterPopupView)
+    
+    updateViewConstraints()
+  }
+  
+  override func updateViewConstraints() {
+    if !didUpdateConstraints {
+      
+      NSLayoutConstraint.activate([
+        filterPopupView.leftAnchor.constraint(equalTo: view.leftAnchor),
+        filterPopupView.rightAnchor.constraint(equalTo: view.rightAnchor),
+        filterPopupView.topAnchor.constraint(equalTo: view.topAnchor),
+        filterPopupView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      ])
+      
+      didUpdateConstraints.toggle()
+    }
+    
+    super.updateViewConstraints()
   }
 }
 
@@ -121,7 +145,7 @@ extension MixRecipeViewController: UICollectionViewDelegateFlowLayout {
       height = HeightInSingle
     }
     else if recipeMode == .MultipleMode {
-      width = (ScreenWidth - MarginLeftInSingle * MarginRightInSingle - SpacingItemInMultiple) / 2.0
+      width = (ScreenWidth - MarginLeftInSingle - MarginRightInSingle - SpacingItemInMultiple) / 2.0
       height = HeightInMultiple
     }
     
@@ -137,5 +161,11 @@ extension MixRecipeViewController: RecipeCollectionViewCellDelegate {
     } else {
       
     }
+  }
+}
+
+extension MixRecipeViewController: FilterPopupDelegate {
+  func tapBackground() {
+    filterPopupView.isHidden = true
   }
 }

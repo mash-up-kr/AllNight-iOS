@@ -9,27 +9,37 @@
 import UIKit
 
 class RadioButton: UIButton {
-  var alternateButton:Array<RadioButton>?
+  var groupButton:Array<RadioButton>?
   
-  override func awakeFromNib() {
-    layer.cornerRadius = 5
-    layer.borderWidth = 2.0
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    layer.cornerRadius = 20.0
+    layer.borderWidth = 1.0
     layer.masksToBounds = true
     
     layer.borderColor = UIColor.init(named: "anBrown")?.cgColor
     layer.backgroundColor = UIColor.white.cgColor
-    titleLabel?.textColor = UIColor.black
+    
+    setTitleColor(UIColor.black, for: .normal)
+    titleLabel?.font = UIFont(name: "NanumBarunGothicOTF", size: 12.0)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder: ) not been implemented")
   }
   
   func unselectAlternateButtons(){
-    if alternateButton != nil {
+    if groupButton != nil {
       isSelected = true
       
-      for aButton:RadioButton in alternateButton! {
-        aButton.isSelected = false
+      for aButton:RadioButton in groupButton! {
+        if aButton !== self {
+          aButton.isSelected = false
+        }
       }
-    }else{
-      toggleButton()
+    } else {
+      isSelected.toggle()
     }
   }
   
@@ -38,18 +48,14 @@ class RadioButton: UIButton {
     super.touchesBegan(touches, with: event)
   }
   
-  func toggleButton(){
-    isSelected = !isSelected
-  }
-  
   override var isSelected: Bool {
     didSet {
       if isSelected {
         layer.backgroundColor = UIColor.init(named: "anBrown")?.cgColor
-        titleLabel?.textColor = UIColor.white
+        setTitleColor(UIColor.white, for: .normal)
       } else {
         layer.backgroundColor = UIColor.white.cgColor
-        titleLabel?.textColor = UIColor.black
+        setTitleColor(UIColor.black, for: .normal)
       }
     }
   }
