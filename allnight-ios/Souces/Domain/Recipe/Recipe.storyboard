@@ -22,7 +22,7 @@
         <!--Recipe View Controller-->
         <scene sceneID="9HD-AC-rr7">
             <objects>
-                <viewController id="1z5-gn-ndp" customClass="RecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" id="1z5-gn-ndp" customClass="RecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FGp-uC-EGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
