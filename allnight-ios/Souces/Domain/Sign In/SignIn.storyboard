@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothic.otf">
+            <string>NanumBarunGothicOTF</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign In View Controller-->
         <scene sceneID="oc5-EK-aOF">
@@ -19,31 +24,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLogo" translatesAutoresizingMaskIntoConstraints="NO" id="uJU-pB-Ctk">
-                                <rect key="frame" x="84.5" y="138" width="206" height="156"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="206" id="SOM-VD-5gb"/>
-                                    <constraint firstAttribute="height" constant="156" id="zDp-3N-Got"/>
-                                </constraints>
+                                <rect key="frame" x="70" y="243" width="235" height="72"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aay-t3-qSZ">
                                 <rect key="frame" x="16" y="551" width="343" height="52"/>
-                                <color key="backgroundColor" red="0.82745098039215681" green="0.72941176470588232" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="3F2-O6-Mwf"/>
-                                    <constraint firstAttribute="width" constant="343" id="DUO-Sd-bed"/>
+                                    <constraint firstAttribute="width" secondItem="aay-t3-qSZ" secondAttribute="height" multiplier="343:52" id="6tT-Yj-Q4H"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="시작하기">
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="19"/>
+                                <state key="normal" title="시작하기" backgroundImage="btnSignin">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="yfE-1S-xBY" kind="show" id="Z2K-LK-tn1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="uJU-pB-Ctk" firstAttribute="top" secondItem="BYJ-6v-8ac" secondAttribute="top" constant="118" id="66a-m1-ZGG"/>
-                            <constraint firstItem="aay-t3-qSZ" firstAttribute="centerX" secondItem="Uta-8e-sHv" secondAttribute="centerX" id="Gut-Lz-V7P"/>
+                            <constraint firstItem="uJU-pB-Ctk" firstAttribute="top" secondItem="BYJ-6v-8ac" secondAttribute="top" constant="222.80000000000001" id="66a-m1-ZGG"/>
+                            <constraint firstItem="aay-t3-qSZ" firstAttribute="leading" secondItem="BYJ-6v-8ac" secondAttribute="leading" constant="16" id="C7X-LL-VWX"/>
                             <constraint firstItem="BYJ-6v-8ac" firstAttribute="bottom" secondItem="aay-t3-qSZ" secondAttribute="bottom" constant="64" id="MBu-Jl-q2l"/>
                             <constraint firstItem="uJU-pB-Ctk" firstAttribute="centerX" secondItem="Uta-8e-sHv" secondAttribute="centerX" id="dme-2Y-aw3"/>
+                            <constraint firstItem="BYJ-6v-8ac" firstAttribute="trailing" secondItem="aay-t3-qSZ" secondAttribute="trailing" constant="16" id="u2C-Pl-Gh2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BYJ-6v-8ac"/>
                     </view>
@@ -52,8 +55,17 @@
             </objects>
             <point key="canvasLocation" x="-261" y="-278"/>
         </scene>
+        <!--Onboarding-->
+        <scene sceneID="aQD-wi-kaB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" id="yfE-1S-xBY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xU-mv-Pjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="-279"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btnSignin" width="343" height="52"/>
         <image name="icLogo" width="235" height="72"/>
     </resources>
 </document>
