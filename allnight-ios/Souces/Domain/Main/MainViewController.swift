@@ -109,7 +109,22 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt: \(indexPath)")
-        //TODO: - 선택한 칵테일에 대한 detail recipe 화면으로 연결해야함, 아마 prepare통해서 선택된 칵테일 id나 이름을 같이 넘겨줘야하지 않을까 생각.
+        
+        
+        guard let recipeStoryboard = UIStoryboard(name: "Recipe", bundle: nil) as? UIStoryboard else {
+            print("recipeStoryboard is nil")
+            return
+        }
+        
+        guard let dest = recipeStoryboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else {
+            print("RecipeViewController is nil")
+            return
+        }
+        
+        let id = cocktails[indexPath.row].id
+        print("RecipeVC에 넘겨주는 id: \(id)")
+        dest.searchDetailRecipe(id: id)
+        present(dest, animated: true, completion: nil)
     }
 }
 
