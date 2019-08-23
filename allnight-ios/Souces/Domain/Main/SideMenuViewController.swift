@@ -63,19 +63,21 @@ extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            print("didSelectRowAt: 스크랩 레시피")
+            //TODO: - 스크랩 모아보기 화면으로 이동
+          let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
+          let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
+          
+          nextViewController.editMode = .scrapMode
+          present(nextViewController, animated: true, completion: nil)
         }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        dismiss(animated: true, completion: nil)
-
-//        let mixRecipeStoryboard = UIStoryboard(name: "MixRecipe", bundle: nil)
-//
-//        guard let dest = mixRecipeStoryboard.instantiateViewController(withIdentifier: "mixRecipeView") as? MixRecipeViewController else {
-//            print("MixRecipeViewController is nil")
-//            return
-//        }
-//
-//        self.present(dest, animated: true, completion: nil)
+        else if indexPath.row == 1 {
+          let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
+          let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
+          
+          nextViewController.editMode = .recentMode
+          present(nextViewController, animated: true, completion: nil)
+        }
+      
+      tableView.deselectRow(at: indexPath, animated: true)
     }
 }
