@@ -74,6 +74,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
       alcoholicImgView.image = UIImage(named: alcholicIconName)
     } else {
       alcoholicImgView.image = nil
+      typeLabel.text = ""
     }
     
     //스크랩 유무에 따른 아이콘 설정
