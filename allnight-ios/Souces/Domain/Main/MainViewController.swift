@@ -72,14 +72,24 @@ final class MainViewController: UIViewController {
     }
     
     func handleMenuBarButtonDidTap() {
-        print("handleMenuBarButtonDidTap")
-        
-        //TODO: - show side menu bar
         guard let sideMenuViewController = storyboard?.instantiateViewController(withIdentifier: "SideMenuViewController") else { return }
         
         sideMenuViewController.modalPresentationStyle = .overCurrentContext
         sideMenuViewController.transitioningDelegate = self
         present(sideMenuViewController, animated: true, completion: nil)
+    }
+    
+    func handleScrappedRecipeDidTap() {
+        let mixRecipeStoryboard = UIStoryboard(name: "MixRecipe", bundle: nil)
+        
+        guard let dest = mixRecipeStoryboard.instantiateViewController(withIdentifier: "mixRecipeView") as? MixRecipeViewController else {
+            print("MixRecipeViewController is nil")
+            return
+        }
+        
+        dest.editMode = .scrapMode
+        
+        present(dest, animated: true, completion: nil)
     }
 }
 

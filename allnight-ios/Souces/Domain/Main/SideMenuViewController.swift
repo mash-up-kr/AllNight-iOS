@@ -22,6 +22,12 @@ class SideMenuViewController: UIViewController {
 
         setUpTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 
     private func setUpTableView() {
         tableView.dataSource = self
@@ -62,22 +68,14 @@ extension SideMenuViewController: UITableViewDataSource {
 extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.row == 0 {
-            //TODO: - 스크랩 모아보기 화면으로 이동
-          let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
-          let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
-          
-          nextViewController.editMode = .scrapMode
-          present(nextViewController, animated: true, completion: nil)
+            guard let mainVC = self.presentingViewController as? MainViewController else { return }
+            
+            dismiss(animated: true) {
+                mainVC.handleScrappedRecipeDidTap()
+            }
         }
-        else if indexPath.row == 1 {
-          let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
-          let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
-          
-          nextViewController.editMode = .recentMode
-          present(nextViewController, animated: true, completion: nil)
-        }
-      
-      tableView.deselectRow(at: indexPath, animated: true)
     }
 }
