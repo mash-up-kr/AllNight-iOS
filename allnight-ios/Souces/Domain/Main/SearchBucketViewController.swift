@@ -35,8 +35,10 @@ class SearchBucketViewController: UIViewController {
     }
     
     @IBAction func searchRecipeButtonDidTap(_ sender: UIButton) {
-        print("레시피 찾아보기")
         //재료가 들어간 레시피 리스트 보여주는 화면으로 연결
+        let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
+        present(nextViewController, animated: true, completion: nil)
     }
     
     //MARK: - Method
