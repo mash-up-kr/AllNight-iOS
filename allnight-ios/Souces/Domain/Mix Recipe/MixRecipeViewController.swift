@@ -40,10 +40,18 @@ final class MixRecipeViewController: UIViewController {
   
   var recipeMode = MixRecipeMode.SingleMode
   
+  var ingredients: [String] = CocktailManager.shared.getArrOfIngredientsInBucket()
+  
+  var cocktails: [Cocktail] = []
+  
+  var filterCocktails: [Cocktail] = []
+  
+  var searchOffset = 0
+  
   private var didUpdateConstraints = false
   
   @IBAction func tapHome(_ sender: Any) {
-    
+    dismiss(animated: true, completion: nil)
   }
   
   @IBAction func tapFilter(_ sender: Any) {
@@ -73,14 +81,31 @@ final class MixRecipeViewController: UIViewController {
     
     recipeCollectionView.delegate   = self
     recipeCollectionView.dataSource = self
+  
+    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
     
-    AllNightNetworking().request(.search(ingredient: "맥주"), completionHandler: { (Response) in
-      if let data = try? Response.decodeJSON(Array<String>.self).get() {
-        print(data)
-      }
-    }) { (MoyaError) in
-      print(MoyaError.errorDescription ?? "")
-    }
+    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
+    
+    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
+    
+    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
+    
+    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
+    
+    filterCocktails = cocktails
+    
+//    AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: true, ingredientCount: self.ingredients.count, completion: { [weak self] in
+//      guard let self = `self` else { return }
+//
+//      if let data = try? $0.decodeJSON([Cocktail].self).get() {
+//        self.cocktails.append(contentsOf: data)
+//        self.recipeCollectionView.reloadData()
+//
+//        self.searchOffset += 1
+//      }
+//    }) {
+//      print($0.errorDescription ?? "no errorDescription!")
+//    }
     
     setModeImage(recipeMode: recipeMode)
     recipeCollectionView.setCollectionViewLayout(loadRecipeCollectionLayout(recipeMode: recipeMode), animated: true)
@@ -117,7 +142,7 @@ extension MixRecipeViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return filterCocktails.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -125,13 +150,28 @@ extension MixRecipeViewController: UICollectionViewDataSource {
       return UICollectionViewCell()
     }
     
+    cell.cellDelegate = self
+    cell.configure(indexPath: indexPath, cocktailInfo: filterCocktails[indexPath.row])
+    
     return cell
   }
 }
 
 extension MixRecipeViewController: UICollectionViewDelegate {
-  func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-    return false
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let recipeStoryboard = UIStoryboard(name: "Recipe", bundle: nil) as? UIStoryboard else {
+      print("recipeStoryboard is nil")
+      return
+    }
+    
+    guard let dest = recipeStoryboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else {
+      print("RecipeViewController is nil")
+      return
+    }
+    
+    let id = filterCocktails[indexPath.row].id
+    dest.searchDetailRecipe(id: id)
+    present(dest, animated: true, completion: nil)
   }
 }
 
@@ -154,12 +194,18 @@ extension MixRecipeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension MixRecipeViewController: RecipeCollectionViewCellDelegate {
-  func tapStar(tapped: Bool) {
-    // TODO: 즐겨찾기 기능 만들기
-    if tapped {
-      
-    } else {
-      
+  func tapScrap(cell: RecipeCollectionViewCell) {
+    guard let indexPathTapped = recipeCollectionView.indexPath(for: cell) else {
+      return
+    }
+    
+    let id = filterCocktails[indexPathTapped.row].id
+    if cell.isScrap { //스크랩 한거면
+      //스크랩 바구니에 칵테일 id를 추가
+      CocktailManager.shared.scrappedCocktails.insert(id)
+    } else { //스크랩 취소한거면
+      //스크랩 바구니에서 칵테일 id 삭제
+      CocktailManager.shared.scrappedCocktails.remove(id)
     }
   }
 }
@@ -167,5 +213,9 @@ extension MixRecipeViewController: RecipeCollectionViewCellDelegate {
 extension MixRecipeViewController: FilterPopupDelegate {
   func tapBackground() {
     filterPopupView.isHidden = true
+  }
+  
+  func tapApply(alcoholIndex: Int, ingredientIndex: Int) {
+    // 칵테일 서비스 재요청
   }
 }

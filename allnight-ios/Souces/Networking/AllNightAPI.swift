@@ -10,7 +10,7 @@ import Moya
 
 enum AllNightAPI {
   case search(ingredient: String)
-    case searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int)
+  case searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int)
   case searchStaticCocktails
   case searchCocktailDetail(id: String)
 

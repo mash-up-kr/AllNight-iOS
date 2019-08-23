@@ -10,6 +10,7 @@ import UIKit
 
 protocol FilterPopupDelegate: class {
   func tapBackground()
+  func tapApply(alcoholIndex: Int, ingredientIndex: Int)
 }
 
 class FilterPopupView: UIView {
@@ -101,7 +102,24 @@ class FilterPopupView: UIView {
   }
   
   @objc func tapApply(_ sender: UIButton) {
-    filterPopupDelegate?.tapBackground()
+    var alcoholIndex = 0
+    var ingredientIndex = 0
+    
+    for (index, radio) in alcoholRadioButtonList.enumerated() {
+      if radio.isSelected {
+        alcoholIndex = index
+        break
+      }
+    }
+    
+    for (index, radio) in ingredientRadioButtonList.enumerated() {
+      if radio.isSelected {
+        ingredientIndex = index
+        break
+      }
+    }
+    
+    filterPopupDelegate?.tapApply(alcoholIndex: alcoholIndex, ingredientIndex: ingredientIndex)
   }
   
   override init(frame: CGRect) {
@@ -230,7 +248,7 @@ class FilterPopupView: UIView {
       
       NSLayoutConstraint.activate([
         ingredientRadioButtonList[2].leadingAnchor.constraint(equalTo: ingredientRadioButtonList[1].trailingAnchor, constant: 34.0),
-        ingredientRadioButtonList[2].widthAnchor.constraint(equalToConstant: 40.0),
+        ingredientRadioButtonList[2].widthAnchor.constraint(equalToConstant: 60.0),
         ingredientRadioButtonList[2].heightAnchor.constraint(equalToConstant: 40.0),
         ingredientRadioButtonList[2].centerYAnchor.constraint(equalTo: ingredientLabel.centerYAnchor),
         ])

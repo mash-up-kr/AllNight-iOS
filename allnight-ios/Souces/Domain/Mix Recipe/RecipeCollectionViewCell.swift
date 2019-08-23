@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol RecipeCollectionViewCellDelegate: class {
-  func tapStar(tapped:Bool)
+  func tapScrap(cell: RecipeCollectionViewCell)
 }
 
 class RecipeCollectionViewCell: UICollectionViewCell {
@@ -18,40 +19,67 @@ class RecipeCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
   
-  @IBOutlet weak var detailView: UIView!
+  @IBOutlet weak var detailView: GradientView!
   
   @IBOutlet weak var typeLabel: UILabel!
   
   @IBOutlet weak var nameLabel: UILabel!
   
-  @IBOutlet weak var starButton: UIButton!
+  @IBOutlet weak var scrapButton: UIButton!
   
-  private var starSelected: Bool = false
+  @IBOutlet weak var alcoholicImgView: UIImageView!
+  
+  private let scrappedIconName = "icScrap24Normal-1"
+  private let nonScrappedIconName = "icScrap24Normal"
+  private let alcholicIconName = "icAlcholic"
+  
+  var isScrap = false {
+    didSet {
+      if isScrap {
+        scrapButton.setImage(UIImage(named: scrappedIconName), for: .normal)
+      } else {
+        scrapButton.setImage(UIImage(named: nonScrappedIconName), for: .normal)
+      }
+    }
+  }
   
   var recipeMode: MixRecipeMode = .SingleMode
   
+  private var starSelected: Bool = false
+  
   @IBOutlet weak var detailViewHeightConstraint: NSLayoutConstraint!
   
+  override func prepareForReuse() {
+    imageView.image = nil
+    nameLabel.text = ""
+    scrapButton.setImage(UIImage(named: nonScrappedIconName), for: .normal)
+  }
   
-  override func awakeFromNib() {
+  @IBAction func tapScrap(_ sender: Any) {
+    isScrap.toggle()
+    cellDelegate?.tapScrap(cell: self)
+  }
+  
+  func configure(indexPath: IndexPath, cocktailInfo: Cocktail) {
     
-  }
-  
-  @IBAction func tapStar(_ sender: Any) {
-    if !starSelected {
-        starButton.setImage(#imageLiteral(resourceName: "icFilledStar"), for: .normal)
+    //칵테일 썸네일 이미지 설정
+    let thumbUrl = cocktailInfo.drinkThumb
+    imageView.kf.setImage(with: thumbUrl)
+    
+    //칵테일 이름 설정
+    nameLabel.text = cocktailInfo.drinkName
+    
+    //알코올 유무 표시 이미지 설정
+    if cocktailInfo.alcoholic == "Alcoholic" {
+      alcoholicImgView.image = UIImage(named: alcholicIconName)
     } else {
-        starButton.setImage(#imageLiteral(resourceName: "icUnfilledStar"), for: .normal)
+      alcoholicImgView.image = nil
     }
-  
-    cellDelegate?.tapStar(tapped: starSelected)
-    starSelected.toggle()
-  }
-  
-  func setImage(_ image: UIImage)
-  {
-    imageView.image = image
-    layoutIfNeeded()
+    
+    //스크랩 유무에 따른 아이콘 설정
+    if CocktailManager.shared.scrappedCocktails.contains(cocktailInfo.id) {
+      isScrap = true
+    }
   }
   
   func changeMode(_ mode: MixRecipeMode)

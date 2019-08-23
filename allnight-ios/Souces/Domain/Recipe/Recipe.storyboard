@@ -106,7 +106,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAu-oD-zNw">
                                                     <rect key="frame" x="16" y="8" width="382" height="56.5"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxRecipeNeed" translatesAutoresizingMaskIntoConstraints="NO" id="oai-Jg-Hpx">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxRecipeNeed" translatesAutoresizingMaskIntoConstraints="NO" id="oai-Jg-Hpx">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="56.5"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bUg-Zq-4mu">

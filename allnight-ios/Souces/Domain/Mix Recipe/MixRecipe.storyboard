@@ -14,7 +14,7 @@
         <!--Mix Recipe View Controller-->
         <scene sceneID="dL0-IW-O8G">
             <objects>
-                <viewController id="jsw-lW-8i7" customClass="MixRecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mixRecipeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jsw-lW-8i7" customClass="MixRecipeViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULo-nU-0IW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="Mwe-d9-SjN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBucket" translatesAutoresizingMaskIntoConstraints="NO" id="Mwe-d9-SjN">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="480"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-x8-JHy">
@@ -83,27 +83,12 @@
                                                     </constraints>
                                                     <state key="normal" image="icUnfilledStar"/>
                                                     <connections>
-                                                        <action selector="tapStar:" destination="5cM-Pc-tZx" eventType="touchUpInside" id="8Ro-r2-3Nd"/>
+                                                        <action selector="tapScrap:" destination="5cM-Pc-tZx" eventType="touchUpInside" id="Xgq-JL-gGj"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZH-YX-HpR">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZH-YX-HpR" customClass="GradientView" customModule="allnight_ios" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="406" width="343" height="74"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-g2-Z8F">
-                                                            <rect key="frame" x="8.5" y="35.5" width="327" height="24.5"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="Black Forest Shake">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="20" name="Athelas-Bold"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <size key="shadowOffset" width="2" height="2"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alchoholic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeo-xb-fya">
                                                             <rect key="frame" x="34.5" y="17.5" width="64" height="16"/>
                                                             <fontDescription key="fontDescription" name="Athelas-Regular" family="Athelas" pointSize="14"/>
@@ -117,8 +102,23 @@
                                                                 <constraint firstAttribute="height" constant="24" id="INH-qK-d49"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-g2-Z8F">
+                                                            <rect key="frame" x="8" y="41" width="327" height="24.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="Black Forest Shake">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="20" name="Athelas-Bold"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <size key="shadowOffset" width="2" height="2"/>
+                                                        </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="anBlack2"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="Spv-g2-Z8F" firstAttribute="top" secondItem="RPh-Tk-spa" secondAttribute="bottom" constant="-2" id="DUS-52-olk"/>
                                                         <constraint firstItem="Spv-g2-Z8F" firstAttribute="leading" secondItem="dZH-YX-HpR" secondAttribute="leading" constant="8.5" id="P8P-iA-xpK"/>
@@ -129,6 +129,14 @@
                                                         <constraint firstItem="Aeo-xb-fya" firstAttribute="centerY" secondItem="RPh-Tk-spa" secondAttribute="centerY" id="hVr-yE-BCJ"/>
                                                         <constraint firstAttribute="height" constant="74" id="o2u-hr-o6Z"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                         </view>
@@ -144,11 +152,12 @@
                                             <constraint firstItem="dZH-YX-HpR" firstAttribute="centerX" secondItem="5cM-Pc-tZx" secondAttribute="centerX" id="rt4-15-vTz"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="detailView" destination="dZH-YX-HpR" id="I5D-9v-rZI"/>
+                                            <outlet property="alcoholicImgView" destination="RPh-Tk-spa" id="ye2-cR-bEz"/>
+                                            <outlet property="detailView" destination="dZH-YX-HpR" id="mMI-Kf-Kc0"/>
                                             <outlet property="detailViewHeightConstraint" destination="o2u-hr-o6Z" id="nzp-iB-7zh"/>
                                             <outlet property="imageView" destination="Mwe-d9-SjN" id="a9A-hG-kKM"/>
                                             <outlet property="nameLabel" destination="Spv-g2-Z8F" id="8Ia-hS-eyg"/>
-                                            <outlet property="starButton" destination="H7q-x8-JHy" id="HKB-gs-P66"/>
+                                            <outlet property="scrapButton" destination="H7q-x8-JHy" id="xrT-5x-Gpi"/>
                                             <outlet property="typeLabel" destination="Aeo-xb-fya" id="zeP-Rv-vbF"/>
                                         </connections>
                                     </collectionViewCell>
