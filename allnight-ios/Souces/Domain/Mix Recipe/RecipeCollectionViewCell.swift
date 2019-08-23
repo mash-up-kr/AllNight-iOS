@@ -70,12 +70,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     nameLabel.text = cocktailInfo.drinkName
     
     //알코올 유무 표시 이미지 설정
-    if cocktailInfo.alcoholic == "Alcoholic" {
-      alcoholicImgView.image = UIImage(named: alcholicIconName)
-    } else {
-      alcoholicImgView.image = nil
-      typeLabel.text = ""
-    }
+    typeLabel.text = cocktailInfo.alcoholic
     
     //스크랩 유무에 따른 아이콘 설정
     if CocktailManager.shared.scrappedCocktails.contains(cocktailInfo.id) {

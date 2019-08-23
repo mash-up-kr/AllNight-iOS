@@ -16,7 +16,7 @@ class AllNightProvider {
         provider.request(.search(ingredient: ingredient), completionHandler: completion, errorHandler: error)
     }
 
-    class func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int, completion: @escaping ((Response) -> Void), error: @escaping ((MoyaError) -> Void)) {
+    class func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: String, ingredientCount: Int, completion: @escaping ((Response) -> Void), error: @escaping ((MoyaError) -> Void)) {
         provider.request(.searchCocktails(ingredients: ingredients, offset: offset, isAlcohol: isAlcohol, ingredientCount: ingredientCount), completionHandler: completion, errorHandler: error)
     }
     

@@ -80,7 +80,7 @@ final class MixRecipeViewController: UIViewController {
   
   func doPaging() {
     DispatchQueue.main.async {
-      AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: self.isAlcohol, ingredientCount: self.ingredientCount, completion: { [weak self] in
+      AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: self.isAlcohol ? "true" : "false", ingredientCount: self.ingredientCount, completion: { [weak self] in
         guard let self = `self` else { return }
         
         if let data = try? $0.decodeJSON([Cocktail].self).get() {
@@ -240,6 +240,8 @@ extension MixRecipeViewController: FilterPopupDelegate {
     
     if alcoholIndex == 1 {
       isAlcohol = false
+    } else {
+      isAlcohol = true
     }
     
     switch ingredientIndex {
@@ -259,6 +261,7 @@ extension MixRecipeViewController: FilterPopupDelegate {
     searchOffset = 0
     
     cocktails.removeAll()
+    recipeCollectionView.reloadData()
     
     isWating = true
     doPaging()
