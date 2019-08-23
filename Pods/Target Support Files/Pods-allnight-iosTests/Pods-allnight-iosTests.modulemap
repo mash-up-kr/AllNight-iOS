@@ -1,0 +1,6 @@
+framework module Pods_allnight_iosTests {
+  umbrella header "Pods-allnight-iosTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
