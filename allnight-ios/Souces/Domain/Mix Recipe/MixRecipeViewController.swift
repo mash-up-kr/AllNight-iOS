@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum EditMode: String, CaseIterable {
+  case viewMode
+  case scrapMode
+  case recentMode
+}
+
 enum MixRecipeMode: String, CaseIterable {
   case SingleMode
   case MultipleMode
@@ -24,6 +30,10 @@ enum MixRecipeMode: String, CaseIterable {
 
 final class MixRecipeViewController: UIViewController {
 
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   @IBOutlet weak var topView: UIView!
     
   @IBOutlet weak var homeButton: UIButton!
@@ -39,6 +49,8 @@ final class MixRecipeViewController: UIViewController {
   let ScreenWidth = UIScreen.main.bounds.width
   
   var recipeMode = MixRecipeMode.SingleMode
+  
+  var editMode = EditMode.viewMode
   
   var ingredients: [String] = CocktailManager.shared.getArrOfIngredientsInBucket()
   
@@ -79,25 +91,69 @@ final class MixRecipeViewController: UIViewController {
   }
   
   func doPaging() {
-    DispatchQueue.main.async {
-      AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: self.isAlcohol ? "true" : "false", ingredientCount: self.ingredientCount, completion: { [weak self] in
-        guard let self = `self` else { return }
-        
-        if let data = try? $0.decodeJSON([Cocktail].self).get() {
+    if editMode == .viewMode {
+      DispatchQueue.main.async {
+        AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: self.isAlcohol ? "true" : "false", ingredientCount: self.ingredientCount, completion: { [weak self] in
+          guard let self = `self` else { return }
           
-          if data.count > 0 {
-            self.cocktails.append(contentsOf: data)
-            self.searchOffset += 1
-            self.recipeCollectionView.reloadData()
+          if let data = try? $0.decodeJSON([Cocktail].self).get() {
+            
+            if data.count > 0 {
+              self.cocktails.append(contentsOf: data)
+              self.searchOffset += 1
+              self.recipeCollectionView.reloadData()
+            }
+          }
+          
+          self.isWating = false
+        }) {
+          print($0.errorDescription ?? "" + " errorDescription!")
+          
+          self.isWating = false
+        }
+      }
+    } else if editMode == .scrapMode {
+      // 서비스로부터 스크랩 된 칵테일 목록 가져옴
+      
+      let per = 2
+      var count = per
+      
+      // 모두 불러옴
+      if CocktailManager.shared.scrappedCocktails.count < self.searchOffset * per {
+        return
+      }
+      
+      if CocktailManager.shared.scrappedCocktails.count - self.searchOffset * per < per {
+        count = CocktailManager.shared.scrappedCocktails.count - self.searchOffset * per
+      }
+      
+      let scrapArr = Array(CocktailManager.shared.scrappedCocktails)[(self.searchOffset * per)..<(self.searchOffset * per + count)]
+      
+      DispatchQueue.main.async {
+        for scrapId in scrapArr {
+          AllNightProvider.searchCocktailDetail(id: scrapId, completion: { [weak self] in
+            guard let self = `self` else { return }
+            
+            if let data = try? $0.decodeJSON(CocktailDetail.self).get() {
+              
+              let cocktailData = Cocktail(id: scrapId, drinkName: data.drinkName, enDrinkName: data.enDrinkName, alcoholic: data.alcoholic, drinkThumb: data.drinkThumb)
+              
+              self.cocktails.append(cocktailData)
+              self.recipeCollectionView.reloadData()
+              
+              if self.cocktails.count == (self.searchOffset + 1) * per {
+                self.searchOffset += 1
+                self.isWating = false
+              }
+            }
+          }) {
+            print($0.errorDescription ?? "" + " errorDescription!")
           }
         }
-        
-        self.isWating = false
-      }) {
-        print($0.errorDescription ?? "" + " errorDescription!")
-        
-        self.isWating = false
       }
+        
+    } else if editMode == .recentMode {
+      
     }
   }
   
