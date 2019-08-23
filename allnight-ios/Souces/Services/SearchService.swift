@@ -10,7 +10,7 @@ import Moya
 
 protocol SearchServiceType {
   func search(ingredient: String, completion: @escaping (Result<[String], MoyaError>) -> ())
-    func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: Bool, ingredientCount: Int, completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
+    func searchCocktails(ingredients: [String], offset: Int?, isAlcohol: String, ingredientCount: Int, completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
   func searchStaticCocktails(completion: @escaping (Result<[Cocktail], MoyaError>) -> ())
   func searchCocktailDetail(id: String, completion: @escaping (Result<CocktailDetail, MoyaError>) -> ())
 }
@@ -39,7 +39,7 @@ final class SearchService: SearchServiceType {
   func searchCocktails(
     ingredients: [String],
     offset: Int? = 0,
-    isAlcohol: Bool = true,
+    isAlcohol: String = "true",
     ingredientCount: Int = 0,
     completion: @escaping (Result<[Cocktail], MoyaError>) -> ()
   ) {
