@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CB98E22D814CE0056D36D /* DetailInformationTableViewCell.swift */; };
 		030CB99122D822860056D36D /* RecipeRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */; };
+		031A231B230FE68600F26460 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A231A230FE68600F26460 /* GradientView.swift */; };
 		03DA0B7322D88605002B600E /* Athelas-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6B22D88605002B600E /* Athelas-BoldItalic.ttf */; };
 		03DA0B7422D88605002B600E /* Athelas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6C22D88605002B600E /* Athelas-Regular.ttf */; };
 		03DA0B7522D88605002B600E /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6D22D88605002B600E /* NanumBarunGothicUltraLight.otf */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		030CB98E22D814CE0056D36D /* DetailInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformationTableViewCell.swift; sourceTree = "<group>"; };
 		030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowTableViewCell.swift; sourceTree = "<group>"; };
+		031A231A230FE68600F26460 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		03DA0B6B22D88605002B600E /* Athelas-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-BoldItalic.ttf"; sourceTree = "<group>"; };
 		03DA0B6C22D88605002B600E /* Athelas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-Regular.ttf"; sourceTree = "<group>"; };
 		03DA0B6D22D88605002B600E /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		BA279DB822C77C35004CA0F6 /* Mix Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				031A231A230FE68600F26460 /* GradientView.swift */,
 				BA279DBC22C77CB9004CA0F6 /* MixRecipeViewController.swift */,
 				EF432FB922C79F3500786CFD /* MixRecipe.storyboard */,
 				BEA241C522E3FE0A002F53B8 /* RecipeCollectionViewCell.swift */,
@@ -646,6 +649,7 @@
 				BA96F3F122CFB68100AC27CC /* Cocktail.swift in Sources */,
 				88321639230671EB0057232A /* AllNightProvider.swift in Sources */,
 				BAF5313322C754AE005809C3 /* main.swift in Sources */,
+				031A231B230FE68600F26460 /* GradientView.swift in Sources */,
 				030CB98F22D814CE0056D36D /* DetailInformationTableViewCell.swift in Sources */,
 				BA9932F122C7CC5500E4BFA8 /* UIColor+AllNight.swift in Sources */,
 				BA279DBB22C77C8C004CA0F6 /* MainViewController.swift in Sources */,
