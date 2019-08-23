@@ -86,6 +86,9 @@ final class MainViewController: UIViewController {
             print("MixRecipeViewController is nil")
             return
         }
+        
+        dest.editMode = .scrapMode
+        
         present(dest, animated: true, completion: nil)
     }
 }

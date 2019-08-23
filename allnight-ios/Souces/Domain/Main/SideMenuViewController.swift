@@ -68,22 +68,14 @@ extension SideMenuViewController: UITableViewDataSource {
 extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
-            //TODO: - 스크랩 모아보기 화면으로 이동
-          let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
-          let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
-          
-          nextViewController.editMode = .scrapMode
-          present(nextViewController, animated: true, completion: nil)
-        }
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let mainVC = self.presentingViewController as? MainViewController else { return }
-        
-        dismiss(animated: true) {
-            //Main에서 이벤트 전달
-            mainVC.handleScrappedRecipeDidTap()
+        if indexPath.row == 0 {
+            guard let mainVC = self.presentingViewController as? MainViewController else { return }
+            
+            dismiss(animated: true) {
+                mainVC.handleScrappedRecipeDidTap()
+            }
         }
     }
 }
