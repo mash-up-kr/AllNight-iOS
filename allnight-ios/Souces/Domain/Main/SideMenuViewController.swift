@@ -61,6 +61,7 @@ extension SideMenuViewController: UITableViewDataSource {
 
 extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if indexPath.row == 0 {
             //TODO: - 스크랩 모아보기 화면으로 이동
           let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
