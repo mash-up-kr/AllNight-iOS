@@ -22,6 +22,12 @@ class SideMenuViewController: UIViewController {
 
         setUpTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 
     private func setUpTableView() {
         tableView.dataSource = self
@@ -67,7 +73,13 @@ extension SideMenuViewController: UITableViewDelegate {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
-        dismiss(animated: true, completion: nil)
+        
+        guard let mainVC = self.presentingViewController as? MainViewController else { return }
+        
+        dismiss(animated: true) {
+            //Main에서 이벤트 전달
+            mainVC.handleScrappedRecipeDidTap()
+        }
 
 //        let mixRecipeStoryboard = UIStoryboard(name: "MixRecipe", bundle: nil)
 //
@@ -75,7 +87,7 @@ extension SideMenuViewController: UITableViewDelegate {
 //            print("MixRecipeViewController is nil")
 //            return
 //        }
-//
-//        self.present(dest, animated: true, completion: nil)
+
+        //self.present(dest, animated: true, completion: nil)
     }
 }
