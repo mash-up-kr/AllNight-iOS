@@ -117,10 +117,7 @@ extension MainViewController: UICollectionViewDelegate {
         print("didSelectItemAt: \(indexPath)")
         
         
-        guard let recipeStoryboard = UIStoryboard(name: "Recipe", bundle: nil) as? UIStoryboard else {
-            print("recipeStoryboard is nil")
-            return
-        }
+        let recipeStoryboard = UIStoryboard(name: "Recipe", bundle: nil)
         
         guard let dest = recipeStoryboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else {
             print("RecipeViewController is nil")
