@@ -167,6 +167,9 @@ class FilterPopupView: UIView {
       radio.groupButton = ingredientRadioButtonList
     }
     
+    alcoholRadioButtonList[0].isSelected = true
+    ingredientRadioButtonList[0].isSelected = true
+    
     addSubview(filterView)
     
     updateConstraintsIfNeeded()

@@ -44,9 +44,13 @@ final class MixRecipeViewController: UIViewController {
   
   var cocktails: [Cocktail] = []
   
-  var filterCocktails: [Cocktail] = []
-  
   var searchOffset = 0
+  
+  var isWating = false
+  
+  var ingredientCount = 3
+  
+  var isAlcohol = true
   
   private var didUpdateConstraints = false
   
@@ -74,6 +78,29 @@ final class MixRecipeViewController: UIViewController {
     }
   }
   
+  func doPaging() {
+    DispatchQueue.main.async {
+      AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: self.isAlcohol, ingredientCount: self.ingredientCount, completion: { [weak self] in
+        guard let self = `self` else { return }
+        
+        if let data = try? $0.decodeJSON([Cocktail].self).get() {
+          
+          if data.count > 0 {
+            self.cocktails.append(contentsOf: data)
+            self.searchOffset += 1
+            self.recipeCollectionView.reloadData()
+          }
+        }
+        
+        self.isWating = false
+      }) {
+        print($0.errorDescription ?? "" + " errorDescription!")
+        
+        self.isWating = false
+      }
+    }
+  }
+  
   // MARK: View LifeCycle
 
   override func viewDidLoad() {
@@ -81,32 +108,10 @@ final class MixRecipeViewController: UIViewController {
     
     recipeCollectionView.delegate   = self
     recipeCollectionView.dataSource = self
-  
-    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
     
-    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
-    
-    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
-    
-    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
-    
-    cocktails.append(Cocktail(id: "AWwR4KrWVDB3vSw6z7_w", drinkName: "카르 스키", enDrinkName: "Karsk", alcoholic: "Alcoholic", drinkThumb: URL(string: "https://www.thecocktaildb.com/images/media/drink/808mxk1487602471.jpg")!))
-    
-    filterCocktails = cocktails
-    
-//    AllNightProvider.searchCocktails(ingredients: self.ingredients, offset: self.searchOffset, isAlcohol: true, ingredientCount: self.ingredients.count, completion: { [weak self] in
-//      guard let self = `self` else { return }
-//
-//      if let data = try? $0.decodeJSON([Cocktail].self).get() {
-//        self.cocktails.append(contentsOf: data)
-//        self.recipeCollectionView.reloadData()
-//
-//        self.searchOffset += 1
-//      }
-//    }) {
-//      print($0.errorDescription ?? "no errorDescription!")
-//    }
-    
+    isWating = true
+    doPaging()
+
     setModeImage(recipeMode: recipeMode)
     recipeCollectionView.setCollectionViewLayout(loadRecipeCollectionLayout(recipeMode: recipeMode), animated: true)
     
@@ -142,7 +147,7 @@ extension MixRecipeViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return filterCocktails.count
+    return cocktails.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -151,7 +156,7 @@ extension MixRecipeViewController: UICollectionViewDataSource {
     }
     
     cell.cellDelegate = self
-    cell.configure(indexPath: indexPath, cocktailInfo: filterCocktails[indexPath.row])
+    cell.configure(indexPath: indexPath, cocktailInfo: cocktails[indexPath.row])
     
     return cell
   }
@@ -159,6 +164,11 @@ extension MixRecipeViewController: UICollectionViewDataSource {
 
 extension MixRecipeViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    if isWating {
+      return
+    }
+    
     guard let recipeStoryboard = UIStoryboard(name: "Recipe", bundle: nil) as? UIStoryboard else {
       print("recipeStoryboard is nil")
       return
@@ -169,9 +179,16 @@ extension MixRecipeViewController: UICollectionViewDelegate {
       return
     }
     
-    let id = filterCocktails[indexPath.row].id
+    let id = cocktails[indexPath.row].id
     dest.searchDetailRecipe(id: id)
     present(dest, animated: true, completion: nil)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    if indexPath.row == cocktails.count - 1 && !isWating {
+      isWating = true
+      doPaging()
+    }
   }
 }
 
@@ -199,7 +216,7 @@ extension MixRecipeViewController: RecipeCollectionViewCellDelegate {
       return
     }
     
-    let id = filterCocktails[indexPathTapped.row].id
+    let id = cocktails[indexPathTapped.row].id
     if cell.isScrap { //스크랩 한거면
       //스크랩 바구니에 칵테일 id를 추가
       CocktailManager.shared.scrappedCocktails.insert(id)
@@ -217,5 +234,33 @@ extension MixRecipeViewController: FilterPopupDelegate {
   
   func tapApply(alcoholIndex: Int, ingredientIndex: Int) {
     // 칵테일 서비스 재요청
+    filterPopupView.isHidden = true
+    
+    print(alcoholIndex, ingredientIndex)
+    
+    if alcoholIndex == 1 {
+      isAlcohol = false
+    }
+    
+    switch ingredientIndex {
+    case 0:
+      ingredientCount = 3
+      break
+    case 1:
+      ingredientCount = 4
+      break
+    case 2:
+      ingredientCount = 5
+      break
+    default:
+      ingredientCount = 3
+    }
+    
+    searchOffset = 0
+    
+    cocktails.removeAll()
+    
+    isWating = true
+    doPaging()
   }
 }
