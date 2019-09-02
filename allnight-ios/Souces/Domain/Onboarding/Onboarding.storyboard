@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="homeButton" destination="eRc-9x-1pg" id="FD7-pX-s5m"/>
+                        <outlet property="questionLabel" destination="lmt-xh-2kZ" id="tCW-3x-wZE"/>
                         <outlet property="yesButton" destination="NbF-5B-V2h" id="cIu-To-OJa"/>
                     </connections>
                 </viewController>

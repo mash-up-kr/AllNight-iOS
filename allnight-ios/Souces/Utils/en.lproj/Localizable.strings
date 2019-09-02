@@ -6,11 +6,18 @@
   Copyright © 2019 kanghoon. All rights reserved.
 */
 
-"스크랩 레시피" = "Favorite Recipe";
+"스크랩 레시피" = "Scrap Recipe";
 "최근에 본 레시피" = "Recent Recipe";
-"적용하기" = "APPLY";
-"재료 수" = "# of Ingredients";
-
-"네, 받아볼래요." = "Yes";
-"홈으로 그냥 갈래요." = "Go to main";
-"시작하기" = "Start";
+"적용하기" = "Apply";
+"재료 수" = "Ingredients";
+"네, 받아볼래요." = "Yes, I like it";
+"홈으로 그냥 갈래요." = "I want to go home.";
+"시작하기" = "Start Party!";
+"레시피 찾아보기" = "Find recipe";
+"어떤 술/재료로 만드시나요?" = "Insert your collection";
+"여러개를 선택하실 수 있습니다." = "More than one can be selected";
+"추가되었습니다." = "Added";
+"ex) 보드카" = "ex) Vodka";
+"술을 선택해서 레시피를 추천 받아보시겠어요?" = "Would you like to recieve cocktail recipes?";
+"찾으시는 칵테일의 정보가 없습니다." = "There is no information for the cocktail you are looking for.";
+"아직 둘러본 레시피가 없습니다." = "You haven't browsed any recipes yet!";

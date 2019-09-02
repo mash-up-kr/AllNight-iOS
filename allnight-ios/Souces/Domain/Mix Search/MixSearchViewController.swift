@@ -17,7 +17,7 @@ final class MixSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex) 보드카", attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex) 보드카".localized, attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)])
         initTableView()
     }
     
@@ -56,7 +56,7 @@ extension MixSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.searchResult.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        showToast(message: "추가되었습니다.")
+        showToast(message: "추가되었습니다.".localized)
     }
     
     private func showToast(message: String) {

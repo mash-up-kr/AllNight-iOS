@@ -24,7 +24,7 @@ class SearchBucketViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchRecipeButton.setTitle("레시피 찾아보기".localized, for: .normal)
         tableView.delegate = self
         tableView.dataSource = self
     }
