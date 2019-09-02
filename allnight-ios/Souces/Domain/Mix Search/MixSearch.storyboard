@@ -236,19 +236,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1o-QG-Got">
-                                                    <rect key="frame" x="335" y="24" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="ptl-hH-dBx"/>
-                                                        <constraint firstAttribute="width" constant="24" id="w43-12-EFp"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="icPutincart24Disactive"/>
+                                                    <rect key="frame" x="327" y="16" width="40" height="40"/>
+                                                    <state key="normal" image="icPutincart24Disactive"/>
                                                     <connections>
                                                         <action selector="putInCartButtonDidTap:" destination="69z-va-7Pu" eventType="touchUpInside" id="tgA-cC-Vv8"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="O1o-QG-Got" secondAttribute="trailing" constant="16" id="e01-HA-MCH"/>
+                                                <constraint firstAttribute="trailing" secondItem="O1o-QG-Got" secondAttribute="trailing" constant="8" id="e01-HA-MCH"/>
                                                 <constraint firstItem="cmc-ER-urJ" firstAttribute="leading" secondItem="kLF-cp-7jD" secondAttribute="leading" constant="16" id="miM-Bg-Psg"/>
                                                 <constraint firstItem="O1o-QG-Got" firstAttribute="centerY" secondItem="kLF-cp-7jD" secondAttribute="centerY" id="oOn-xO-ZTj"/>
                                                 <constraint firstItem="cmc-ER-urJ" firstAttribute="centerY" secondItem="kLF-cp-7jD" secondAttribute="centerY" id="yc0-eu-enn"/>
@@ -263,14 +259,18 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAn-ng-5ls" userLabel="backButton">
-                                <rect key="frame" x="16" y="40" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="32" width="40" height="40"/>
                                 <state key="normal" image="icArrowBack"/>
                                 <connections>
                                     <action selector="backButtonDidTap:" destination="7bg-rb-i92" eventType="touchUpInside" id="NPn-Qm-hxI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-cq-IhK" userLabel="frontButton">
-                                <rect key="frame" x="335" y="40" width="24" height="24"/>
+                                <rect key="frame" x="335" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BwE-7M-2jg"/>
+                                    <constraint firstAttribute="width" constant="40" id="efU-bS-1hS"/>
+                                </constraints>
                                 <state key="normal" image="icArrowFront"/>
                                 <connections>
                                     <segue destination="g6n-4e-wGD" kind="show" id="S1y-iv-9R2"/>
@@ -281,8 +281,8 @@
                         <constraints>
                             <constraint firstItem="w9S-i9-8S4" firstAttribute="leading" secondItem="044-3p-YSQ" secondAttribute="leading" constant="16" id="2VA-c0-Bad"/>
                             <constraint firstItem="BHU-v4-CDd" firstAttribute="leading" secondItem="w9S-i9-8S4" secondAttribute="leading" id="2hj-F5-4kV"/>
-                            <constraint firstItem="HAn-ng-5ls" firstAttribute="leading" secondItem="qwc-Ib-jr9" secondAttribute="leading" constant="16" id="5n7-kk-JTk"/>
-                            <constraint firstItem="qwc-Ib-jr9" firstAttribute="trailing" secondItem="dMW-cq-IhK" secondAttribute="trailing" constant="16" id="7rB-Yq-58y"/>
+                            <constraint firstItem="HAn-ng-5ls" firstAttribute="leading" secondItem="qwc-Ib-jr9" secondAttribute="leading" id="5n7-kk-JTk"/>
+                            <constraint firstItem="qwc-Ib-jr9" firstAttribute="trailing" secondItem="dMW-cq-IhK" secondAttribute="trailing" id="7rB-Yq-58y"/>
                             <constraint firstItem="w9S-i9-8S4" firstAttribute="top" secondItem="BHU-v4-CDd" secondAttribute="bottom" constant="10" id="BSq-gg-7Wt"/>
                             <constraint firstItem="cvq-rP-gSk" firstAttribute="leading" secondItem="qwc-Ib-jr9" secondAttribute="leading" constant="14" id="DPg-ph-djf"/>
                             <constraint firstItem="X7t-jI-V4W" firstAttribute="leading" secondItem="qwc-Ib-jr9" secondAttribute="leading" constant="16" id="PkA-dJ-6H4"/>
@@ -293,10 +293,10 @@
                             <constraint firstItem="wyn-fO-Rio" firstAttribute="leading" secondItem="qwc-Ib-jr9" secondAttribute="leading" id="g9u-Kd-dLP"/>
                             <constraint firstItem="w9S-i9-8S4" firstAttribute="top" secondItem="ZmN-tf-h3d" secondAttribute="bottom" constant="12" id="hzC-2N-YAC"/>
                             <constraint firstItem="cvq-rP-gSk" firstAttribute="top" secondItem="X7t-jI-V4W" secondAttribute="bottom" constant="9" id="jzU-Hl-MqT"/>
-                            <constraint firstItem="HAn-ng-5ls" firstAttribute="top" secondItem="qwc-Ib-jr9" secondAttribute="top" constant="20" id="mYw-mr-ml1"/>
-                            <constraint firstItem="dMW-cq-IhK" firstAttribute="top" secondItem="qwc-Ib-jr9" secondAttribute="top" constant="20" id="rE7-VY-vKq"/>
+                            <constraint firstItem="HAn-ng-5ls" firstAttribute="top" secondItem="qwc-Ib-jr9" secondAttribute="top" constant="12" id="mYw-mr-ml1"/>
+                            <constraint firstItem="dMW-cq-IhK" firstAttribute="top" secondItem="qwc-Ib-jr9" secondAttribute="top" constant="12" id="rE7-VY-vKq"/>
                             <constraint firstItem="qwc-Ib-jr9" firstAttribute="trailing" secondItem="wyn-fO-Rio" secondAttribute="trailing" id="vVY-vx-8eN"/>
-                            <constraint firstItem="X7t-jI-V4W" firstAttribute="top" secondItem="HAn-ng-5ls" secondAttribute="bottom" constant="20" id="ynM-OL-WcW"/>
+                            <constraint firstItem="X7t-jI-V4W" firstAttribute="top" secondItem="HAn-ng-5ls" secondAttribute="bottom" constant="12" id="ynM-OL-WcW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qwc-Ib-jr9"/>
                     </view>
@@ -339,7 +339,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmj-xV-yZF">
-                                                    <rect key="frame" x="335" y="20" width="24" height="24"/>
+                                                    <rect key="frame" x="327" y="12" width="40" height="40"/>
                                                     <state key="normal" image="icRemove"/>
                                                     <connections>
                                                         <action selector="removeButtonDidTap:" destination="qyI-Zm-5Ia" eventType="touchUpInside" id="GWL-Js-NxE"/>
@@ -348,7 +348,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="UmG-If-SF2" firstAttribute="centerY" secondItem="nVB-AJ-0Br" secondAttribute="centerY" id="4an-1e-6Tp"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fmj-xV-yZF" secondAttribute="trailing" constant="16" id="G1n-Pp-wAJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fmj-xV-yZF" secondAttribute="trailing" constant="8" id="G1n-Pp-wAJ"/>
                                                 <constraint firstItem="Fmj-xV-yZF" firstAttribute="centerY" secondItem="nVB-AJ-0Br" secondAttribute="centerY" id="dkl-s3-Wqq"/>
                                                 <constraint firstItem="UmG-If-SF2" firstAttribute="leading" secondItem="nVB-AJ-0Br" secondAttribute="leading" constant="16" id="kMF-EJ-bwn"/>
                                             </constraints>
@@ -364,7 +364,7 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="176"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-aH-N20" userLabel="back Button">
-                                <rect key="frame" x="16" y="40" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="32" width="40" height="40"/>
                                 <state key="normal" image="icArrowBack"/>
                                 <connections>
                                     <action selector="backButtonDidTap:" destination="g6n-4e-wGD" eventType="touchUpInside" id="tiO-aa-hUg"/>
@@ -389,12 +389,12 @@
                             <constraint firstItem="Meb-kc-SOj" firstAttribute="trailing" secondItem="cRS-fh-dgH" secondAttribute="trailing" id="6A2-yb-8ty"/>
                             <constraint firstItem="cRS-fh-dgH" firstAttribute="leading" secondItem="Meb-kc-SOj" secondAttribute="leading" id="CVp-sn-SLn"/>
                             <constraint firstItem="fD7-QX-kUF" firstAttribute="leading" secondItem="Meb-kc-SOj" secondAttribute="leading" id="FYL-gH-6x2"/>
-                            <constraint firstItem="aEk-fd-Bam" firstAttribute="top" secondItem="Gxl-aH-N20" secondAttribute="bottom" constant="20" id="ccz-gk-spm"/>
+                            <constraint firstItem="aEk-fd-Bam" firstAttribute="top" secondItem="Gxl-aH-N20" secondAttribute="bottom" constant="12" id="ccz-gk-spm"/>
                             <constraint firstItem="Meb-kc-SOj" firstAttribute="trailing" secondItem="aEk-fd-Bam" secondAttribute="trailing" id="df9-Tg-W1y"/>
                             <constraint firstItem="cRS-fh-dgH" firstAttribute="bottom" secondItem="Meb-kc-SOj" secondAttribute="bottom" id="fWh-st-cFz"/>
                             <constraint firstItem="Meb-kc-SOj" firstAttribute="trailing" secondItem="fD7-QX-kUF" secondAttribute="trailing" id="qsw-Yc-chr"/>
-                            <constraint firstItem="Gxl-aH-N20" firstAttribute="leading" secondItem="Meb-kc-SOj" secondAttribute="leading" constant="16" id="t7E-hX-ZWm"/>
-                            <constraint firstItem="Gxl-aH-N20" firstAttribute="top" secondItem="Meb-kc-SOj" secondAttribute="top" constant="20" id="toF-qS-YoI"/>
+                            <constraint firstItem="Gxl-aH-N20" firstAttribute="leading" secondItem="Meb-kc-SOj" secondAttribute="leading" id="t7E-hX-ZWm"/>
+                            <constraint firstItem="Gxl-aH-N20" firstAttribute="top" secondItem="Meb-kc-SOj" secondAttribute="top" constant="12" id="toF-qS-YoI"/>
                             <constraint firstItem="aEk-fd-Bam" firstAttribute="leading" secondItem="Meb-kc-SOj" secondAttribute="leading" id="ubR-3P-JTf"/>
                             <constraint firstItem="Meb-kc-SOj" firstAttribute="bottom" secondItem="fD7-QX-kUF" secondAttribute="bottom" constant="54" id="zco-72-Gw9"/>
                         </constraints>
@@ -411,14 +411,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icArrowBack" width="24" height="24"/>
+        <image name="icArrowBack" width="40" height="40"/>
         <image name="icArrowFront" width="24" height="24"/>
         <image name="icBucket" width="375" height="176"/>
         <image name="icCart" width="24" height="24"/>
         <image name="icFind" width="24" height="24"/>
         <image name="icMixCocktail" width="74" height="74"/>
-        <image name="icPutincart24Disactive" width="24" height="24"/>
-        <image name="icRemove" width="24" height="24"/>
+        <image name="icPutincart24Disactive" width="40" height="40"/>
+        <image name="icRemove" width="40" height="40"/>
         <namedColor name="anBlack2">
             <color red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

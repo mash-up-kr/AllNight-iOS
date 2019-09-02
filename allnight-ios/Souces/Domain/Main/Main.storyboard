@@ -45,10 +45,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="164" height="217"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmI-7c-N85">
-                                                    <rect key="frame" x="132.5" y="8" width="24" height="24"/>
+                                                    <rect key="frame" x="124" y="0.0" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="YmI-7c-N85" secondAttribute="height" multiplier="1:1" id="ghW-pI-oFb"/>
-                                                        <constraint firstAttribute="width" constant="24" id="rlI-tb-xws"/>
                                                     </constraints>
                                                     <state key="normal" image="icScrap24Normal"/>
                                                     <connections>
@@ -78,14 +77,14 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="YmI-7c-N85" firstAttribute="top" secondItem="f08-xb-95G" secondAttribute="top" constant="8" id="2Pz-ay-S87"/>
+                                            <constraint firstItem="YmI-7c-N85" firstAttribute="top" secondItem="f08-xb-95G" secondAttribute="top" id="2Pz-ay-S87"/>
                                             <constraint firstItem="dUH-Bt-vwk" firstAttribute="leading" secondItem="f08-xb-95G" secondAttribute="leading" constant="6.5" id="3ZH-lm-DPn"/>
                                             <constraint firstItem="6Sy-8e-FnT" firstAttribute="leading" secondItem="f08-xb-95G" secondAttribute="leading" constant="8.5" id="NlI-P2-3zm"/>
                                             <constraint firstItem="7qS-nf-3ZA" firstAttribute="leading" secondItem="f08-xb-95G" secondAttribute="leading" id="Ogm-JY-W0y"/>
                                             <constraint firstAttribute="trailing" secondItem="6Sy-8e-FnT" secondAttribute="trailing" constant="7.5" id="RZr-VD-dIw"/>
                                             <constraint firstItem="7qS-nf-3ZA" firstAttribute="top" secondItem="f08-xb-95G" secondAttribute="top" id="aWF-h2-E08"/>
                                             <constraint firstAttribute="trailing" secondItem="7qS-nf-3ZA" secondAttribute="trailing" id="atR-Q4-TvB"/>
-                                            <constraint firstAttribute="trailing" secondItem="YmI-7c-N85" secondAttribute="trailing" constant="7.5" id="cQ5-Wk-juV"/>
+                                            <constraint firstAttribute="trailing" secondItem="YmI-7c-N85" secondAttribute="trailing" id="cQ5-Wk-juV"/>
                                             <constraint firstAttribute="bottom" secondItem="7qS-nf-3ZA" secondAttribute="bottom" id="rwG-yd-Dh1"/>
                                             <constraint firstAttribute="bottom" secondItem="6Sy-8e-FnT" secondAttribute="bottom" constant="14" id="vJ4-ec-MNB"/>
                                             <constraint firstAttribute="bottom" secondItem="dUH-Bt-vwk" secondAttribute="bottom" constant="34" id="zPO-Ev-smF"/>
@@ -103,7 +102,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIt-nl-7fw">
-                                            <rect key="frame" x="343" y="20" width="24" height="24"/>
+                                            <rect key="frame" x="335" y="12" width="40" height="40"/>
                                             <state key="normal" image="icMenu24"/>
                                             <connections>
                                                 <action selector="menuBarButtonDidTap:" destination="CYY-Zr-wuz" eventType="touchUpInside" id="V2K-O6-90Y"/>
@@ -135,11 +134,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="dIt-nl-7fw" firstAttribute="top" secondItem="CYY-Zr-wuz" secondAttribute="top" constant="20" id="3rP-HO-Cqy"/>
+                                        <constraint firstItem="dIt-nl-7fw" firstAttribute="top" secondItem="CYY-Zr-wuz" secondAttribute="top" constant="12" id="3rP-HO-Cqy"/>
                                         <constraint firstItem="gWQ-zJ-k5v" firstAttribute="centerY" secondItem="9fF-QO-KEO" secondAttribute="centerY" id="Ipb-Xb-SfK"/>
                                         <constraint firstItem="LN4-a7-Gii" firstAttribute="centerX" secondItem="CYY-Zr-wuz" secondAttribute="centerX" id="LDi-V0-ssH"/>
                                         <constraint firstItem="9fF-QO-KEO" firstAttribute="top" secondItem="LN4-a7-Gii" secondAttribute="bottom" constant="48" id="NlA-Wz-YLJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="dIt-nl-7fw" secondAttribute="trailing" constant="8" id="OCT-Rd-H56"/>
+                                        <constraint firstAttribute="trailing" secondItem="dIt-nl-7fw" secondAttribute="trailing" id="OCT-Rd-H56"/>
                                         <constraint firstItem="9fF-QO-KEO" firstAttribute="leading" secondItem="CYY-Zr-wuz" secondAttribute="leading" constant="16" id="SYm-2m-hV5"/>
                                         <constraint firstItem="rpL-Tc-qb0" firstAttribute="centerX" secondItem="CYY-Zr-wuz" secondAttribute="centerX" id="aLg-bH-m8E"/>
                                         <constraint firstAttribute="trailing" secondItem="gWQ-zJ-k5v" secondAttribute="trailing" constant="16" id="bTF-n0-sjs"/>
@@ -202,12 +201,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-a7-uo8">
-                                                    <rect key="frame" x="8" y="15" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="Mxc-uc-y29"/>
-                                                        <constraint firstAttribute="width" secondItem="Lnm-a7-uo8" secondAttribute="height" multiplier="1:1" id="qo0-yr-vae"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icScrap24Normal-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-a7-uo8">
+                                                    <rect key="frame" x="0.0" y="7" width="40" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스크랩 레시피" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNg-8i-EhJ">
                                                     <rect key="frame" x="40" y="15" width="108.5" height="24"/>
@@ -218,8 +213,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Lnm-a7-uo8" firstAttribute="centerY" secondItem="LvF-KQ-PEq" secondAttribute="centerY" id="QuM-us-OY4"/>
-                                                <constraint firstItem="UNg-8i-EhJ" firstAttribute="leading" secondItem="Lnm-a7-uo8" secondAttribute="trailing" constant="8" id="eTq-dA-ctG"/>
-                                                <constraint firstItem="Lnm-a7-uo8" firstAttribute="leading" secondItem="LvF-KQ-PEq" secondAttribute="leading" constant="8" id="sKP-14-g1Y"/>
+                                                <constraint firstItem="UNg-8i-EhJ" firstAttribute="leading" secondItem="Lnm-a7-uo8" secondAttribute="trailing" id="eTq-dA-ctG"/>
+                                                <constraint firstItem="Lnm-a7-uo8" firstAttribute="leading" secondItem="LvF-KQ-PEq" secondAttribute="leading" id="sKP-14-g1Y"/>
                                                 <constraint firstItem="UNg-8i-EhJ" firstAttribute="centerY" secondItem="LvF-KQ-PEq" secondAttribute="centerY" id="z57-8W-Per"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -235,12 +230,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5nt-Uc-vh3">
-                                                    <rect key="frame" x="8" y="15" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="E2N-Yn-Evu"/>
-                                                        <constraint firstAttribute="width" secondItem="5nt-Uc-vh3" secondAttribute="height" multiplier="1:1" id="Ghu-t9-001"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHistory24Normal" translatesAutoresizingMaskIntoConstraints="NO" id="5nt-Uc-vh3">
+                                                    <rect key="frame" x="0.0" y="7" width="40" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근에 본 레시피" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8o-iA-KR1">
                                                     <rect key="frame" x="40" y="15" width="130.5" height="24"/>
@@ -252,8 +243,8 @@
                                             <constraints>
                                                 <constraint firstItem="n8o-iA-KR1" firstAttribute="centerY" secondItem="hGS-YT-cVe" secondAttribute="centerY" id="Edp-26-woF"/>
                                                 <constraint firstItem="5nt-Uc-vh3" firstAttribute="centerY" secondItem="hGS-YT-cVe" secondAttribute="centerY" id="dz4-4Q-tbY"/>
-                                                <constraint firstItem="n8o-iA-KR1" firstAttribute="leading" secondItem="5nt-Uc-vh3" secondAttribute="trailing" constant="8" id="o3e-5d-I94"/>
-                                                <constraint firstItem="5nt-Uc-vh3" firstAttribute="leading" secondItem="hGS-YT-cVe" secondAttribute="leading" constant="8" id="xfQ-Rk-Ho0"/>
+                                                <constraint firstItem="n8o-iA-KR1" firstAttribute="leading" secondItem="5nt-Uc-vh3" secondAttribute="trailing" id="o3e-5d-I94"/>
+                                                <constraint firstItem="5nt-Uc-vh3" firstAttribute="leading" secondItem="hGS-YT-cVe" secondAttribute="leading" id="xfQ-Rk-Ho0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -384,14 +375,18 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWl-aF-W55" userLabel="backButton">
-                                <rect key="frame" x="16" y="40" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="32" width="40" height="40"/>
                                 <state key="normal" image="icArrowBack"/>
                                 <connections>
                                     <action selector="backButtonDidTap:" destination="PkN-eQ-sYP" eventType="touchUpInside" id="zFK-fK-Ub7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlR-f4-rT7" userLabel="frontButton">
-                                <rect key="frame" x="335" y="40" width="24" height="24"/>
+                                <rect key="frame" x="335" y="32" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ITr-XD-0pG"/>
+                                    <constraint firstAttribute="height" constant="40" id="fds-W4-JBM"/>
+                                </constraints>
                                 <state key="normal" image="icArrowFront"/>
                                 <connections>
                                     <segue destination="HKw-mL-Gw6" kind="show" identifier="showSearchBucketSegue" id="HRD-UD-YnW"/>
@@ -401,11 +396,11 @@
                         <color key="backgroundColor" name="anBlack2"/>
                         <constraints>
                             <constraint firstItem="Q2N-bZ-Qto" firstAttribute="leading" secondItem="62t-n2-FNW" secondAttribute="leading" id="1k6-5f-OVg"/>
-                            <constraint firstItem="xlR-f4-rT7" firstAttribute="top" secondItem="Gw5-Jh-zBy" secondAttribute="top" constant="20" id="5yc-0V-xPL"/>
+                            <constraint firstItem="xlR-f4-rT7" firstAttribute="top" secondItem="Gw5-Jh-zBy" secondAttribute="top" constant="12" id="5yc-0V-xPL"/>
                             <constraint firstItem="aSo-Ac-eiB" firstAttribute="leading" secondItem="Gw5-Jh-zBy" secondAttribute="leading" constant="16" id="K2H-Pl-eVX"/>
-                            <constraint firstItem="JWl-aF-W55" firstAttribute="top" secondItem="Gw5-Jh-zBy" secondAttribute="top" constant="20" id="LLD-kk-Pgs"/>
+                            <constraint firstItem="JWl-aF-W55" firstAttribute="top" secondItem="Gw5-Jh-zBy" secondAttribute="top" constant="12" id="LLD-kk-Pgs"/>
                             <constraint firstItem="Gw5-Jh-zBy" firstAttribute="bottom" secondItem="og0-3G-3lU" secondAttribute="bottom" id="Oev-3z-o6m"/>
-                            <constraint firstItem="aSo-Ac-eiB" firstAttribute="top" secondItem="JWl-aF-W55" secondAttribute="bottom" constant="20" id="Pk8-ou-xuI"/>
+                            <constraint firstItem="aSo-Ac-eiB" firstAttribute="top" secondItem="JWl-aF-W55" secondAttribute="bottom" constant="12" id="Pk8-ou-xuI"/>
                             <constraint firstItem="Gw5-Jh-zBy" firstAttribute="trailing" secondItem="og0-3G-3lU" secondAttribute="trailing" id="Q4s-QM-eyJ"/>
                             <constraint firstItem="og0-3G-3lU" firstAttribute="leading" secondItem="Gw5-Jh-zBy" secondAttribute="leading" id="VaL-qy-D8z"/>
                             <constraint firstItem="62t-n2-FNW" firstAttribute="top" secondItem="OON-Bn-bu7" secondAttribute="bottom" constant="12" id="X3Y-Ys-PQK"/>
@@ -415,8 +410,8 @@
                             <constraint firstItem="qXV-qI-9lV" firstAttribute="top" secondItem="aSo-Ac-eiB" secondAttribute="bottom" constant="9" id="eEY-2A-Ict"/>
                             <constraint firstItem="62t-n2-FNW" firstAttribute="top" secondItem="Q2N-bZ-Qto" secondAttribute="bottom" constant="10" id="gO7-cO-B4L"/>
                             <constraint firstItem="62t-n2-FNW" firstAttribute="leading" secondItem="9de-Hn-4ll" secondAttribute="leading" constant="16" id="gZr-Uq-iEv"/>
-                            <constraint firstItem="Gw5-Jh-zBy" firstAttribute="trailing" secondItem="xlR-f4-rT7" secondAttribute="trailing" constant="16" id="h5e-Gr-xZC"/>
-                            <constraint firstItem="JWl-aF-W55" firstAttribute="leading" secondItem="Gw5-Jh-zBy" secondAttribute="leading" constant="16" id="r7k-YB-VZ0"/>
+                            <constraint firstItem="Gw5-Jh-zBy" firstAttribute="trailing" secondItem="xlR-f4-rT7" secondAttribute="trailing" id="h5e-Gr-xZC"/>
+                            <constraint firstItem="JWl-aF-W55" firstAttribute="leading" secondItem="Gw5-Jh-zBy" secondAttribute="leading" id="r7k-YB-VZ0"/>
                             <constraint firstItem="62t-n2-FNW" firstAttribute="top" secondItem="qXV-qI-9lV" secondAttribute="bottom" constant="70" id="tsJ-u4-D2U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gw5-Jh-zBy"/>
@@ -460,7 +455,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4I-o8-AMg">
-                                                    <rect key="frame" x="335" y="20" width="24" height="24"/>
+                                                    <rect key="frame" x="327" y="12" width="40" height="40"/>
                                                     <state key="normal" image="icRemove"/>
                                                     <connections>
                                                         <action selector="removeButtonDidTap:" destination="CLD-a7-s56" eventType="touchUpInside" id="4xn-Pe-mid"/>
@@ -470,7 +465,7 @@
                                             <constraints>
                                                 <constraint firstItem="D4I-o8-AMg" firstAttribute="centerY" secondItem="iT1-06-4uX" secondAttribute="centerY" id="K6p-F6-R4X"/>
                                                 <constraint firstItem="xkr-0G-SJC" firstAttribute="leading" secondItem="iT1-06-4uX" secondAttribute="leading" constant="16" id="NTJ-tS-Eo3"/>
-                                                <constraint firstAttribute="trailing" secondItem="D4I-o8-AMg" secondAttribute="trailing" constant="16" id="qPl-Ew-ATC"/>
+                                                <constraint firstAttribute="trailing" secondItem="D4I-o8-AMg" secondAttribute="trailing" constant="8" id="qPl-Ew-ATC"/>
                                                 <constraint firstItem="xkr-0G-SJC" firstAttribute="centerY" secondItem="iT1-06-4uX" secondAttribute="centerY" id="uwR-qb-dL2"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -485,7 +480,7 @@
                                 <rect key="frame" x="0.0" y="84" width="375" height="176"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEe-Nw-62s" userLabel="back Button">
-                                <rect key="frame" x="16" y="40" width="24" height="24"/>
+                                <rect key="frame" x="0.0" y="32" width="40" height="40"/>
                                 <state key="normal" image="icArrowBack"/>
                                 <connections>
                                     <action selector="backButtonDidTap:" destination="HKw-mL-Gw6" eventType="touchUpInside" id="nBh-1X-8F7"/>
@@ -512,12 +507,12 @@
                             <constraint firstItem="D7d-4e-wz6" firstAttribute="trailing" secondItem="YvC-e8-DWp" secondAttribute="trailing" id="Vvw-b6-vl1"/>
                             <constraint firstItem="D7d-4e-wz6" firstAttribute="trailing" secondItem="Bkj-Pr-ReA" secondAttribute="trailing" id="Xfz-7T-XrG"/>
                             <constraint firstItem="YvC-e8-DWp" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" id="Zzo-i2-Wto"/>
-                            <constraint firstItem="dEe-Nw-62s" firstAttribute="top" secondItem="D7d-4e-wz6" secondAttribute="top" constant="20" id="ceN-uc-VAa"/>
+                            <constraint firstItem="dEe-Nw-62s" firstAttribute="top" secondItem="D7d-4e-wz6" secondAttribute="top" constant="12" id="ceN-uc-VAa"/>
                             <constraint firstItem="YvC-e8-DWp" firstAttribute="bottom" secondItem="D7d-4e-wz6" secondAttribute="bottom" id="j3k-2e-c5B"/>
                             <constraint firstItem="YvC-e8-DWp" firstAttribute="top" secondItem="Bkj-Pr-ReA" secondAttribute="bottom" id="lzo-MD-PTa"/>
                             <constraint firstItem="Bkj-Pr-ReA" firstAttribute="top" secondItem="5yJ-fb-07g" secondAttribute="bottom" id="oOa-Fh-K1O"/>
-                            <constraint firstItem="dEe-Nw-62s" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" constant="16" id="pMn-fL-2jv"/>
-                            <constraint firstItem="5yJ-fb-07g" firstAttribute="top" secondItem="dEe-Nw-62s" secondAttribute="bottom" constant="20" id="ypC-YQ-X4n"/>
+                            <constraint firstItem="dEe-Nw-62s" firstAttribute="leading" secondItem="D7d-4e-wz6" secondAttribute="leading" id="pMn-fL-2jv"/>
+                            <constraint firstItem="5yJ-fb-07g" firstAttribute="top" secondItem="dEe-Nw-62s" secondAttribute="bottom" constant="12" id="ypC-YQ-X4n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D7d-4e-wz6"/>
                     </view>
@@ -533,16 +528,18 @@
     </scenes>
     <resources>
         <image name="icAlcholic" width="24" height="24"/>
-        <image name="icArrowBack" width="24" height="24"/>
+        <image name="icArrowBack" width="40" height="40"/>
         <image name="icArrowFront" width="24" height="24"/>
         <image name="icBucket" width="375" height="176"/>
         <image name="icErase24Active" width="24" height="24"/>
         <image name="icFind" width="24" height="24"/>
-        <image name="icMenu24" width="24" height="24"/>
+        <image name="icHistory24Normal" width="40" height="40"/>
+        <image name="icMenu24" width="40" height="40"/>
         <image name="icMixCocktail" width="74" height="74"/>
-        <image name="icPutincart24Disactive" width="24" height="24"/>
-        <image name="icRemove" width="24" height="24"/>
-        <image name="icScrap24Normal" width="24" height="24"/>
+        <image name="icPutincart24Disactive" width="40" height="40"/>
+        <image name="icRemove" width="40" height="40"/>
+        <image name="icScrap24Normal" width="40" height="40"/>
+        <image name="icScrap24Normal-1" width="40" height="40"/>
         <image name="imgCocktailTest" width="210" height="210"/>
         <image name="imgMainConcept" width="357" height="436"/>
         <image name="textimg" width="175" height="26"/>

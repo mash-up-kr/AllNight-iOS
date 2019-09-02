@@ -199,14 +199,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnT-Fs-K2Q">
-                                                <rect key="frame" x="16" y="20" width="24" height="24"/>
+                                                <rect key="frame" x="0.0" y="12" width="40" height="40"/>
                                                 <state key="normal" image="icArrowBack"/>
                                                 <connections>
                                                     <action selector="backButtonAction:" destination="1z5-gn-ndp" eventType="touchUpInside" id="4eW-iv-Fm4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-Dr-vm2">
-                                                <rect key="frame" x="374" y="20" width="24" height="24"/>
+                                                <rect key="frame" x="366" y="12" width="40" height="40"/>
                                                 <state key="normal" image="icScrap24Normal"/>
                                                 <state key="selected" image="icScrap24Normal-1"/>
                                                 <connections>
@@ -215,11 +215,11 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="tnT-Fs-K2Q" firstAttribute="leading" secondItem="ZXw-ym-KHH" secondAttribute="leading" constant="16" id="1Bg-LG-v5T"/>
+                                            <constraint firstItem="tnT-Fs-K2Q" firstAttribute="leading" secondItem="ZXw-ym-KHH" secondAttribute="leading" id="1Bg-LG-v5T"/>
                                             <constraint firstItem="tnT-Fs-K2Q" firstAttribute="centerY" secondItem="ZXw-ym-KHH" secondAttribute="centerY" id="Pz5-v1-FYw"/>
                                             <constraint firstAttribute="height" constant="64" id="ULp-yJ-u1u"/>
                                             <constraint firstItem="p6S-Dr-vm2" firstAttribute="centerY" secondItem="ZXw-ym-KHH" secondAttribute="centerY" id="Vlh-Fd-hO6"/>
-                                            <constraint firstAttribute="trailing" secondItem="p6S-Dr-vm2" secondAttribute="trailing" constant="16" id="bIC-Rw-AH3"/>
+                                            <constraint firstAttribute="trailing" secondItem="p6S-Dr-vm2" secondAttribute="trailing" constant="8" id="bIC-Rw-AH3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -266,11 +266,11 @@
     </scenes>
     <resources>
         <image name="boxRecipeNeed" width="343" height="40"/>
-        <image name="icArrowBack" width="24" height="24"/>
+        <image name="icArrowBack" width="40" height="40"/>
         <image name="icBucket" width="375" height="176"/>
         <image name="icCircle" width="24" height="24"/>
-        <image name="icScrap24Normal" width="24" height="24"/>
-        <image name="icScrap24Normal-1" width="24" height="24"/>
+        <image name="icScrap24Normal" width="40" height="40"/>
+        <image name="icScrap24Normal-1" width="40" height="40"/>
         <namedColor name="anBrown">
             <color red="0.82745098039215681" green="0.72941176470588232" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
