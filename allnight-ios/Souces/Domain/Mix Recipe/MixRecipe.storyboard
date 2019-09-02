@@ -23,21 +23,21 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcc-N4-PWe">
-                                        <rect key="frame" x="16" y="20" width="24" height="24"/>
+                                        <rect key="frame" x="8" y="12" width="40" height="40"/>
                                         <state key="normal" image="icHome"/>
                                         <connections>
                                             <action selector="tapHome:" destination="jsw-lW-8i7" eventType="touchUpInside" id="uih-sn-VA2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fK6-6R-Txi">
-                                        <rect key="frame" x="374" y="20" width="24" height="24"/>
+                                        <rect key="frame" x="366" y="12" width="40" height="40"/>
                                         <state key="normal" image="icFilter"/>
                                         <connections>
                                             <action selector="tapFilter:" destination="jsw-lW-8i7" eventType="touchUpInside" id="OB8-EM-eSL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNN-VV-vPU">
-                                        <rect key="frame" x="334" y="20" width="24" height="24"/>
+                                        <rect key="frame" x="326" y="12" width="40" height="40"/>
                                         <state key="normal" image="icMultiple"/>
                                         <connections>
                                             <action selector="tapMode:" destination="jsw-lW-8i7" eventType="touchUpInside" id="uii-Ro-RVr"/>
@@ -50,9 +50,9 @@
                                     <constraint firstItem="qNN-VV-vPU" firstAttribute="centerY" secondItem="1TY-Ao-68K" secondAttribute="centerY" id="GkY-fS-ymF"/>
                                     <constraint firstItem="fK6-6R-Txi" firstAttribute="centerY" secondItem="1TY-Ao-68K" secondAttribute="centerY" id="TQi-gs-gcj"/>
                                     <constraint firstItem="lcc-N4-PWe" firstAttribute="centerY" secondItem="1TY-Ao-68K" secondAttribute="centerY" id="eus-kO-Fpg"/>
-                                    <constraint firstItem="lcc-N4-PWe" firstAttribute="leading" secondItem="1TY-Ao-68K" secondAttribute="leading" constant="16" id="f5U-qF-y0q"/>
-                                    <constraint firstAttribute="trailing" secondItem="fK6-6R-Txi" secondAttribute="trailing" constant="16" id="jyW-w7-JfG"/>
-                                    <constraint firstAttribute="trailing" secondItem="qNN-VV-vPU" secondAttribute="trailing" constant="56" id="zPs-mX-PO2"/>
+                                    <constraint firstItem="lcc-N4-PWe" firstAttribute="leading" secondItem="1TY-Ao-68K" secondAttribute="leading" constant="8" id="f5U-qF-y0q"/>
+                                    <constraint firstAttribute="trailing" secondItem="fK6-6R-Txi" secondAttribute="trailing" constant="8" id="jyW-w7-JfG"/>
+                                    <constraint firstAttribute="trailing" secondItem="qNN-VV-vPU" secondAttribute="trailing" constant="48" id="zPs-mX-PO2"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kuG-qu-8l9">
@@ -76,12 +76,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="480"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-x8-JHy">
-                                                    <rect key="frame" x="299" y="20" width="24" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="13z-Ma-JFk"/>
-                                                        <constraint firstAttribute="height" constant="24" id="lxg-A8-124"/>
-                                                    </constraints>
-                                                    <state key="normal" image="icUnfilledStar"/>
+                                                    <rect key="frame" x="287" y="16" width="40" height="40"/>
+                                                    <state key="normal" image="icScrap24Normal"/>
                                                     <connections>
                                                         <action selector="tapScrap:" destination="5cM-Pc-tZx" eventType="touchUpInside" id="Xgq-JL-gGj"/>
                                                     </connections>
@@ -135,11 +131,11 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dZH-YX-HpR" secondAttribute="bottom" id="1Fb-Bl-xbZ"/>
                                             <constraint firstItem="Mwe-d9-SjN" firstAttribute="height" secondItem="5cM-Pc-tZx" secondAttribute="height" id="8nP-pv-QgG"/>
-                                            <constraint firstAttribute="trailing" secondItem="H7q-x8-JHy" secondAttribute="trailing" constant="20" id="A0d-yW-0DW"/>
+                                            <constraint firstAttribute="trailing" secondItem="H7q-x8-JHy" secondAttribute="trailing" constant="16" id="A0d-yW-0DW"/>
                                             <constraint firstItem="Mwe-d9-SjN" firstAttribute="width" secondItem="5cM-Pc-tZx" secondAttribute="width" id="FrT-gq-nFE"/>
                                             <constraint firstItem="dZH-YX-HpR" firstAttribute="width" secondItem="5cM-Pc-tZx" secondAttribute="width" id="MLM-iB-tp3"/>
                                             <constraint firstItem="Mwe-d9-SjN" firstAttribute="centerY" secondItem="5cM-Pc-tZx" secondAttribute="centerY" id="cjc-vO-k2X"/>
-                                            <constraint firstItem="H7q-x8-JHy" firstAttribute="top" secondItem="5cM-Pc-tZx" secondAttribute="top" constant="20" id="hfy-LO-0yt"/>
+                                            <constraint firstItem="H7q-x8-JHy" firstAttribute="top" secondItem="5cM-Pc-tZx" secondAttribute="top" constant="16" id="hfy-LO-0yt"/>
                                             <constraint firstItem="Mwe-d9-SjN" firstAttribute="centerX" secondItem="5cM-Pc-tZx" secondAttribute="centerX" id="pIS-Zk-EHJ"/>
                                             <constraint firstItem="dZH-YX-HpR" firstAttribute="centerX" secondItem="5cM-Pc-tZx" secondAttribute="centerX" id="rt4-15-vTz"/>
                                         </constraints>
@@ -183,10 +179,10 @@
     <resources>
         <image name="icBucket" width="375" height="176"/>
         <image name="icCircle" width="24" height="24"/>
-        <image name="icFilter" width="24" height="24"/>
-        <image name="icHome" width="24" height="24"/>
-        <image name="icMultiple" width="24" height="24"/>
-        <image name="icUnfilledStar" width="24" height="24"/>
+        <image name="icFilter" width="40" height="40"/>
+        <image name="icHome" width="40" height="40"/>
+        <image name="icMultiple" width="40" height="40"/>
+        <image name="icScrap24Normal" width="40" height="40"/>
         <namedColor name="anBlack2">
             <color red="0.043137254901960784" green="0.047058823529411764" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
