@@ -75,7 +75,7 @@ class FilterPopupView: UIView {
   private var ingredientLabel: UIView = {
     let label = UILabel()
     
-    label.text = "재료 수"
+    label.text = "재료 수".localized
     label.font = UIFont(name: "NanumBarunGothicOTF", size: 16.0)
     
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,7 @@ class FilterPopupView: UIView {
     button.translatesAutoresizingMaskIntoConstraints = false
     
     button.backgroundColor = #colorLiteral(red: 0.8274509804, green: 0.7294117647, blue: 0.568627451, alpha: 1)
-    button.setTitle("적용하기", for: .normal)
+    button.setTitle("적용하기".localized, for: .normal)
     button.titleLabel?.font = UIFont(name: "NanumBarunGothicOTF", size: 16.0)
     
     button.addTarget(self, action: #selector(tapApply), for: .touchDown)

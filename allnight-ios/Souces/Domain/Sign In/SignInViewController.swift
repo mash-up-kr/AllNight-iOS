@@ -10,6 +10,7 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
+    @IBOutlet weak var startButton: UIButton!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -17,5 +18,6 @@ final class SignInViewController: UIViewController {
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        startButton.setTitle("시작하기".localized, for: .normal)
     }
 }

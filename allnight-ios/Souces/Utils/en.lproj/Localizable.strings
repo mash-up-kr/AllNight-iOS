@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  allnight-ios
+
+  Created by Suji Kim on 9/1/19.
+  Copyright © 2019 kanghoon. All rights reserved.
+*/
+
+"스크랩 레시피" = "Favorite Recipe";
+"최근에 본 레시피" = "Recent Recipe";
+"적용하기" = "APPLY";
+"재료 수" = "# of Ingredients";
+
+"네, 받아볼래요." = "Yes";
+"홈으로 그냥 갈래요." = "Go to main";
+"시작하기" = "Start";
