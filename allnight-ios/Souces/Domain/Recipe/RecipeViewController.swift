@@ -43,7 +43,6 @@ final class RecipeViewController: UIViewController {
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchDetailRecipe(id: "AWwR4K0EVDB3vSw6z8CM")
         initTableView()
     }
     
@@ -141,15 +140,12 @@ private extension RecipeViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath) as? DetailInformationTableViewCell else {
             return UITableViewCell()
         }
-        var glass = ""
-        var instruction = ""
+        var glass = cocktailDetail?.enGlass ?? "No information about glass."
+        var instruction = cocktailDetail?.enInstructions ?? "No information about instruction."
         
         if LanguageManger.language == "ko" {
             glass = cocktailDetail?.glass ?? "잔에 대한 내용이 없습니다."
             instruction = cocktailDetail?.instructions ?? "Instruction에 대한 내용이 없습니다."
-        } else {
-            glass = cocktailDetail?.enGlass ?? "No information about glass."
-            instruction = cocktailDetail?.enInstructions ?? "No information about instruction."
         }
         
         switch indexPath.section {
@@ -285,7 +281,6 @@ extension RecipeViewController {
         AllNightProvider.searchCocktailDetail(id: id, completion: {
             if let data = try? $0.decodeJSON(CocktailDetail.self).get() {
                 self.cocktailDetail = data
-//                print(self.cocktailDetail ?? "")
                 self.cocktailId = id
                 DispatchQueue.main.async {
                     self.updateDetailHeaderView()
