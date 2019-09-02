@@ -113,20 +113,20 @@
                                                             <rect key="frame" x="16" y="0.0" width="358" height="56.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sweet Vermouth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gb-Kv-O0q">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="259.5" height="56.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="56.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
                                                                     <color key="textColor" name="anGray1"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 oz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fn5-Lm-fPf">
-                                                                    <rect key="frame" x="265.5" y="0.0" width="92.5" height="56.5"/>
+                                                                    <rect key="frame" x="217" y="0.0" width="141" height="56.5"/>
                                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                                                     <color key="textColor" name="anBrown"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="9Gb-Kv-O0q" firstAttribute="width" secondItem="fn5-Lm-fPf" secondAttribute="width" multiplier="2.8" id="RRE-6c-HNd"/>
+                                                                <constraint firstItem="9Gb-Kv-O0q" firstAttribute="width" secondItem="fn5-Lm-fPf" secondAttribute="width" multiplier="1.5" id="RRE-6c-HNd"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
