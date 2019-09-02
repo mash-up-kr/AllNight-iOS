@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="g1T-OY-LLD">
             <objects>
-                <viewController id="fHJ-BZ-PlW" sceneMemberID="viewController">
+                <viewController id="fHJ-BZ-PlW" customClass="OnboardingViewController" customModule="allnight_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Saf-Tb-wjb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,6 +84,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5eX-47-gBS"/>
                     </view>
+                    <connections>
+                        <outlet property="homeButton" destination="eRc-9x-1pg" id="FD7-pX-s5m"/>
+                        <outlet property="questionLabel" destination="lmt-xh-2kZ" id="tCW-3x-wZE"/>
+                        <outlet property="yesButton" destination="NbF-5B-V2h" id="cIu-To-OJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUS-sv-ato" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

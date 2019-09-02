@@ -27,11 +27,11 @@ class SideMenuTableViewCell: UITableViewCell {
     func configure(indexPath: IndexPath) {
         if indexPath.row == 0 {
             iconImgView.image = UIImage(named: "icScrap24Normal-1")
-            menuNameLabel.text = "스크랩 레시피"
+            menuNameLabel.text = "스크랩 레시피".localized
         }
         else if indexPath.row == 1 {
             iconImgView.image = UIImage(named: "icHistory24Normal")
-            menuNameLabel.text = "최근에 본 레시피"
+            menuNameLabel.text = "최근에 본 레시피".localized
         }
     }
 }

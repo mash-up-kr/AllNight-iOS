@@ -53,7 +53,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         backgroundImgView.kf.setImage(with: thumbUrl)
         
         //칵테일 이름 설정
-        cocktailNameLabel.text = cocktailInfo.drinkName
+        cocktailNameLabel.text = cocktailInfo.enDrinkName
         
         //알코올 유무 표시 이미지 설정
         if cocktailInfo.alcoholic == "Alcoholic" {

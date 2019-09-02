@@ -421,6 +421,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icArrowFront" id="Zpl-wP-6g9"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailInstructionLabel" destination="qXV-qI-9lV" id="Hpb-oh-gMs"/>
+                        <outlet property="ingredientQuestionLabel" destination="aSo-Ac-eiB" id="m8o-BV-ca7"/>
                         <outlet property="searchTextField" destination="Q2N-bZ-Qto" id="FUt-Xw-3RO"/>
                         <outlet property="tableView" destination="og0-3G-3lU" id="fJH-Pa-xX3"/>
                     </connections>

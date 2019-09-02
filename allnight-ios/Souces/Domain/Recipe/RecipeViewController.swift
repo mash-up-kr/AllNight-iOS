@@ -43,7 +43,6 @@ final class RecipeViewController: UIViewController {
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchDetailRecipe(id: "AWwR4K0EVDB3vSw6z8CM")
         initTableView()
     }
     
@@ -113,10 +112,17 @@ private extension RecipeViewController {
         
         if let cocktail = cocktailDetail {
             var measurement = ""
+            let ingredientName = LanguageManger.language == "ko" ? cocktail.ingredientArray[indexPath.row - 1] : cocktail.enIngredientArray[indexPath.row - 1]
+            
             if indexPath.row <= cocktail.measureArray.count {
-                measurement = cocktail.measureArray[indexPath.row - 1]
+                if LanguageManger.language == "ko" {
+                    measurement = cocktail.measureArray[indexPath.row - 1]
+                } else {
+                    measurement = cocktail.enMeasureArray[indexPath.row - 1]
+                }
             }
-            cell.configure(ingredientName: cocktail.ingredientArray[indexPath.row - 1] , measure: measurement)
+            
+            cell.configure(ingredientName: ingredientName , measure: measurement)
         }
         
         if indexPath.row == lastRowIndex {
@@ -134,14 +140,21 @@ private extension RecipeViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellIdentifier, for: indexPath) as? DetailInformationTableViewCell else {
             return UITableViewCell()
         }
+        var glass = cocktailDetail?.enGlass ?? "No information about glass."
+        var instruction = cocktailDetail?.enInstructions ?? "No information about instruction."
+        
+        if LanguageManger.language == "ko" {
+            glass = cocktailDetail?.glass ?? "잔에 대한 내용이 없습니다."
+            instruction = cocktailDetail?.instructions ?? "Instruction에 대한 내용이 없습니다."
+        }
         
         switch indexPath.section {
         case 0:
 //            cell.configure(title: "INTRO", detail: "칵테일이라는 이름의 유래는 여러가지 설이 있으나, 17 95년에 미국의 루이지애나주 뉴올리언스에 이주해온A. A. 페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합하여 프랑스어로 코크티에(coquetier)라고 부른 데에서 비롯되었다는 설이 가장 유력합니다.")
 //        case 1:
-            cell.configure(title: "GLASS", detail: cocktailDetail?.glass ?? "glass")
+            cell.configure(title: "GLASS", detail: glass)
         default:
-            cell.configure(title: "INSTRUCTION", detail: cocktailDetail?.instructions ?? "18oz 맥주 유리에 코로나를 부어 맥주에 럼주를 부어 넣으십시오")
+            cell.configure(title: "INSTRUCTION", detail: instruction)
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
         }
         
@@ -268,7 +281,6 @@ extension RecipeViewController {
         AllNightProvider.searchCocktailDetail(id: id, completion: {
             if let data = try? $0.decodeJSON(CocktailDetail.self).get() {
                 self.cocktailDetail = data
-//                print(self.cocktailDetail ?? "")
                 self.cocktailId = id
                 DispatchQueue.main.async {
                     self.updateDetailHeaderView()

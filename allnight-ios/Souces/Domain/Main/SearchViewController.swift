@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    @IBOutlet weak var ingredientQuestionLabel: UILabel!
+    @IBOutlet weak var detailInstructionLabel: UILabel!
     //MARK: - Property
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -25,7 +27,8 @@ class SearchViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ingredientQuestionLabel.text = "어떤 술/재료로 만드시나요?".localized
+        detailInstructionLabel.text = "여러개를 선택하실 수 있습니다.".localized
         commonInit()
     }
     
@@ -53,7 +56,7 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         
         //change searchTextField placeholder color
-        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex)칵테일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "ex) 보드카".localized, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
         //searchTextField clear버튼 설정
         guard let clearButton = searchTextField.value(forKey: "_clearButton") as? UIButton else {
