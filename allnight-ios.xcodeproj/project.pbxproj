@@ -11,6 +11,8 @@
 		030CB99122D822860056D36D /* RecipeRowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */; };
 		031A231B230FE68600F26460 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A231A230FE68600F26460 /* GradientView.swift */; };
 		03739181231CB5CE004639C9 /* LanguageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03739180231CB5CE004639C9 /* LanguageManger.swift */; };
+		03739183231CC059004639C9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03739182231CC059004639C9 /* String.swift */; };
+		03739186231CC0DA004639C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03739188231CC0DA004639C9 /* Localizable.strings */; };
 		03DA0B7322D88605002B600E /* Athelas-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6B22D88605002B600E /* Athelas-BoldItalic.ttf */; };
 		03DA0B7422D88605002B600E /* Athelas-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6C22D88605002B600E /* Athelas-Regular.ttf */; };
 		03DA0B7522D88605002B600E /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03DA0B6D22D88605002B600E /* NanumBarunGothicUltraLight.otf */; };
@@ -85,6 +87,10 @@
 		030CB99022D822860056D36D /* RecipeRowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowTableViewCell.swift; sourceTree = "<group>"; };
 		031A231A230FE68600F26460 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		03739180231CB5CE004639C9 /* LanguageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManger.swift; sourceTree = "<group>"; };
+		03739182231CC059004639C9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		03739187231CC0DA004639C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		03739189231CC117004639C9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0373918A231CC117004639C9 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		03DA0B6B22D88605002B600E /* Athelas-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-BoldItalic.ttf"; sourceTree = "<group>"; };
 		03DA0B6C22D88605002B600E /* Athelas-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Athelas-Regular.ttf"; sourceTree = "<group>"; };
 		03DA0B6D22D88605002B600E /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
@@ -321,6 +327,8 @@
 				BA279DD122C78773004CA0F6 /* UICollectionView+reusableCell.swift */,
 				BA9932F022C7CC5500E4BFA8 /* UIColor+AllNight.swift */,
 				BA96F3EE22CFB3B400AC27CC /* Moya+Decode.swift */,
+				03739182231CC059004639C9 /* String.swift */,
+				03739188231CC0DA004639C9 /* Localizable.strings */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -499,6 +507,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = BAF5310022C74790005809C3;
 			productRefGroup = BAF5310A22C74790005809C3 /* Products */;
@@ -529,6 +538,7 @@
 				EF432FBC22C79F3D00786CFD /* MixSearch.storyboard in Resources */,
 				EF432FBE22C79F4800786CFD /* Onboarding.storyboard in Resources */,
 				03DA0B7322D88605002B600E /* Athelas-BoldItalic.ttf in Resources */,
+				03739186231CC0DA004639C9 /* Localizable.strings in Resources */,
 				03DA0B7A22D88605002B600E /* NanumBarunGothicLight.otf in Resources */,
 				BAF5311722C74791005809C3 /* LaunchScreen.storyboard in Resources */,
 				BAF5311422C74791005809C3 /* Assets.xcassets in Resources */,
@@ -634,6 +644,7 @@
 			files = (
 				BEA241C622E3FE0A002F53B8 /* RecipeCollectionViewCell.swift in Sources */,
 				030CB99122D822860056D36D /* RecipeRowTableViewCell.swift in Sources */,
+				03739183231CC059004639C9 /* String.swift in Sources */,
 				EF432FC622C7D0FC00786CFD /* SearchResultTableViewCell.swift in Sources */,
 				BA279DC122C77CE2004CA0F6 /* SignInViewController.swift in Sources */,
 				BA96F3E922CFA23400AC27CC /* AllNightAPI.swift in Sources */,
@@ -694,10 +705,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		03739188231CC0DA004639C9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03739187231CC0DA004639C9 /* en */,
+				0373918A231CC117004639C9 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BAF5311522C74791005809C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BAF5311622C74791005809C3 /* Base */,
+				03739189231CC117004639C9 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -709,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -770,6 +792,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
