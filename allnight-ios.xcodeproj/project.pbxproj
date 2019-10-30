@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,8 @@
 		8884B2F622D83F1A000276BB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F522D83F1A000276BB /* SideMenuViewController.swift */; };
 		8884B2F822D843EE000276BB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F722D843EE000276BB /* SideMenuTableViewCell.swift */; };
 		8884B2FA22D849FE000276BB /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884B2F922D849FE000276BB /* SlideInTransition.swift */; };
+		8891EBC823697C7D0002C8CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8891EBC723697C7D0002C8CC /* Realm */; };
+		8891EBCA23697C7D0002C8CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8891EBC923697C7D0002C8CC /* RealmSwift */; };
 		8892846623059AB500B8FBDF /* MainCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892846423059AB500B8FBDF /* MainCollectionReusableHeaderView.swift */; };
 		889284692305BF9E00B8FBDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889284682305BF9E00B8FBDF /* SearchViewController.swift */; };
 		8892846F2305CFDA00B8FBDF /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8892846E2305CFDA00B8FBDF /* SearchTableViewCell.swift */; };
@@ -57,7 +59,6 @@
 		BAF5313122C74D2A005809C3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313022C74D2A005809C3 /* Networking.swift */; };
 		BAF5313322C754AE005809C3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313222C754AE005809C3 /* main.swift */; };
 		BAF5313522C754F5005809C3 /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF5313422C754F5005809C3 /* StubAppDelegate.swift */; };
-		BE279016230FD3EE006FE094 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE279015230FD3EE006FE094 /* GradientView.swift */; };
 		BEA241C622E3FE0A002F53B8 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C522E3FE0A002F53B8 /* RecipeCollectionViewCell.swift */; };
 		BEA241C822E41350002F53B8 /* FilterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C722E41350002F53B8 /* FilterPopupView.swift */; };
 		BEA241CA22E42768002F53B8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA241C922E42768002F53B8 /* RadioButton.swift */; };
@@ -163,6 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8891EBCA23697C7D0002C8CC /* RealmSwift in Frameworks */,
+				8891EBC823697C7D0002C8CC /* Realm in Frameworks */,
 				26971F65362748B63E2D8E44 /* Pods_allnight_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF5312D22C748D0005809C3 /* Resources */,
-				BAF5312C22C748C8005809C3 /* Souces */,
+				BAF5312C22C748C8005809C3 /* Sources */,
 				BAF5312E22C748D5005809C3 /* SupportingFiles */,
 			);
 			path = "allnight-ios";
@@ -380,7 +383,7 @@
 			path = "allnight-iosTests";
 			sourceTree = "<group>";
 		};
-		BAF5312C22C748C8005809C3 /* Souces */ = {
+		BAF5312C22C748C8005809C3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				BAF5310C22C74790005809C3 /* AppDelegate.swift */,
@@ -391,7 +394,7 @@
 				BA279DC722C77D82004CA0F6 /* Services */,
 				BA279DC822C77D94004CA0F6 /* Utils */,
 			);
-			path = Souces;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		BAF5312D22C748D0005809C3 /* Resources */ = {
@@ -457,6 +460,10 @@
 			dependencies = (
 			);
 			name = "allnight-ios";
+			packageProductDependencies = (
+				8891EBC723697C7D0002C8CC /* Realm */,
+				8891EBC923697C7D0002C8CC /* RealmSwift */,
+			);
 			productName = "allnight-ios";
 			productReference = BAF5310922C74790005809C3 /* allnight-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -510,6 +517,9 @@
 				ko,
 			);
 			mainGroup = BAF5310022C74790005809C3;
+			packageReferences = (
+				8891EBC623697C7D0002C8CC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = BAF5310A22C74790005809C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -963,6 +973,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8891EBC623697C7D0002C8CC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8891EBC723697C7D0002C8CC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8891EBC623697C7D0002C8CC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		8891EBC923697C7D0002C8CC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8891EBC623697C7D0002C8CC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BAF5310122C74790005809C3 /* Project object */;
 }
