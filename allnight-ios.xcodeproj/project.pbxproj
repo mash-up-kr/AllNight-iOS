@@ -368,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF5312D22C748D0005809C3 /* Resources */,
-				BAF5312C22C748C8005809C3 /* Souces */,
+				BAF5312C22C748C8005809C3 /* Sources */,
 				BAF5312E22C748D5005809C3 /* SupportingFiles */,
 			);
 			path = "allnight-ios";
@@ -383,7 +383,7 @@
 			path = "allnight-iosTests";
 			sourceTree = "<group>";
 		};
-		BAF5312C22C748C8005809C3 /* Souces */ = {
+		BAF5312C22C748C8005809C3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				BAF5310C22C74790005809C3 /* AppDelegate.swift */,
@@ -394,7 +394,7 @@
 				BA279DC722C77D82004CA0F6 /* Services */,
 				BA279DC822C77D94004CA0F6 /* Utils */,
 			);
-			path = Souces;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		BAF5312D22C748D0005809C3 /* Resources */ = {
