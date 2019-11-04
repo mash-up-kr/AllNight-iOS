@@ -9,6 +9,7 @@ target 'allnight-ios' do
   # Utils
   pod 'Kingfisher'
   pod 'SwiftLint'
+  pod 'RealmSwift'
 
   # Logger
   pod 'SwiftyBeaver'
