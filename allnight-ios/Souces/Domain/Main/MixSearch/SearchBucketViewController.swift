@@ -5,21 +5,18 @@
 //  Created by 공지원 on 19/08/2019.
 //  Copyright © 2019 kanghoon. All rights reserved.
 //
-
-//버킷에 담은 재료가 하나도 없다면, searchRecipeButton 비활성화 해줘야할듯
-
 import UIKit
 
-class SearchBucketViewController: UIViewController {
+final class SearchBucketViewController: UIViewController {
+    //MAKR: - IBOutlet
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchRecipeButton: UIButton!
     
     //MARK: - Property
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    //MAKR: - IBOutlet
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var searchRecipeButton: UIButton!
+    private let heightForRow: CGFloat = 64
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -31,14 +28,7 @@ class SearchBucketViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func backButtonDidTap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func searchRecipeButtonDidTap(_ sender: UIButton) {
-        //재료가 들어간 레시피 리스트 보여주는 화면으로 연결
-        let storyboard = UIStoryboard(name: "MixRecipe", bundle: nil)
-        let nextViewController = storyboard.instantiateViewController(withIdentifier: "mixRecipeView") as! MixRecipeViewController
-        present(nextViewController, animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Method
@@ -68,6 +58,6 @@ extension SearchBucketViewController: UITableViewDataSource {
 //MARK: - TableView Delegate
 extension SearchBucketViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+        return heightForRow
     }
 }

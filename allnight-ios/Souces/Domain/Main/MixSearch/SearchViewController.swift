@@ -10,19 +10,28 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet weak var ingredientQuestionLabel: UILabel!
-    @IBOutlet weak var detailInstructionLabel: UILabel!
+    //MARK: - IBOutlet
+    @IBOutlet var ingredientQuestionLabel: UILabel!
+    @IBOutlet var detailInstructionLabel: UILabel!
+    @IBOutlet var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+        }
+    }
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
+    
     //MARK: - Property
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
     private var searchResults: [String] = []
-    private let cellIdentifier = "searchTableViewCell"
-    
-    //MARK: - IBOutlet
-    @IBOutlet var searchTextField: UITextField!
-    @IBOutlet var tableView: UITableView!
+    private let cellIdentifier = "searchResultTableViewCell"
+    private let heightForRow: CGFloat = 72
 
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -39,22 +48,17 @@ class SearchViewController: UIViewController {
     }
 
     //MARK: - IBAction
+    @IBAction func cancelButtonDidTap(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func findButtonDidTap(_ sender: UIButton) {
         guard let ingredient = searchTextField.text else { return }
         getIngredientList(ingredient: ingredient)
     }
     
-    @IBAction func backButtonDidTap(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     //MARK: - Method
     private func commonInit() {
-        //data source, delegate 설정
-        searchTextField.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         //change searchTextField placeholder color
         searchTextField.attributedPlaceholder = NSAttributedString(string: "ex) 보드카".localized, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
@@ -67,7 +71,7 @@ class SearchViewController: UIViewController {
         clearButton.setImage(UIImage(named: "icSmallx24Normal"), for: .normal)
     }
     
-    //서버 통신
+    //Networking
     private func getIngredientList(ingredient: String) {
             AllNightProvider.search(ingredient: ingredient, completion: {[weak self] in
                 guard let self = `self` else { return }
@@ -102,7 +106,7 @@ extension SearchViewController: UITableViewDataSource {
 //MARK: - TableView Delegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 72
+        return heightForRow
     }
 }
 

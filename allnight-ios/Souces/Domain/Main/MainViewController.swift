@@ -10,21 +10,18 @@ import UIKit
 import Moya
 
 final class MainViewController: UIViewController {
+    //MARK: - IBOutlet
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var floatingButton: UIButton!
     
     //MARK: - Property
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
     private var cocktails: [Cocktail] = []
     private var favorites: Set<String> = []
-    
     private let transition = SlideInTransition()
     private let cellIdentifier = "recipeCollectionViewCell"
-    
-    //MARK: - IBOutlet
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var floatingButton: UIButton!
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -65,8 +62,7 @@ final class MainViewController: UIViewController {
         if cell.isScrap { //스크랩 한거면
             //스크랩 바구니에 칵테일 id를 추가
             CocktailManager.shared.scrappedCocktails.insert(id)
-        } else { //스크랩 취소한거면
-            //스크랩 바구니에서 칵테일 id 삭제
+        } else {
             CocktailManager.shared.scrappedCocktails.remove(id)
         }
     }

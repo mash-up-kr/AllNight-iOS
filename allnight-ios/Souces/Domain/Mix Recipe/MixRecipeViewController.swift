@@ -162,6 +162,8 @@ final class MixRecipeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationController?.navigationBar.isHidden = true
+    
     recipeCollectionView.delegate   = self
     recipeCollectionView.dataSource = self
     

@@ -9,11 +9,11 @@
 import UIKit
 
 class MainCollectionReusableHeaderView: UICollectionReusableView {
-    //MARK: - Property
-    var delegate: MainViewController?
-    
     //MARK: - IBOutlet
     @IBOutlet var menuBarButton: UIButton!
+    
+    //MARK: - Property
+    var delegate: MainViewController?
     
     //MARK: - IBAction
     @IBAction func menuBarButtonDidTap(_ sender: UIButton) {
